@@ -8,9 +8,10 @@ public class TowerAttack : MonoBehaviour
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private Transform bulletParent;
     private float fireCountdown = 0f;
-    [SerializeField] private float fireCooldown = 1f;
+    public float fireCooldown = 0.2f;
     private bool canAttack = false;
     private int randomNumber;
+    public float towerDamage;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -58,6 +59,7 @@ public class TowerAttack : MonoBehaviour
             {
                 randomNumber = Random.Range(0, i);
                 bullet.target = enemyList[randomNumber].transform;
+                bullet.damage = towerDamage;
             }
         }
     }

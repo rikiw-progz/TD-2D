@@ -17,6 +17,13 @@ public class TowerAttack : MonoBehaviour
         if(collision.gameObject.CompareTag("Enemy"))
         {
             enemyList.Add(collision.gameObject);
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
             canAttack = true;
         }
     }

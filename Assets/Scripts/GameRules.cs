@@ -14,6 +14,11 @@ public class GameRules : MonoBehaviour
     [SerializeField] private GameObject[] towers;
     private int levelAmount = 0;
 
+    private void Start()
+    {
+        CardChoose();
+    }
+
     public void ExperienceGain(float exp)
     {
         experience += exp;

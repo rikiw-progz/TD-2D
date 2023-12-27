@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class PiercingBullet : MonoBehaviour
 {
-    public Transform target;
     public float damage = 40f;
     private float piercingBulletDuration = 5f;
 
-    private void Start()
+    public void GetTarget(Transform target)
     {
+        if (target == null)
+            this.gameObject.SetActive(false);
+
         Vector3 dir = target.position - transform.position;
         transform.rotation = Quaternion.LookRotation(Vector3.forward, dir);
     }
@@ -24,10 +26,7 @@ public class PiercingBullet : MonoBehaviour
 
     private void Update()
     {
-        if (target != null && target.gameObject.activeInHierarchy)
-            transform.position += 3f * Time.deltaTime * transform.up;
-        else
-            this.gameObject.SetActive(false);
+       transform.position += 3f * Time.deltaTime * transform.up;
 
         piercingBulletDuration -= Time.deltaTime;
 

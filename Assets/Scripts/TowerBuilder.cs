@@ -6,22 +6,35 @@ using UnityEngine.UI;
 
 public class TowerBuilder : MonoBehaviour
 {
-    [SerializeField] private GameObject[] simpleTowers;
-
     public Vector2 towerPositionToBuild;
+    [SerializeField] private GameObject[] towers;
     [SerializeField] private ButtonHandler _buttonHandler;
-    [SerializeField] private TextMeshProUGUI _simpleTowerAmount;
+    [SerializeField] private TextMeshProUGUI _towerAmount;
     private int towerQueue = 0;
 
-    public void BuildTower()
+    public void BuildSimpleTower()
     {
         if(_buttonHandler.simpleTowerAmount > 0)
         {
             _buttonHandler.simpleTowerAmount -= 1;
-            _simpleTowerAmount.text = _buttonHandler.simpleTowerAmount.ToString();
+            _towerAmount.text = _buttonHandler.simpleTowerAmount.ToString();
 
-            simpleTowers[0 + towerQueue].transform.position = towerPositionToBuild;
-            simpleTowers[0 + towerQueue].SetActive(true);
+            towers[0 + towerQueue].transform.position = towerPositionToBuild;
+            towers[0 + towerQueue].SetActive(true);
+            towerQueue += 1;
+        }
+        this.GetComponent<Button>().enabled = false;
+    }
+
+    public void BuildPiercingTower()
+    {
+        if (_buttonHandler.piercingTowerAmount > 0)
+        {
+            _buttonHandler.piercingTowerAmount -= 1;
+            _towerAmount.text = _buttonHandler.piercingTowerAmount.ToString();
+
+            towers[0 + towerQueue].transform.position = towerPositionToBuild;
+            towers[0 + towerQueue].SetActive(true);
             towerQueue += 1;
         }
         this.GetComponent<Button>().enabled = false;

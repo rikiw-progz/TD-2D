@@ -23,7 +23,7 @@ public class EnemyHealth : MonoBehaviour
 
     public void GetEnemyHP(float f)
     {
-        _image.DOColor(Color.red, 0.1f).SetLoops(2, LoopType.Yoyo);
+        _image.DOColor(Color.red, 0.02f).SetLoops(2, LoopType.Yoyo);
         enemyHP -= f;
 
         if (enemyHP <= 0)

@@ -6,14 +6,17 @@ using UnityEngine.UI;
 public class TowerHandler : MonoBehaviour
 {
     //[SerializeField] private GameObject towerStats;
-    [SerializeField] private GameObject towerBuilder;
+    [SerializeField] private GameObject[] towerBuilder;
 
     public void OnClick()
     {
         // Tower stats
         //towerStats.SetActive(true);
 
-        towerBuilder.GetComponent<Button>().enabled = true;
-        towerBuilder.GetComponent<TowerBuilder>().towerPositionToBuild = this.transform.position;
+        foreach(GameObject g in towerBuilder)
+        {
+            g.GetComponent<Button>().enabled = true;
+            g.GetComponent<TowerBuilder>().towerPositionToBuild = this.transform.position;
+        }
     }
 }

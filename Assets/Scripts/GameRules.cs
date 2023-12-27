@@ -11,7 +11,8 @@ public class GameRules : MonoBehaviour
     [SerializeField] private GameObject cardParent;
 
     [Header("Towers")]
-    [SerializeField] private GameObject[] towers;
+    [SerializeField] private GameObject[] simpleTowers;
+    [SerializeField] private GameObject[] piercingTowers;
     private int levelAmount = 0;
 
     private void Start()
@@ -35,13 +36,5 @@ public class GameRules : MonoBehaviour
     {
         Time.timeScale = 0f;
         cardParent.SetActive(true);
-
-        foreach(GameObject g in towers)
-        {
-            g.GetComponent<TowerAttack>().towerDamage += 5f;
-
-            if (levelAmount % 3 == 0)
-                g.GetComponent<TowerAttack>().fireCooldown -= 0.01f;
-        }
     }
 }

@@ -6,12 +6,12 @@ public class TowerAttack : MonoBehaviour
 {
     private List<GameObject> enemyList = new();
     [SerializeField] private GameObject bulletPrefab;
-    [SerializeField] private Transform bulletParent;
     private float fireCountdown = 0f;
     public float fireCooldown = 0.2f;
     private bool canAttack = false;
     private int randomNumber;
     public float towerDamage;
+    public int bulletAmount = 1;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -50,17 +50,35 @@ public class TowerAttack : MonoBehaviour
 
     void Shoot()
     {
-        GameObject bulletGO = (GameObject)EnemyPool.instance.GetEnemyObject("Bullet", this.transform.position);
-        Bullet bullet = bulletGO.GetComponent<Bullet>();
-
-        if (bullet != null)
+        if (enemyList.Count == 1)
         {
-            for(int i = 0; i < enemyList.Count; i++)
+            // Single shot for one enemy
+            GameObject bulletGO = (GameObject)EnemyPool.instance.GetEnemyObject("Bullet", this.transform.position);
+            Bullet bullet = bulletGO.GetComponent<Bullet>();
+
+            if (bullet != null)
             {
-                randomNumber = Random.Range(0, i);
-                bullet.target = enemyList[randomNumber].transform;
+                bullet.target = enemyList[0].transform;
                 bullet.damage = towerDamage;
             }
         }
+        else if (enemyList.Count > 1)
+        {
+            // Multiple shots for more enemies based on bulletAmount
+            for (int i = 0; i < Mathf.Min(bulletAmount, enemyList.Count); i++)
+            {
+                GameObject bulletGO = (GameObject)EnemyPool.instance.GetEnemyObject("Bullet", this.transform.position);
+                Bullet bullet = bulletGO.GetComponent<Bullet>();
+
+                if (bullet != null)
+                {
+                    randomNumber = Random.Range(0, enemyList.Count);
+                    bullet.target = enemyList[randomNumber].transform;
+                    bullet.damage = towerDamage;
+                }
+            }
+        }
     }
+
+
 }

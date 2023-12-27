@@ -50,15 +50,16 @@ public class PiercingTower : MonoBehaviour
 
     void Shoot()
     {
-        GameObject bulletGO = (GameObject)EnemyPool.instance.GetEnemyObject("Piercing Bullet", this.transform.position);
-        PiercingBullet bullet = bulletGO.GetComponent<PiercingBullet>();
-
-        if (bullet != null)
+        if (enemyList.Count > 0)
         {
-            for (int i = 0; i < enemyList.Count; i++)
+            GameObject bulletGO = (GameObject)EnemyPool.instance.GetEnemyObject("Piercing Bullet", this.transform.position);
+            PiercingBullet bullet = bulletGO.GetComponent<PiercingBullet>();
+
+            if (bullet != null)
             {
-                randomNumber = Random.Range(0, i);
-                bullet.target = enemyList[randomNumber].transform;
+                randomNumber = Random.Range(0, enemyList.Count);
+                if (enemyList[randomNumber] != null && enemyList[randomNumber].activeSelf)
+                    bullet.GetComponent<PiercingBullet>().GetTarget(enemyList[randomNumber].transform);
                 bullet.damage = towerDamage;
             }
         }

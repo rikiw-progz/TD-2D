@@ -18,9 +18,10 @@ public class ButtonHandler : MonoBehaviour
     public int piercingTowerAmount;
 
     [Header("Long Range Tower")]
-    [SerializeField] private GameObject[] longRangeTowers;
-    [SerializeField] private TextMeshProUGUI longRangeTowerAmountTMP;
-    public int longRangeTowerAmount;
+    [SerializeField] private GameObject[] chakrumTowers;
+    [SerializeField] private TextMeshProUGUI ChakrumTowerAmountTMP;
+    public int chakrumTowerAmount;
+    private int chakrumTowerLevel = 1;
 
     public void SimpleTower(int amount)
     {
@@ -38,7 +39,7 @@ public class ButtonHandler : MonoBehaviour
         {
             g.GetComponent<TowerAttack>().towerDamage += 5f;
 
-            if(simpleTowerLevel % 3 == 0)
+            if(simpleTowerLevel % 4 == 0)
             {
                 g.GetComponent<TowerAttack>().bulletAmount += 1;
             }
@@ -61,19 +62,24 @@ public class ButtonHandler : MonoBehaviour
         }
     }
 
-    public void LongRangeTower(int amount)
+    public void ChakrumTower(int amount)
     {
         Time.timeScale = 1f;
 
         cardParent.SetActive(false);
 
-        longRangeTowerAmount += amount;
+        chakrumTowerAmount += amount;
 
-        longRangeTowerAmountTMP.text = longRangeTowerAmount.ToString();
+        ChakrumTowerAmountTMP.text = chakrumTowerAmount.ToString();
 
-        foreach (GameObject g in longRangeTowers)
+        foreach (GameObject g in chakrumTowers)
         {
-            //g.GetComponent<PiercingTower>().towerDamage += 50f;
+            g.GetComponent<ChakrumTower>().towerDamage += 10f;
+
+            if (chakrumTowerLevel % 3 == 0)
+            {
+                g.GetComponent<ChakrumTower>().bounceAmount += 1;
+            }
         }
     }
 }

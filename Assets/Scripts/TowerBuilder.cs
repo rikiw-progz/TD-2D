@@ -39,4 +39,18 @@ public class TowerBuilder : MonoBehaviour
         }
         this.GetComponent<Button>().enabled = false;
     }
+
+    public void BuildChakrumTower()
+    {
+        if (_buttonHandler.chakrumTowerAmount > 0)
+        {
+            _buttonHandler.chakrumTowerAmount -= 1;
+            _towerAmount.text = _buttonHandler.chakrumTowerAmount.ToString();
+
+            towers[0 + towerQueue].transform.position = towerPositionToBuild;
+            towers[0 + towerQueue].SetActive(true);
+            towerQueue += 1;
+        }
+        this.GetComponent<Button>().enabled = false;
+    }
 }

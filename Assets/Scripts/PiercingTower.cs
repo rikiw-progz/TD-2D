@@ -5,8 +5,6 @@ using UnityEngine;
 public class PiercingTower : MonoBehaviour
 {
     private List<GameObject> enemyList = new();
-    [SerializeField] private GameObject bulletPrefab;
-    [SerializeField] private Transform bulletParent;
     private float fireCountdown = 0f;
     public float fireCooldown = 1f;
     private bool canAttack = false;

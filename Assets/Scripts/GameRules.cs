@@ -26,7 +26,7 @@ public class GameRules : MonoBehaviour
 
         if (experience >= newCardLimit)
         {
-            newCardLimit += experience + newCardLimit/10;
+            newCardLimit += experience;
             levelAmount += 1;
             CardChoose();
         }

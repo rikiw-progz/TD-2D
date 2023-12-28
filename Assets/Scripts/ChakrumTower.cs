@@ -2,18 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TowerAttack : MonoBehaviour
+public class ChakrumTower : MonoBehaviour
 {
     private List<GameObject> enemyList = new();
     private float fireCountdown = 0f;
     public float fireCooldown = 0.2f;
     private bool canAttack = false;
-    public float towerDamage;
+    public float towerDamage = 10f;
     public int bulletAmount = 1;
+    public int bounceAmount = 1;
+    public float chakrumSpeed = 5f;
+    public float chakrumRadius = 5f;
+    public float chakrumRotationSpeed = 30f;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.CompareTag("Enemy"))
+        if (collision.gameObject.CompareTag("Enemy"))
         {
             enemyList.Add(collision.gameObject);
         }
@@ -38,7 +42,7 @@ public class TowerAttack : MonoBehaviour
 
     private void Update()
     {
-        if(fireCountdown <= 0f && canAttack)
+        if (fireCountdown <= 0f && canAttack)
         {
             Shoot();
             fireCountdown = fireCooldown;
@@ -52,13 +56,17 @@ public class TowerAttack : MonoBehaviour
 
         for (int i = 0; i < Mathf.Min(bulletAmount, enemyList.Count); i++)
         {
-            GameObject bulletGO = EnemyPool.instance.GetEnemyObject("Bullet", this.transform.position);
-            Bullet bullet = bulletGO.GetComponent<Bullet>();
+            GameObject bulletGO = EnemyPool.instance.GetEnemyObject("Chakrum Bullet", this.transform.position);
+            ChakrumBullet chakrumBullet = bulletGO.GetComponent<ChakrumBullet>();
 
-            if (bullet != null)
+            if (chakrumBullet != null)
             {
-                bullet.target = enemyList[i].transform;
-                bullet.damage = towerDamage;
+                chakrumBullet.target = enemyList[i].transform;
+                chakrumBullet.damage = towerDamage;
+                chakrumBullet.maxBounces = bounceAmount;
+                chakrumBullet._chakrumSpeed = chakrumSpeed;
+                chakrumBullet._chakrumRadius = chakrumRadius;
+                chakrumBullet._chakrumRotationSpeed = chakrumRotationSpeed;
             }
         }
     }

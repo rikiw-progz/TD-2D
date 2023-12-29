@@ -17,11 +17,17 @@ public class ButtonHandler : MonoBehaviour
     [SerializeField] private TextMeshProUGUI piercingTowerAmountTMP;
     public int piercingTowerAmount;
 
-    [Header("Long Range Tower")]
+    [Header("Chakrum Tower")]
     [SerializeField] private GameObject[] chakrumTowers;
     [SerializeField] private TextMeshProUGUI ChakrumTowerAmountTMP;
     public int chakrumTowerAmount;
     private int chakrumTowerLevel = 1;
+
+    [Header("Splash Tower")]
+    [SerializeField] private GameObject[] splashTowers;
+    [SerializeField] private TextMeshProUGUI splashTowerAmountTMP;
+    public int splashTowerAmount;
+    //private int splashTowerLevel = 1;
 
     public void SimpleTower(int amount)
     {
@@ -80,6 +86,22 @@ public class ButtonHandler : MonoBehaviour
             {
                 g.GetComponent<ChakrumTower>().bounceAmount += 1;
             }
+        }
+    }
+
+    public void SplashTower(int amount)
+    {
+        Time.timeScale = 1f;
+
+        cardParent.SetActive(false);
+
+        splashTowerAmount += amount;
+
+        splashTowerAmountTMP.text = splashTowerAmount.ToString();
+
+        foreach (GameObject g in splashTowers)
+        {
+            g.GetComponent<SplashTower>().towerDamage += 10f;
         }
     }
 }

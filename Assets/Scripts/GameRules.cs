@@ -9,15 +9,12 @@ public class GameRules : MonoBehaviour
 
     [Header("Cards")]
     [SerializeField] private GameObject cardParent;
-
-    [Header("Towers")]
-    [SerializeField] private GameObject[] simpleTowers;
-    [SerializeField] private GameObject[] piercingTowers;
-    private int levelAmount = 0;
+    [SerializeField] private GameObject[] cards;
+    private float cardPositionControl = 400f;
 
     private void Start()
     {
-        CardChoose();
+        CardShow();
     }
 
     public void ExperienceGain(float exp)
@@ -27,14 +24,46 @@ public class GameRules : MonoBehaviour
         if (experience >= newCardLimit)
         {
             newCardLimit += experience;
-            levelAmount += 1;
-            CardChoose();
+            CardShow();
         }
     }
 
-    void CardChoose()
+    void CardShow()
     {
-        Time.timeScale = 0f;
+        ShowRandomCards();
+
         cardParent.SetActive(true);
+        Time.timeScale = 0f;
+    }
+
+    void ShowRandomCards()
+    {
+        ShuffleArray(cards);
+
+        for (int i = 0; i < cards.Length; i++)
+        {
+            if (i < 3)
+            {
+                cards[i].SetActive(true);
+
+                cards[i].transform.localPosition = new Vector2(-400f + i * cardPositionControl, 0f);
+            }
+            else
+            {
+                cards[i].SetActive(false);
+            }
+        }
+    }
+
+    void ShuffleArray(GameObject[] array)
+    {
+        int n = array.Length;
+        for (int i = n - 1; i > 0; i--)
+        {
+            int j = Random.Range(0, i + 1);
+            GameObject temp = array[i];
+            array[i] = array[j];
+            array[j] = temp;
+        }
     }
 }

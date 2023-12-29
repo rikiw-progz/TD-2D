@@ -53,4 +53,18 @@ public class TowerBuilder : MonoBehaviour
         }
         this.GetComponent<Button>().enabled = false;
     }
+
+    public void BuildSplashTower()
+    {
+        if (_buttonHandler.splashTowerAmount > 0)
+        {
+            _buttonHandler.splashTowerAmount -= 1;
+            _towerAmount.text = _buttonHandler.splashTowerAmount.ToString();
+
+            towers[0 + towerQueue].transform.position = towerPositionToBuild;
+            towers[0 + towerQueue].SetActive(true);
+            towerQueue += 1;
+        }
+        this.GetComponent<Button>().enabled = false;
+    }
 }

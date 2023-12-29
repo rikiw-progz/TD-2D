@@ -12,6 +12,7 @@ public class TowerHandler : MonoBehaviour
     {
         // Tower stats
         //towerStats.SetActive(true);
+        this.GetComponent<Button>().enabled = false;
 
         foreach(GameObject g in towerBuilder)
         {

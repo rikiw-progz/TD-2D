@@ -5364,7 +5364,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8a93da76f2a2e243b076b2d1965cae3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyWaveAmount: 50
+  enemyWaveAmount: 1
   enemyStartPosition: {fileID: 2089806473}
 --- !u!114 &532268891
 MonoBehaviour:

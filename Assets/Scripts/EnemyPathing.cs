@@ -6,7 +6,10 @@ public class EnemyPathing : MonoBehaviour
 {
     [SerializeField] private float enemyWaveAmount = 200f;
     [SerializeField] private Transform enemyStartPosition;
+    [SerializeField] private float enemySpeed = 5f;
     private float _enemyHP = 50f;
+
+    [SerializeField] private Transform[] path;
 
     private IEnumerator Start()
     {
@@ -25,6 +28,15 @@ public class EnemyPathing : MonoBehaviour
                 enemy.SetActive(true);
                 enemy.GetComponent<EnemyHealth>().enemyHP = _enemyHP;
                 enemy.GetComponent<EnemyMove>().enabled = true;
+                enemy.GetComponent<EnemyMove>().speed = enemySpeed;       // is this must be in Update???
+                if(enemy.GetComponent<EnemyMove>().pathAdded == false)
+                {
+                    for (int j = 0; j < path.Length; j++)
+                        enemy.GetComponent<EnemyMove>().enemyPath.Add(path[j]);
+                }
+
+                enemy.GetComponent<EnemyMove>().pathAdded = true;
+
                 yield return new WaitForSeconds(0.25f);
             }
         }

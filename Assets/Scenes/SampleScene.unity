@@ -5364,8 +5364,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8a93da76f2a2e243b076b2d1965cae3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyWaveAmount: 1
-  enemyStartPosition: {fileID: 2089806473}
+  enemyWaveAmount: 100
+  enemyStartPosition: {fileID: 1570290904}
+  enemySpeed: 3
+  path:
+  - {fileID: 1477177483}
+  - {fileID: 1517303051}
+  - {fileID: 985422062}
+  - {fileID: 1352320334}
+  - {fileID: 226967524}
+  - {fileID: 348446769}
+  - {fileID: 1490294675}
+  - {fileID: 28593114}
+  - {fileID: 936925675}
 --- !u!114 &532268891
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10914,7 +10925,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 985, y: 200}
+  m_AnchoredPosition: {x: 500, y: 200}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!61 &1108954305

@@ -5,58 +5,72 @@ using DG.Tweening;
 
 public class EnemyMove : MonoBehaviour
 {
-    private int currentIndex = 0;
+    public int currentIndex = 0;
     private Vector2 targetPosition;
     public float speed = 5f;
+    public List<Transform> enemyPath = new();
+    public bool pathAdded = false;
 
     void Start()
     {
         MoveToNextPosition();
     }
 
+    private void OnEnable()
+    {
+        if(enemyPath.Count > 0)
+        {
+            currentIndex = 0;
+
+            MoveToNextPosition();
+        }
+    }
+
     void Update()
     {
         float step = speed * Time.deltaTime;
 
-        transform.position = Vector3.MoveTowards(transform.position, targetPosition, step);
-
-        if (Vector2.Distance(transform.localPosition, targetPosition) < 1f)
+        transform.position = Vector2.MoveTowards(transform.position, targetPosition, step);
+        
+        if (Vector2.Distance(transform.position, targetPosition) < 0.01f)
         {
-            Debug.Log(0);
             MoveToNextPosition();
         }
     }
 
     void MoveToNextPosition()
     {
-        switch (currentIndex % 9)
+        switch (currentIndex % 10)
         {
             case 0:
-                targetPosition = new Vector2(150f, transform.position.y);
+                targetPosition = enemyPath[0].position;
                 break;
             case 1:
-                targetPosition = new Vector2(transform.position.x, 100f);
+                targetPosition = enemyPath[1].position;
                 break;
             case 2:
-                targetPosition = new Vector2(-50f, transform.position.y);
+                targetPosition = enemyPath[2].position;
                 break;
             case 3:
-                targetPosition = new Vector2(transform.position.x, 0f);
+                targetPosition = enemyPath[3].position;
                 break;
             case 4:
-                targetPosition = new Vector2(50f, transform.position.y);
+                targetPosition = enemyPath[4].position;
                 break;
             case 5:
-                targetPosition = new Vector2(transform.position.x, -100f);
+                targetPosition = enemyPath[5].position;
                 break;
             case 6:
-                targetPosition = new Vector2(-150f, transform.position.y);
+                targetPosition = enemyPath[6].position;
                 break;
             case 7:
-                targetPosition = new Vector2(transform.position.x, 200f);
+                targetPosition = enemyPath[7].position;
                 break;
             case 8:
-                targetPosition = new Vector2(1000f, transform.position.y);
+                targetPosition = enemyPath[8].position;
+                break;
+            case 9:
+                this.gameObject.SetActive(false);
                 break;
 
         }

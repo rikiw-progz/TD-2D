@@ -31,6 +31,9 @@ public class PiercingBullet : MonoBehaviour
         piercingBulletDuration -= Time.deltaTime;
 
         if(piercingBulletDuration <= 0)
+        {
+            // later add vanishing effect here
             this.gameObject.SetActive(false);
+        }
     }
 }

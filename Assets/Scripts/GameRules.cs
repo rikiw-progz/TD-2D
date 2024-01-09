@@ -14,7 +14,7 @@ public class GameRules : MonoBehaviour
 
     private void Start()
     {
-        CardShow();
+        //CardShow();
     }
 
     public void ExperienceGain(float exp)
@@ -24,7 +24,7 @@ public class GameRules : MonoBehaviour
         if (experience >= newCardLimit)
         {
             newCardLimit += experience;
-            CardShow();
+            //CardShow();
         }
     }
 

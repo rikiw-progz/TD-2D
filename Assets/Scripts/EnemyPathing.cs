@@ -7,7 +7,7 @@ public class EnemyPathing : MonoBehaviour
     [SerializeField] private float enemyWaveAmount = 200f;
     [SerializeField] private Transform enemyStartPosition;
     [SerializeField] private float enemySpeed = 5f;
-    private float _enemyHP = 50f;
+    private float _enemyHP = 5000f;
 
     [SerializeField] private Transform[] path;
 

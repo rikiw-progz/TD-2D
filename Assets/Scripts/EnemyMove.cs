@@ -7,6 +7,7 @@ public class EnemyMove : MonoBehaviour
 {
     public int currentIndex = 0;
     private Vector2 targetPosition;
+    private float _speed;
     public float speed = 5f;
     public List<Transform> enemyPath = new();
     public bool pathAdded = false;
@@ -40,7 +41,7 @@ public class EnemyMove : MonoBehaviour
 
     void MoveToNextPosition()
     {
-        switch (currentIndex % 10)
+        switch (currentIndex % 14)
         {
             case 0:
                 targetPosition = enemyPath[0].position;
@@ -70,6 +71,18 @@ public class EnemyMove : MonoBehaviour
                 targetPosition = enemyPath[8].position;
                 break;
             case 9:
+                targetPosition = enemyPath[9].position;
+                break;
+            case 10:
+                targetPosition = enemyPath[10].position;
+                break;
+            case 11:
+                targetPosition = enemyPath[11].position;
+                break;
+            case 12:
+                targetPosition = enemyPath[12].position;
+                break;
+            case 13:
                 this.gameObject.SetActive(false);
                 break;
 
@@ -77,6 +90,20 @@ public class EnemyMove : MonoBehaviour
         currentIndex++;
     }
 
+    public void Stun(float stunDuration)
+    {
+        if(this.gameObject.activeInHierarchy)
+            StartCoroutine(StunCountdown(stunDuration));
+    }
+
+    public IEnumerator StunCountdown(float stunDuration)
+    {
+        _speed = speed;
+        speed = 0f;
+        yield return new WaitForSeconds(stunDuration);
+        speed = _speed;
+    }
+    
     private void OnDisable()
     {
         this.transform.position = new Vector2(-1000f, -200f);

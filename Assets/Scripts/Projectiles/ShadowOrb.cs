@@ -5,7 +5,7 @@ public class ShadowOrb : MonoBehaviour
     public float shadowOrbDurationTime = 3f;
     public float shadowOrbSpeed = 3f;
     public float shadowOrbDamage = 10f;
-    private float sphereRadius = 0.08f;
+    private float sphereRadius = 0.1f;
 
     private Vector3 randomDirection;
 
@@ -15,21 +15,13 @@ public class ShadowOrb : MonoBehaviour
         randomDirection = Random.insideUnitCircle.normalized;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Enemy"))
-        {
-            collision.gameObject.GetComponent<EnemyHealth>().GetEnemyHP(shadowOrbDamage);
-        }
-    }
-
     private void Update()
     {
         transform.position += shadowOrbSpeed * Time.deltaTime * randomDirection;
 
         shadowOrbDurationTime -= Time.deltaTime;
 
-        //CheckForTargets();
+        CheckForTargets();
 
         if (shadowOrbDurationTime <= 0)
             this.gameObject.SetActive(false);
@@ -37,24 +29,15 @@ public class ShadowOrb : MonoBehaviour
 
     private void CheckForTargets()
     {
-        RaycastHit[] hits = Physics.SphereCastAll(transform.position, sphereRadius, transform.forward);
-        
+        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, sphereRadius);
+
         // Iterate through the hits and apply damage to enemies
-        foreach (RaycastHit hit in hits)
+        foreach (var hit in hits)
         {
-            Debug.Log(1);
-            if (hit.collider.CompareTag("Enemy"))
+            if (hit.CompareTag("Enemy"))
             {
-                Debug.Log(2);
-                hit.collider.GetComponent<EnemyHealth>().GetEnemyHP(shadowOrbDamage);
+                hit.GetComponent<EnemyHealth>().GetEnemyHP(shadowOrbDamage);
             }
         }
-    }
-
-    private void OnDrawGizmos()
-    {
-        // Draw a wire sphere in the Scene view to visualize the sphere radius
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position + transform.forward * sphereRadius, sphereRadius);
     }
 }

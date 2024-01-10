@@ -2445,7 +2445,7 @@ MonoBehaviour:
   chancePercentage: 100
   shadowOrbName: Shadow orb
   shadowOrbAmount: 0
-  shadowOrbDamage: 20
+  shadowOrbDamage: 2000
   shadowOrbDurationTime: 8
 --- !u!58 &187114037
 CircleCollider2D:
@@ -2708,7 +2708,7 @@ MonoBehaviour:
   chancePercentage: 100
   shadowOrbName: Shadow orb
   shadowOrbAmount: 0
-  shadowOrbDamage: 20
+  shadowOrbDamage: 2000
   shadowOrbDurationTime: 8
 --- !u!58 &200014760
 CircleCollider2D:
@@ -7687,7 +7687,7 @@ MonoBehaviour:
   chancePercentage: 100
   shadowOrbName: Shadow orb
   shadowOrbAmount: 0
-  shadowOrbDamage: 20
+  shadowOrbDamage: 2000
   shadowOrbDurationTime: 8
 --- !u!58 &650855524
 CircleCollider2D:
@@ -7821,7 +7821,7 @@ MonoBehaviour:
   chancePercentage: 100
   shadowOrbName: Shadow orb
   shadowOrbAmount: 0
-  shadowOrbDamage: 20
+  shadowOrbDamage: 2000
   shadowOrbDurationTime: 8
 --- !u!58 &655356164
 CircleCollider2D:
@@ -9602,7 +9602,7 @@ MonoBehaviour:
   chancePercentage: 100
   shadowOrbName: Shadow orb
   shadowOrbAmount: 0
-  shadowOrbDamage: 20
+  shadowOrbDamage: 2000
   shadowOrbDurationTime: 8
 --- !u!58 &804059000
 CircleCollider2D:
@@ -12660,7 +12660,7 @@ MonoBehaviour:
   chancePercentage: 100
   shadowOrbName: Shadow orb
   shadowOrbAmount: 0
-  shadowOrbDamage: 20
+  shadowOrbDamage: 2000
   shadowOrbDurationTime: 8
 --- !u!58 &1131733749
 CircleCollider2D:
@@ -16152,7 +16152,7 @@ MonoBehaviour:
   chancePercentage: 100
   shadowOrbName: Shadow orb
   shadowOrbAmount: 0
-  shadowOrbDamage: 20
+  shadowOrbDamage: 2000
   shadowOrbDurationTime: 8
 --- !u!58 &1384951364
 CircleCollider2D:
@@ -16754,7 +16754,7 @@ MonoBehaviour:
   chancePercentage: 100
   shadowOrbName: Shadow orb
   shadowOrbAmount: 0
-  shadowOrbDamage: 20
+  shadowOrbDamage: 2000
   shadowOrbDurationTime: 8
 --- !u!58 &1427443995
 CircleCollider2D:
@@ -18891,7 +18891,7 @@ MonoBehaviour:
   chancePercentage: 100
   shadowOrbName: Shadow orb
   shadowOrbAmount: 0
-  shadowOrbDamage: 20
+  shadowOrbDamage: 2000
   shadowOrbDurationTime: 8
 --- !u!58 &1619533971
 CircleCollider2D:
@@ -23113,7 +23113,7 @@ MonoBehaviour:
   chancePercentage: 100
   shadowOrbName: Shadow orb
   shadowOrbAmount: 0
-  shadowOrbDamage: 20
+  shadowOrbDamage: 2000
   shadowOrbDurationTime: 8
 --- !u!58 &1958589054
 CircleCollider2D:
@@ -23373,7 +23373,7 @@ MonoBehaviour:
   chancePercentage: 100
   shadowOrbName: Shadow orb
   shadowOrbAmount: 0
-  shadowOrbDamage: 20
+  shadowOrbDamage: 2000
   shadowOrbDurationTime: 8
 --- !u!58 &1965670221
 CircleCollider2D:
@@ -23791,7 +23791,7 @@ MonoBehaviour:
   chancePercentage: 100
   shadowOrbName: Shadow orb
   shadowOrbAmount: 0
-  shadowOrbDamage: 20
+  shadowOrbDamage: 2000
   shadowOrbDurationTime: 8
 --- !u!58 &2008254334
 CircleCollider2D:
@@ -25571,11 +25571,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 249922898116353887, guid: 792df12f0e2fab84e9eee658861033f7, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 18.5
+      value: -247.6
       objectReference: {fileID: 0}
     - target: {fileID: 249922898116353887, guid: 792df12f0e2fab84e9eee658861033f7, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -139.6
+      value: -399.7
       objectReference: {fileID: 0}
     - target: {fileID: 249922898116353887, guid: 792df12f0e2fab84e9eee658861033f7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -25596,6 +25596,14 @@ PrefabInstance:
     - target: {fileID: 1285752899817790089, guid: 792df12f0e2fab84e9eee658861033f7, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2805194399444907424, guid: 792df12f0e2fab84e9eee658861033f7, type: 3}
+      propertyPath: shadowOrbSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2805194399444907424, guid: 792df12f0e2fab84e9eee658861033f7, type: 3}
+      propertyPath: shadowOrbDurationTime
+      value: 10000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -25812,9 +25820,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2093554476}
     m_Modifications:
+    - target: {fileID: -1612126941875407597, guid: 2477852fa0b306940bc7649d2e5926bc, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1607949304865346249, guid: 2477852fa0b306940bc7649d2e5926bc, type: 3}
       propertyPath: m_Name
       value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 1607949304865346249, guid: 2477852fa0b306940bc7649d2e5926bc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6451252030474532619, guid: 2477852fa0b306940bc7649d2e5926bc, type: 3}
       propertyPath: m_Pivot.x
@@ -25878,11 +25894,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6451252030474532619, guid: 2477852fa0b306940bc7649d2e5926bc, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 1000
+      value: -263
       objectReference: {fileID: 0}
     - target: {fileID: 6451252030474532619, guid: 2477852fa0b306940bc7649d2e5926bc, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 200
+      value: -404
       objectReference: {fileID: 0}
     - target: {fileID: 6451252030474532619, guid: 2477852fa0b306940bc7649d2e5926bc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -25894,6 +25910,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6451252030474532619, guid: 2477852fa0b306940bc7649d2e5926bc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7790645995534343136, guid: 2477852fa0b306940bc7649d2e5926bc, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

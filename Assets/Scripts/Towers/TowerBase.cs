@@ -14,7 +14,7 @@ public abstract class TowerBase : MonoBehaviour
 
     [Header("Tower stats")]
     public float projectileSpeed = 5f;
-    private float fireCountdown = 0f;
+    [HideInInspector] public float fireCountdown = 0f;
     public float fireCooldown = 1f;
     public float towerDamage = 10f;
     public float towerRadius = 100f;
@@ -28,7 +28,7 @@ public abstract class TowerBase : MonoBehaviour
         }
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
+    public virtual void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {

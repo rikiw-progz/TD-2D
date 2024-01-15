@@ -119,6 +119,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyHP: 0
+  damageOverTimeDuration: 0
 --- !u!70 &1813733861927596574
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

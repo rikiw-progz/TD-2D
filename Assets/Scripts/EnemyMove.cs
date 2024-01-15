@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using DG.Tweening;
 
 public class EnemyMove : MonoBehaviour
 {
@@ -106,6 +105,6 @@ public class EnemyMove : MonoBehaviour
     
     private void OnDisable()
     {
-        this.transform.position = new Vector2(-1000f, -200f);
+        //this.transform.position = new Vector2(-1000f, -200f);
     }
 }

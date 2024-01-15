@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class LesserShadow : TowerBase
@@ -15,22 +13,21 @@ public class LesserShadow : TowerBase
 
         for (int i = 0; i < Mathf.Min(projectileAmount, enemyList.Count); i++)
         {
-            GameObject projectileGO = PoolBase.instance.GetEnemyObject(projectileName, this.transform.position);
-            ProjectileShadow projectile = projectileGO.GetComponent<ProjectileShadow>();
-
-            if (projectile != null)
-            {
-                projectile.target = enemyList[i].transform;
-                projectile.damage = towerDamage;
-            }
+            GameObject projectileGO = PoolBase.instance.GetEnemyObject(projectileName, this.transform.localPosition);
+            StartCoroutine(ProjectileCoroutine(projectileGO, enemyList[i]));
         }
     }
 
-    public override void PerformAction()
+    public override void ProjectileTrigger(GameObject target)
+    {
+        // do nothing
+    }
+
+    public override void TowerTrigger()
     {
         for (int i = 0; i < shadowOrbAmount; i++)
         {
-            GameObject projectileGO = PoolBase.instance.GetEnemyObject(shadowOrbName, this.transform.position);
+            GameObject projectileGO = PoolBase.instance.GetEnemyObject(shadowOrbName, this.transform.localPosition);
             ShadowOrb projectile = projectileGO.GetComponent<ShadowOrb>();
 
             projectile.shadowOrbDurationTime = shadowOrbDurationTime;

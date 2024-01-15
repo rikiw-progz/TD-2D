@@ -7,27 +7,6 @@ public abstract class ProjectileBase : MonoBehaviour
     public float projectileSpeed = 5f;
     public float chancePercentage = 30f;
 
-    //private void OnTriggerEnter2D(Collider2D collision)
-    //{
-    //    if (collision.gameObject.CompareTag("Enemy"))
-    //    {
-    //        float randomValue = Random.Range(0f, 100f);
-
-    //        if (randomValue < chancePercentage)
-    //        {
-    //            // Execute your action here
-    //            PerformAction();
-    //        }
-    //        else
-    //        {
-    //            // Action did not occur
-    //        }
-
-    //        collision.gameObject.GetComponent<EnemyHealth>().GetEnemyHP(damage);
-    //        gameObject.SetActive(false);
-    //    }
-    //}
-
     public virtual void PerformAction()
     {
         // Implement your action logic here

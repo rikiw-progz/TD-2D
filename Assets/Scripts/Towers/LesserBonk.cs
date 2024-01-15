@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class LesserBonk : TowerBase
@@ -10,15 +8,13 @@ public class LesserBonk : TowerBase
     {
         for (int i = 0; i < Mathf.Min(projectileAmount, enemyList.Count); i++)
         {
-            GameObject projectileGO = PoolBase.instance.GetEnemyObject(projectileName, this.transform.position);
-            ProjectileBonk projectile = projectileGO.GetComponent<ProjectileBonk>();
-
-            if (projectile != null)
-            {
-                projectile.target = enemyList[i].transform;
-                projectile.damage = towerDamage;
-                projectile.bonkStunDuration = bonkStunDuration;
-            }
+            GameObject projectileGO = PoolBase.instance.GetEnemyObject(projectileName, this.transform.localPosition);
+            StartCoroutine(ProjectileCoroutine(projectileGO, enemyList[i]));
         }
+    }
+
+    public override void ProjectileTrigger(GameObject target)
+    {
+        target.GetComponent<EnemyMove>().Stun(bonkStunDuration);
     }
 }

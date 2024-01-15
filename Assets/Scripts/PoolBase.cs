@@ -53,7 +53,7 @@ public class PoolBase : MonoBehaviour
 
         GameObject objectToSpawn = poolDictionary[tag].Dequeue();
         objectToSpawn.SetActive(true);
-        objectToSpawn.transform.position = position;
+        objectToSpawn.transform.localPosition = position;
 
         poolDictionary[tag].Enqueue(objectToSpawn);
 

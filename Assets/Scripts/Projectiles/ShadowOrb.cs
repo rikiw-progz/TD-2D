@@ -1,11 +1,10 @@
 using UnityEngine;
 
-public class ShadowOrb : MonoBehaviour
+public class ShadowOrb : TowerBase
 {
     public float shadowOrbDurationTime = 3f;
-    public float shadowOrbSpeed = 3f;
+    public float shadowOrbSpeed = 1f;
     public float shadowOrbDamage = 10f;
-    private float sphereRadius = 0.1f;
 
     private Vector3 randomDirection;
 
@@ -15,29 +14,29 @@ public class ShadowOrb : MonoBehaviour
         randomDirection = Random.insideUnitCircle.normalized;
     }
 
-    private void Update()
+    public override void Update()
     {
+        base.Update();
+
         transform.position += shadowOrbSpeed * Time.deltaTime * randomDirection;
 
         shadowOrbDurationTime -= Time.deltaTime;
-
-        CheckForTargets();
 
         if (shadowOrbDurationTime <= 0)
             this.gameObject.SetActive(false);
     }
 
-    private void CheckForTargets()
+    public override void Shoot()
     {
-        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, sphereRadius);
-
-        // Iterate through the hits and apply damage to enemies
-        foreach (var hit in hits)
+        for (int i = 0; i < Mathf.Min(projectileAmount, enemyList.Count); i++)
         {
-            if (hit.CompareTag("Enemy"))
-            {
-                hit.GetComponent<EnemyHealth>().GetEnemyHP(shadowOrbDamage);
-            }
+            GameObject projectileGO = PoolBase.instance.GetEnemyObject(projectileName, this.transform.localPosition);
+            StartCoroutine(ProjectileCoroutine(projectileGO, enemyList[i]));
         }
+    }
+
+    public override void ProjectileTrigger(GameObject target)
+    {
+        // do nothing
     }
 }

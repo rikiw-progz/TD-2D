@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class LesserFireLord : TowerBase
@@ -12,17 +10,16 @@ public class LesserFireLord : TowerBase
     {
         for (int i = 0; i < Mathf.Min(projectileAmount, enemyList.Count); i++)
         {
-            GameObject projectileGO = PoolBase.instance.GetEnemyObject(projectileName, this.transform.position);
-            ProjectileFireLord projectile = projectileGO.GetComponent<ProjectileFireLord>();
-
-            if (projectile != null)
-            {
-                projectile.target = enemyList[i].transform;
-                projectile.damage = towerDamage;
-                projectile.fireLordLiquidFireDamage = fireLordLiquidFireDamage;
-                projectile.fireLordLiquidFireDuration = fireLordLiquidFireDuration;
-                projectile.fireLordDebuffName = fireLordDebuffName;
-            }
+            GameObject projectileGO = PoolBase.instance.GetEnemyObject(projectileName, this.transform.localPosition);
+            StartCoroutine(ProjectileCoroutine(projectileGO, enemyList[i]));
         }
+    }
+
+    public override void ProjectileTrigger(GameObject target)
+    {
+        if (target.GetComponent<EnemyHealth>().damageOverTimeDuration == true)
+            return;
+
+        target.GetComponent<EnemyHealth>().Debuff(fireLordLiquidFireDamage, fireLordLiquidFireDuration, fireLordDebuffName);
     }
 }

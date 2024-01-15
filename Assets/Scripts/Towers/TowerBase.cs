@@ -10,8 +10,10 @@ public abstract class TowerBase : MonoBehaviour
     [Header("Bullet")]
     public int projectileAmount = 1;
     public string projectileName = "Name of your bullet here";
+    public bool projectileFinishEffect = false;
 
     [Header("Tower stats")]
+    public float projectileSpeed = 5f;
     private float fireCountdown = 0f;
     public float fireCooldown = 1f;
     public float towerDamage = 10f;
@@ -43,7 +45,7 @@ public abstract class TowerBase : MonoBehaviour
         }
     }
 
-    private void Update()
+    public virtual void Update()
     {
         if (fireCountdown <= 0f && canAttack)
         {
@@ -55,14 +57,12 @@ public abstract class TowerBase : MonoBehaviour
 
     public virtual void Shoot()
     {
-        // different to every tower???
-
         float randomValue = Random.Range(0f, 100f);
 
         if (randomValue < chancePercentage)
         {
             // Execute your action here
-            PerformAction();
+            TowerTrigger();
         }
         else
         {
@@ -70,10 +70,55 @@ public abstract class TowerBase : MonoBehaviour
         }
     }
 
-    public virtual void PerformAction()
+    public virtual void TowerTrigger()
     {
         // Implement your action logic here
-        Debug.Log("Triggered!");
+        //Debug.Log("Triggered!");
+    }
+
+    public virtual IEnumerator ProjectileCoroutine(GameObject go, GameObject target)
+    {
+        while (target != null && go.activeInHierarchy)
+        {
+            float step = projectileSpeed * Time.deltaTime;
+            go.transform.position = Vector2.MoveTowards(go.transform.position, target.transform.position, step);
+
+            if (Vector2.Distance(go.transform.position, target.transform.position) < 0.1f)
+            {
+                float randomValue = Random.Range(0f, 100f);
+
+                if (randomValue < chancePercentage)
+                {
+                    // Execute your action here
+                    ProjectileTrigger(target);
+                }
+                else
+                {
+                    // Action did not occur
+                }
+
+                if(projectileFinishEffect)
+                    ProjectileFinish(target);
+
+                target.GetComponent<EnemyHealth>().GetEnemyHP(towerDamage);
+                go.SetActive(false);
+            }
+
+            yield return null;
+        }
+
+        // Return the projectile to the pool or handle deactivation
+        go.SetActive(false);
+    }
+
+    public virtual void ProjectileTrigger(GameObject target)
+    {
+
+    }
+
+    public virtual void ProjectileFinish(GameObject target)
+    {
+
     }
 
     // Adds targerRadius amount to the radius

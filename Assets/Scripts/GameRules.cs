@@ -8,13 +8,13 @@ public class GameRules : MonoBehaviour
     [SerializeField] private float newCardLimit = 20f;
 
     [Header("Cards")]
-    [SerializeField] private GameObject cardParent;
+    [SerializeField] private GameObject towerParent;
     [SerializeField] private GameObject[] cards;
-    private float cardPositionControl = 400f;
+    private readonly float cardPositionControl = 400f;
 
     private void Start()
     {
-        //CardShow();
+        CardShow();
     }
 
     public void ExperienceGain(float exp)
@@ -24,7 +24,7 @@ public class GameRules : MonoBehaviour
         if (experience >= newCardLimit)
         {
             newCardLimit += experience;
-            //CardShow();
+            CardShow();
         }
     }
 
@@ -32,7 +32,7 @@ public class GameRules : MonoBehaviour
     {
         ShowRandomCards();
 
-        cardParent.SetActive(true);
+        towerParent.SetActive(true);
         Time.timeScale = 0f;
     }
 

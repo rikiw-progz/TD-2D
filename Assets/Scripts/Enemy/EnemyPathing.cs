@@ -7,7 +7,7 @@ public class EnemyPathing : MonoBehaviour
     [SerializeField] private float enemyWaveAmount = 200f;
     [SerializeField] private Transform enemyStartPosition;
     [SerializeField] private float enemySpeed = 5f;
-    private float _enemyHP = 5000f;
+    private float _enemyHP = 5f;
 
     [SerializeField] private Transform[] path;
 
@@ -42,7 +42,7 @@ public class EnemyPathing : MonoBehaviour
         }
 
         yield return new WaitForSeconds(5f);
-        _enemyHP += 50f;
+        _enemyHP += 5f;
         StartCoroutine(EnemyWaveHandler());
     }
 }

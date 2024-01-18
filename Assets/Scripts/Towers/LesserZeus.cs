@@ -6,6 +6,7 @@ public class LesserZeus : TowerBase
     public float zeusStunDuration = 0.5f;
     private CircleCollider2D circleCollider;
     public string zeusThunderSplashName = "Zeus thunder splash";
+    public int thunderAmount = 0;
     public float _splashRadius = 5f;
 
     private void Start()
@@ -31,11 +32,20 @@ public class LesserZeus : TowerBase
         }
         else
         {
+            StartCoroutine(ThunderStrike());
+        }
+    }
+
+    IEnumerator ThunderStrike()
+    {
+        for (int i = 0; i < thunderAmount; i++)
+        {
             Vector2 randomPoint = GetRandomPointInCircle();
 
             GameObject thunderGO = PoolBase.instance.GetEnemyObject(zeusThunderSplashName, randomPoint);
             SetSplashEffectSize(thunderGO);
             SplashAttack(thunderGO);
+            yield return new WaitForSeconds(0.25f);
         }
     }
 

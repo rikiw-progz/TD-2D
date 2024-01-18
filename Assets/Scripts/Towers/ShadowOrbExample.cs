@@ -35,7 +35,6 @@ public class ShadowOrbExample : MonoBehaviour
     {
         if (fireCountdown <= 0f)
         {
-            Debug.Log(0);
             GetEnemiesInRange();
             Shoot();
             fireCountdown = fireCooldown;

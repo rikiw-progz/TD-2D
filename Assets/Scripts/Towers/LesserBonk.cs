@@ -8,7 +8,7 @@ public class LesserBonk : TowerBase
     {
         for (int i = 0; i < Mathf.Min(projectileAmount, enemyList.Count); i++)
         {
-            GameObject projectileGO = PoolBase.instance.GetEnemyObject(projectileName, this.transform.localPosition);
+            GameObject projectileGO = PoolBase.instance.GetEnemyObject(projectileName, transform.localPosition);
             StartCoroutine(ProjectileCoroutine(projectileGO, enemyList[i]));
         }
     }

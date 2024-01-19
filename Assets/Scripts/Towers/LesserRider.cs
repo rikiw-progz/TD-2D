@@ -16,7 +16,7 @@ public class LesserRider : TowerBase
 
         for (int i = 0; i < Mathf.Min(projectileAmount, enemyList.Count); i++)
         {
-            GameObject projectileGO = PoolBase.instance.GetEnemyObject(projectileName, this.transform.localPosition);
+            GameObject projectileGO = PoolBase.instance.GetObject(projectileName, this.transform.localPosition);
             StartCoroutine(ProjectileCoroutine(projectileGO, enemyList[i]));
 
             float randomValue = Random.Range(0f, 100f);
@@ -35,27 +35,30 @@ public class LesserRider : TowerBase
 
     private void HammerTrigger(GameObject target)
     {
-        GameObject projectileGO = PoolBase.instance.GetEnemyObject(riderHammerProjectileName, this.transform.localPosition);
+        GameObject projectileGO = PoolBase.instance.GetObject(riderHammerProjectileName, this.transform.localPosition);
         StartCoroutine(ProjectileCoroutine(projectileGO, target));
         projectileFinishEffect = true;
     }
 
     public override void ProjectileFinish(GameObject target)
     {
+        base.ProjectileFinish(target);
+
         projectileFinishEffect = false;
-        GameObject hammerGO = PoolBase.instance.GetEnemyObject(riderHammerSplashName, target.transform.localPosition);
+        GameObject hammerGO = PoolBase.instance.GetObject(riderHammerSplashName, target.transform.localPosition);
         SplashAttack(hammerGO);
     }
 
     private void SplashAttack(GameObject target)
     {
         Collider2D[] colliders = Physics2D.OverlapCircleAll(target.transform.position, hammerSplashRadius);
+        target.GetComponent<RectTransform>().sizeDelta = new Vector2(hammerSplashRadius * 250f, hammerSplashRadius * 250f);
 
         foreach (var collider in colliders)
         {
             if (collider.CompareTag("Enemy"))
             {
-                collider.GetComponent<EnemyHealth>().GetEnemyHP(riderHammerDamage);
+                DoDamage(collider.gameObject, riderHammerDamage);
                 collider.GetComponent<EnemyMove>().Stun(riderHammerStunDuration);
             }
         }

@@ -53,7 +53,11 @@ public class EnemyPathing : MonoBehaviour
     void NextWaveLevelUp()
     {
         _enemyHP += 3f;
-        enemyBetweenEnemyDelay -= 0.05f;
-        enemySpeed += 0.05f;
+
+        if(enemyBetweenEnemyDelay > 0.1f)
+            enemyBetweenEnemyDelay -= 0.05f;
+
+        if(enemySpeed < 5f)
+            enemySpeed += 0.05f;
     }
 }

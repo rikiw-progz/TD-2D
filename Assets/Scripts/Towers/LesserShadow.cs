@@ -13,7 +13,7 @@ public class LesserShadow : TowerBase
 
         for (int i = 0; i < Mathf.Min(projectileAmount, enemyList.Count); i++)
         {
-            GameObject projectileGO = PoolBase.instance.GetEnemyObject(projectileName, this.transform.localPosition);
+            GameObject projectileGO = PoolBase.instance.GetObject(projectileName, this.transform.localPosition);
             StartCoroutine(ProjectileCoroutine(projectileGO, enemyList[i]));
         }
     }
@@ -27,7 +27,7 @@ public class LesserShadow : TowerBase
     {
         for (int i = 0; i < shadowOrbAmount; i++)
         {
-            GameObject projectileGO = PoolBase.instance.GetEnemyObject(shadowOrbName, this.transform.localPosition);
+            GameObject projectileGO = PoolBase.instance.GetObject(shadowOrbName, this.transform.localPosition);
             ShadowOrb projectile = projectileGO.GetComponent<ShadowOrb>();
 
             projectile.shadowOrbDurationTime = shadowOrbDurationTime;

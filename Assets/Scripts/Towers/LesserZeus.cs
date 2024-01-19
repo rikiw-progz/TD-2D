@@ -19,7 +19,7 @@ public class LesserZeus : TowerBase
 
         for (int i = 0; i < Mathf.Min(projectileAmount, enemyList.Count); i++)
         {
-            GameObject projectileGO = PoolBase.instance.GetEnemyObject(projectileName, this.transform.localPosition);
+            GameObject projectileGO = PoolBase.instance.GetObject(projectileName, this.transform.localPosition);
             StartCoroutine(ProjectileCoroutine(projectileGO, enemyList[i]));
         }
     }
@@ -42,7 +42,7 @@ public class LesserZeus : TowerBase
         {
             Vector2 randomPoint = GetRandomPointInCircle();
 
-            GameObject thunderGO = PoolBase.instance.GetEnemyObject(zeusThunderSplashName, randomPoint);
+            GameObject thunderGO = PoolBase.instance.GetObject(zeusThunderSplashName, randomPoint);
             SetSplashEffectSize(thunderGO);
             SplashAttack(thunderGO);
             yield return new WaitForSeconds(0.1f);
@@ -62,7 +62,7 @@ public class LesserZeus : TowerBase
         {
             if (collider.CompareTag("Enemy"))
             {
-                collider.GetComponent<EnemyHealth>().GetEnemyHP(towerDamage);
+                DoDamage(collider.gameObject, towerDamage);
                 collider.GetComponent<EnemyMove>().Stun(zeusStunDuration);
             }
         }

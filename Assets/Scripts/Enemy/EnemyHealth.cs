@@ -41,7 +41,7 @@ public class EnemyHealth : MonoBehaviour
     {
         damageOverTimeDuration = true;
 
-        GameObject debuffGO = PoolBase.instance.GetEnemyObject(debuffName, this.transform.position);
+        GameObject debuffGO = PoolBase.instance.GetObject(debuffName, this.transform.position);
         debuffGO.transform.SetParent(this.transform);
         debuffGO.transform.localPosition = Vector2.zero;
 

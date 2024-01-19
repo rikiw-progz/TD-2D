@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public abstract class TowerBase : MonoBehaviour
 {
@@ -100,7 +101,7 @@ public abstract class TowerBase : MonoBehaviour
                 if(projectileFinishEffect)
                     ProjectileFinish(target);
 
-                target.GetComponent<EnemyHealth>().GetEnemyHP(towerDamage);
+                DoDamage(target, towerDamage);
                 go.SetActive(false);
             }
 
@@ -111,6 +112,14 @@ public abstract class TowerBase : MonoBehaviour
         go.SetActive(false);
     }
 
+    public void DoDamage(GameObject target, float damage)
+    {
+        target.GetComponent<EnemyHealth>().GetEnemyHP(damage);
+            GameObject textDamageGO = PoolBase.instance.GetObject("Damage text", target.transform.localPosition);
+            textDamageGO.GetComponent<TextMeshProUGUI>().text = this.towerDamage.ToString();
+            StartCoroutine(TextDamageDeactivation(textDamageGO));
+    }
+
     public virtual void ProjectileTrigger(GameObject target)
     {
 
@@ -118,7 +127,13 @@ public abstract class TowerBase : MonoBehaviour
 
     public virtual void ProjectileFinish(GameObject target)
     {
+        
+    }
 
+    IEnumerator TextDamageDeactivation(GameObject textGO)
+    {
+        yield return new WaitForSeconds(0.1f);
+        textGO.SetActive(false);
     }
 
     // Adds targerRadius amount to the radius

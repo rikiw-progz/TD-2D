@@ -43,7 +43,10 @@ public class CardTowerChoose : MonoBehaviour
         bonkLevel += 1;
         bonk.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = bonkLevel.ToString();
 
-        bonk.GetComponent<LesserBonk>().towerDamage += bonkStartDamage / 2;
+        bonk.GetComponent<LesserBonk>().towerDamage *= 1.5f;
+        bonk.GetComponent<LesserBonk>().fireCooldown *= 0.9f;
+
+        bonk.GetComponent<LesserBonk>().bonkStunDuration *= 1.05f;
     }
 
     public void ShadowTowerPick()
@@ -53,7 +56,8 @@ public class CardTowerChoose : MonoBehaviour
         shadowLevel += 1;
         shadow.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = shadowLevel.ToString();
 
-        shadow.GetComponent<LesserShadow>().towerDamage += shadowStartDamage / 10;
+        shadow.GetComponent<LesserShadow>().towerDamage *= 1.1f;
+        shadow.GetComponent<LesserShadow>().fireCooldown *= 0.95f;
     }
 
     public void ZeusTowerPick()
@@ -63,8 +67,14 @@ public class CardTowerChoose : MonoBehaviour
         zeusLevel += 1;
         zeus.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = zeusLevel.ToString();
 
-        zeus.GetComponent<LesserZeus>().towerDamage += zeusStartDamage / 10;
+        zeus.GetComponent<LesserZeus>().towerDamage *= 1.1f;
+        zeus.GetComponent<LesserZeus>().fireCooldown *= 0.95f;
         zeus.GetComponent<LesserZeus>().thunderAmount += 1;
+
+        if(zeusLevel % 2 == 0)
+        {
+            zeus.GetComponent<LesserZeus>().chancePercentage += 5;
+        }
     }
 
     public void RiderTowerPick()
@@ -74,7 +84,15 @@ public class CardTowerChoose : MonoBehaviour
         riderLevel += 1;
         rider.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = riderLevel.ToString();
 
-        rider.GetComponent<LesserRider>().towerDamage += riderStartDamage / 5;
+        rider.GetComponent<LesserRider>().towerDamage *= 1.2f;
+        rider.GetComponent<LesserRider>().fireCooldown *= 0.9f;
+
+        if (riderLevel % 2 == 0)
+        {
+            rider.GetComponent<LesserRider>().chancePercentage += 5;
+        }
+
+        rider.GetComponent<LesserRider>().hammerSplashRadius *= 1.1f;
     }
 
     public void LivingVolcanoTowerPick()
@@ -85,6 +103,9 @@ public class CardTowerChoose : MonoBehaviour
         livingVolcano.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = livingVolcanoLevel.ToString();
 
         livingVolcano.GetComponent<LesserLivingVolcano>().towerDamage += livingVolcanoStartDamage;
+        livingVolcano.GetComponent<LesserLivingVolcano>().fireCooldown *= 0.9f;
+
+        livingVolcano.GetComponent<LesserLivingVolcano>().heatAuraDamage *= 1.1f;
     }
 
     public void FirelordTowerPick()
@@ -94,7 +115,11 @@ public class CardTowerChoose : MonoBehaviour
         firelordLevel += 1;
         firelord.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = firelordLevel.ToString();
 
-        firelord.GetComponent<LesserFireLord>().towerDamage += firelordStartDamage / 5;
+        firelord.GetComponent<LesserFireLord>().towerDamage *= 1.2f;
+        firelord.GetComponent<LesserFireLord>().fireCooldown *= 0.9f;
+
+        firelord.GetComponent<LesserFireLord>().fireLordLiquidFireDuration *= 1.2f;
+        firelord.GetComponent<LesserFireLord>().fireLordLiquidFireDamage *= 1.05f;
     }
 
     void TowerPick(GameObject tower)

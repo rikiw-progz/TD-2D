@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class ShadowOrb : MonoBehaviour
 {
@@ -68,7 +69,7 @@ public class ShadowOrb : MonoBehaviour
     {
         for (int i = 0; i < Mathf.Min(projectileAmount, enemyList.Count); i++)
         {
-            GameObject projectileGO = PoolBase.instance.GetEnemyObject(projectileName, this.transform.localPosition);
+            GameObject projectileGO = PoolBase.instance.GetObject(projectileName, this.transform.localPosition);
             StartCoroutine(ProjectileCoroutine(projectileGO, enemyList[i]));
         }
     }
@@ -93,7 +94,8 @@ public class ShadowOrb : MonoBehaviour
                     // Action did not occur
                 }
 
-                target.GetComponent<EnemyHealth>().GetEnemyHP(towerDamage/10);
+                DoDamage(target, towerDamage);
+
                 go.SetActive(false);
             }
 
@@ -102,5 +104,22 @@ public class ShadowOrb : MonoBehaviour
 
         // Return the projectile to the pool or handle deactivation
         go.SetActive(false);
+    }
+
+    public void DoDamage(GameObject target, float damage)
+    {
+        target.GetComponent<EnemyHealth>().GetEnemyHP(damage);
+        if (target.activeInHierarchy)
+        {
+            GameObject textDamageGO = PoolBase.instance.GetObject("Damage text", target.transform.localPosition);
+            textDamageGO.GetComponent<TextMeshProUGUI>().text = this.towerDamage.ToString();
+            StartCoroutine(TextDamageDeactivation(textDamageGO));
+        }
+    }
+
+    IEnumerator TextDamageDeactivation(GameObject textGO)
+    {
+        yield return new WaitForSeconds(0.1f);
+        textGO.SetActive(false);
     }
 }

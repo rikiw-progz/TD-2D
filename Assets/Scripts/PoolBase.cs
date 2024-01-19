@@ -43,7 +43,7 @@ public class PoolBase : MonoBehaviour
         }
     }
 
-    public GameObject GetEnemyObject(string tag, Vector2 position)
+    public GameObject GetObject(string tag, Vector2 position)
     {
         if (!poolDictionary.ContainsKey(tag))
         {

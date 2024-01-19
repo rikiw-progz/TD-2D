@@ -1,11 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class DropHandler : MonoBehaviour, IDropHandler
+public class DropHandler : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointerExitHandler
 {
+    private Color32 _startColor;
+
+    void Start()
+    {
+        _startColor = this.GetComponent<Image>().color;
+    }
+
     public void OnDrop(PointerEventData eventData)
     {
         if(eventData.pointerDrag != null)
@@ -22,7 +27,24 @@ public class DropHandler : MonoBehaviour, IDropHandler
             eventData.pointerDrag.GetComponent<Image>().raycastTarget = false;
             eventData.pointerDrag.GetComponent<DragAndDropHandler>().enabled = false;
             eventData.pointerDrag.GetComponent<CircleCollider2D>().enabled = true;
+            this.GetComponent<Image>().color = _startColor;
             this.enabled = false;
+        }
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        if(eventData.pointerDrag != null)
+        {
+            this.GetComponent<Image>().color = Color.red;
+        }
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        if (eventData.pointerDrag != null)
+        {
+            this.GetComponent<Image>().color = _startColor;
         }
     }
 }

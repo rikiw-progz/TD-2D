@@ -3463,10 +3463,10 @@ MonoBehaviour:
   projectileFinishEffect: 0
   projectileSpeed: 5
   fireCountdown: 0
-  fireCooldown: 1
-  towerDamage: 10
+  fireCooldown: 2.5
+  towerDamage: 15
   towerRadius: 100
-  chancePercentage: 30
+  chancePercentage: 25
   riderHammerProjectileName: Rider hammer projectile
   riderHammerDamage: 10
   riderHammerStunDuration: 0.25
@@ -3519,6 +3519,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dd27fd235514f748974026526c5a65d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canvas: {fileID: 2013959152}
   droppedRight: 0
 --- !u!225 &506062098
 CanvasGroup:
@@ -3821,9 +3822,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8a93da76f2a2e243b076b2d1965cae3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyWaveAmount: 300
+  enemyWaveAmount: 50
   enemyStartPosition: {fileID: 1170682898}
-  enemySpeed: 2
+  enemySpeed: 1
+  _enemyStartHP: 5
+  enemyBetweenEnemyDelay: 1
   path:
   - {fileID: 2143311550}
   - {fileID: 1558800759}
@@ -3851,7 +3854,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   experience: 0
-  newCardLimit: 10
+  experienceRequired: 10
+  playerLevel: 0
   towerParent: {fileID: 1115196659}
   cards:
   - {fileID: 606448474}
@@ -4011,6 +4015,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dd27fd235514f748974026526c5a65d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canvas: {fileID: 2013959152}
   droppedRight: 0
 --- !u!225 &542145432
 CanvasGroup:
@@ -4041,10 +4046,10 @@ MonoBehaviour:
   projectileFinishEffect: 0
   projectileSpeed: 3
   fireCountdown: 0
-  fireCooldown: 1
-  towerDamage: 5
+  fireCooldown: 3
+  towerDamage: 20
   towerRadius: 100
-  chancePercentage: 30
+  chancePercentage: 20
   bonkStunDuration: 0.5
 --- !u!58 &542145434
 CircleCollider2D:
@@ -4576,13 +4581,13 @@ MonoBehaviour:
   projectileFinishEffect: 0
   projectileSpeed: 5
   fireCountdown: 0
-  fireCooldown: 1
-  towerDamage: 10
+  fireCooldown: 4
+  towerDamage: 25
   towerRadius: 100
   chancePercentage: 30
   heatAura: {fileID: 813537717}
   heatAuraRadius: 2
-  heatAuraDamage: 10
+  heatAuraDamage: 5
 --- !u!58 &657860221
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -4630,6 +4635,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dd27fd235514f748974026526c5a65d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canvas: {fileID: 2013959152}
   droppedRight: 0
 --- !u!225 &657860223
 CanvasGroup:
@@ -6136,7 +6142,7 @@ MonoBehaviour:
   projectileFinishEffect: 0
   projectileSpeed: 5
   fireCountdown: 0
-  fireCooldown: 0.5
+  fireCooldown: 1.5
   towerDamage: 10
   towerRadius: 100
   chancePercentage: 20
@@ -6191,6 +6197,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dd27fd235514f748974026526c5a65d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canvas: {fileID: 2013959152}
   droppedRight: 0
 --- !u!225 &910401228
 CanvasGroup:
@@ -8564,12 +8571,12 @@ MonoBehaviour:
   projectileFinishEffect: 0
   projectileSpeed: 5
   fireCountdown: 0
-  fireCooldown: 0.5
-  towerDamage: 1
+  fireCooldown: 1.5
+  towerDamage: 10
   towerRadius: 200
   chancePercentage: 30
-  fireLordLiquidFireDamage: 10
-  fireLordLiquidFireDuration: 5
+  fireLordLiquidFireDamage: 5
+  fireLordLiquidFireDuration: 2
   fireLordDebuffName: Firelord debuff
 --- !u!58 &1397028577
 CircleCollider2D:
@@ -8618,6 +8625,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dd27fd235514f748974026526c5a65d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canvas: {fileID: 2013959152}
   droppedRight: 0
 --- !u!225 &1397028579
 CanvasGroup:
@@ -11375,7 +11383,7 @@ MonoBehaviour:
   projectileFinishEffect: 0
   projectileSpeed: 5
   fireCountdown: 0
-  fireCooldown: 1
+  fireCooldown: 2
   towerDamage: 10
   towerRadius: 100
   chancePercentage: 10
@@ -11430,6 +11438,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dd27fd235514f748974026526c5a65d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canvas: {fileID: 2013959152}
   droppedRight: 0
 --- !u!225 &1781465611
 CanvasGroup:

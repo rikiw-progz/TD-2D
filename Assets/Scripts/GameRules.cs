@@ -5,7 +5,8 @@ using UnityEngine;
 public class GameRules : MonoBehaviour
 {
     public float experience = 0f;
-    [SerializeField] private float newCardLimit = 20f;
+    [SerializeField] private float experienceRequired = 10f;
+    public int playerLevel = 0;
 
     [Header("Cards")]
     [SerializeField] private GameObject towerParent;
@@ -21,11 +22,17 @@ public class GameRules : MonoBehaviour
     {
         experience += exp;
 
-        if (experience >= newCardLimit)
+        if (experience >= experienceRequired)
         {
-            newCardLimit += experience;
-            CardShow();
+            LevelUp();
         }
+    }
+
+    void LevelUp()
+    {
+        playerLevel += 1;
+        experienceRequired += playerLevel * 10 + 10;
+        CardShow();
     }
 
     void CardShow()

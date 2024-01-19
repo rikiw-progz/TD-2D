@@ -5,6 +5,7 @@ using UnityEngine.EventSystems;
 
 public class DragAndDropHandler : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
+    [SerializeField] private Canvas _canvas;
     private Transform _originalParent;
     private Vector2 _dragBeginPosition;
     public bool droppedRight = false;
@@ -29,7 +30,7 @@ public class DragAndDropHandler : MonoBehaviour, IPointerDownHandler, IBeginDrag
 
     public void OnDrag(PointerEventData eventData)
     {
-        _rectTransform.anchoredPosition += eventData.delta;
+        _rectTransform.anchoredPosition += eventData.delta/_canvas.scaleFactor;
     }
 
     public void OnEndDrag(PointerEventData eventData)

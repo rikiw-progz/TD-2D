@@ -45,7 +45,7 @@ public class LesserZeus : TowerBase
             GameObject thunderGO = PoolBase.instance.GetEnemyObject(zeusThunderSplashName, randomPoint);
             SetSplashEffectSize(thunderGO);
             SplashAttack(thunderGO);
-            yield return new WaitForSeconds(0.25f);
+            yield return new WaitForSeconds(0.1f);
         }
     }
 

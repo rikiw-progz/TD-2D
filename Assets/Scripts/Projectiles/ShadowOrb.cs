@@ -93,7 +93,7 @@ public class ShadowOrb : MonoBehaviour
                     // Action did not occur
                 }
 
-                target.GetComponent<EnemyHealth>().GetEnemyHP(towerDamage);
+                target.GetComponent<EnemyHealth>().GetEnemyHP(towerDamage/10);
                 go.SetActive(false);
             }
 

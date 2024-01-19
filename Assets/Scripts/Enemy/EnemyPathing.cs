@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class EnemyPathing : MonoBehaviour
 {
-    [SerializeField] private float enemyWaveAmount = 200f;
+    public float enemyWaveAmount = 200f;
     [SerializeField] private Transform enemyStartPosition;
-    [SerializeField] private float enemySpeed = 5f;
+    public float enemySpeed = 5f;
+    public float _enemyStartHP = 5f;
     private float _enemyHP = 5f;
+    public float enemyBetweenEnemyDelay = 0.5f;
 
     [SerializeField] private Transform[] path;
 
     private IEnumerator Start()
     {
+        _enemyHP = _enemyStartHP;
         yield return new WaitForSeconds(1f);
         StartCoroutine(EnemyWaveHandler());
     }
@@ -37,12 +40,20 @@ public class EnemyPathing : MonoBehaviour
 
                 enemy.GetComponent<EnemyMove>().pathAdded = true;
 
-                yield return new WaitForSeconds(0.25f);
+                yield return new WaitForSeconds(enemyBetweenEnemyDelay);
             }
         }
 
-        yield return new WaitForSeconds(5f);
-        _enemyHP += 5f;
+        // Next wave
+        NextWaveLevelUp();
+
         StartCoroutine(EnemyWaveHandler());
+    }
+
+    void NextWaveLevelUp()
+    {
+        _enemyHP += 3f;
+        enemyBetweenEnemyDelay -= 0.05f;
+        enemySpeed += 0.05f;
     }
 }

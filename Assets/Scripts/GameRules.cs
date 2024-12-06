@@ -15,6 +15,7 @@ public class GameRules : MonoBehaviour
 
     private void Start()
     {
+        Application.targetFrameRate = 144;
         CardShow();
     }
 

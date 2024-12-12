@@ -5,6 +5,19 @@ using TMPro;
 
 public abstract class TowerBase : MonoBehaviour
 {
+    public enum ElementType
+    {
+        Fire,
+        Water,
+        Earth,
+        Thunder,
+        Darkness,
+        Nature
+    }
+
+    [Header("Tower Properties")]
+    public ElementType towerElement; // Allows setting the element in Inspector or dynamically
+
     public readonly List<GameObject> enemyList = new();
     private bool canAttack = false;
 
@@ -115,9 +128,9 @@ public abstract class TowerBase : MonoBehaviour
     public void DoDamage(GameObject target, float damage)
     {
         target.GetComponent<EnemyHealth>().GetEnemyHP(damage);
-            GameObject textDamageGO = PoolBase.instance.GetObject("Damage text", target.transform.localPosition);
-            textDamageGO.GetComponent<TextMeshProUGUI>().text = this.towerDamage.ToString();
-            StartCoroutine(TextDamageDeactivation(textDamageGO));
+        GameObject textDamageGO = PoolBase.instance.GetObject("Damage text", target.transform.localPosition);
+        textDamageGO.GetComponent<TextMeshProUGUI>().text = this.towerDamage.ToString();
+        StartCoroutine(TextDamageDeactivation(textDamageGO));
     }
 
     public virtual void ProjectileTrigger(GameObject target)

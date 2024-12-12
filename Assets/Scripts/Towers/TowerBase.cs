@@ -128,7 +128,7 @@ public abstract class TowerBase : MonoBehaviour
     public void DoDamage(GameObject target, float damage)
     {
         target.GetComponent<EnemyHealth>().GetEnemyHP(damage);
-        GameObject textDamageGO = PoolBase.instance.GetObject("Damage text", target.transform.localPosition);
+        GameObject textDamageGO = PoolBase.instance.GetObject("Damage text", target.transform.position);
         textDamageGO.GetComponent<TextMeshProUGUI>().text = this.towerDamage.ToString();
         StartCoroutine(TextDamageDeactivation(textDamageGO));
     }

@@ -7,24 +7,25 @@ public class TowerDragger : MonoBehaviour, IPointerDownHandler, IBeginDragHandle
     private Canvas _canvas;
     private Vector2 _dragBeginPosition;
     public bool dropRight = false;
+    private Transform _parent;
 
     private void Start()
     {
         _canvas = transform.parent.root.gameObject.GetComponent<Canvas>();
-        Debug.Log(_canvas.name);
+        _parent = this.transform.parent;
     }
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        _dragBeginPosition = this.transform.position;
+        _dragBeginPosition = this.transform.position; 
+        transform.parent.GetComponent<DropTowerHandler>().enabled = false;
+
+        this.transform.SetParent(this.transform.parent.parent);
+
 
         this.GetComponent<Image>().raycastTarget = false;
 
-        //this.GetComponent<RectTransform>().anchorMin = new Vector2(0.5f, 0.5f);
-        //this.GetComponent<RectTransform>().anchorMax = new Vector2(0.5f, 0.5f);
         this.GetComponent<RectTransform>().localScale = new Vector3(1f, 1f, 1f);
-        this.GetComponent<RectTransform>().sizeDelta = new Vector2(50f, 50f);
-        this.GetComponent<RectTransform>().anchoredPosition = new Vector2(0f, 0f);
         this.GetComponent<CanvasGroup>().alpha = 0.5f;
         this.GetComponent<CanvasGroup>().blocksRaycasts = false;
 
@@ -38,16 +39,19 @@ public class TowerDragger : MonoBehaviour, IPointerDownHandler, IBeginDragHandle
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        if (!dropRight)
+        if (dropRight)
         {
-            this.transform.position = _dragBeginPosition;
-            this.GetComponent<CanvasGroup>().blocksRaycasts = true;
-            this.GetComponent<Image>().raycastTarget = true;
-            this.GetComponent<CanvasGroup>().alpha = 1f;
-            this.GetComponent<TowerBase>().enabled = true;
-        }
+            this.gameObject.SetActive(false);
+            _parent.GetComponent<DropHandler>().enabled = true;
 
-        dropRight = false;
+        }
+        this.transform.position = _dragBeginPosition;
+        this.GetComponent<CanvasGroup>().blocksRaycasts = true;
+        this.GetComponent<Image>().raycastTarget = true;
+        this.GetComponent<CanvasGroup>().alpha = 1f;
+        this.GetComponent<TowerBase>().enabled = true;
+        this.transform.SetParent(_parent);
+        transform.parent.GetComponent<DropTowerHandler>().enabled = true;
     }
 
     public void OnPointerDown(PointerEventData eventData)

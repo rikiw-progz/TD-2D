@@ -35,7 +35,8 @@ public class PoolBase : MonoBehaviour
             for (int i = 0; i < pool.size; i++)
             {
                 GameObject obj = Instantiate(pool.prefab, pool.parent);
-                obj.SetActive(false);
+                if(obj != null)
+                    obj.SetActive(false);
                 objectPool.Enqueue(obj);
             }
 
@@ -53,7 +54,7 @@ public class PoolBase : MonoBehaviour
 
         GameObject objectToSpawn = poolDictionary[tag].Dequeue();
         objectToSpawn.SetActive(true);
-        objectToSpawn.transform.localPosition = position;
+        objectToSpawn.transform.position = position;
 
         poolDictionary[tag].Enqueue(objectToSpawn);
 

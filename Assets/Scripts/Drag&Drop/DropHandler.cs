@@ -13,9 +13,10 @@ public class DropHandler : MonoBehaviour, IDropHandler, IPointerEnterHandler, IP
 
     public void OnDrop(PointerEventData eventData)
     {
-        if(eventData.pointerDrag != null)
+        if(eventData.pointerDrag != null && eventData.pointerDrag.GetComponent<DragAndDropHandler>())
         {
             eventData.pointerDrag.GetComponent<DragAndDropHandler>().towerGO.transform.SetParent(this.transform);
+            eventData.pointerDrag.GetComponent<DragAndDropHandler>().towerGO.transform.SetAsFirstSibling();
             eventData.pointerDrag.GetComponent<DragAndDropHandler>().towerGO.GetComponent<RectTransform>().anchorMin = new Vector2(0.5f, 0.5f);
             eventData.pointerDrag.GetComponent<DragAndDropHandler>().towerGO.GetComponent<RectTransform>().anchorMax = new Vector2(0.5f, 0.5f);
             eventData.pointerDrag.GetComponent<DragAndDropHandler>().towerGO.GetComponent<RectTransform>().localScale = new Vector3(1f, 1f, 1f);
@@ -23,7 +24,6 @@ public class DropHandler : MonoBehaviour, IDropHandler, IPointerEnterHandler, IP
             eventData.pointerDrag.GetComponent<DragAndDropHandler>().towerGO.GetComponent<RectTransform>().anchoredPosition = new Vector2(0f, 0f);
             eventData.pointerDrag.GetComponent<DragAndDropHandler>().towerGO.GetComponent<CanvasGroup>().alpha = 1f;
             eventData.pointerDrag.GetComponent<DragAndDropHandler>().towerGO.GetComponent<CanvasGroup>().blocksRaycasts = true;
-            eventData.pointerDrag.GetComponent<DragAndDropHandler>().towerGO.transform.SetParent(this.transform.parent);
             eventData.pointerDrag.GetComponent<DragAndDropHandler>().droppedRight = true;
             eventData.pointerDrag.GetComponent<DragAndDropHandler>().towerGO.GetComponent<CanvasGroup>().interactable = true;
             eventData.pointerDrag.GetComponent<DragAndDropHandler>().towerGO.GetComponent<Image>().raycastTarget = true;
@@ -37,12 +37,14 @@ public class DropHandler : MonoBehaviour, IDropHandler, IPointerEnterHandler, IP
             eventData.pointerDrag.GetComponent<TowerHandler>().TowerAmount(-1);
             if (eventData.pointerDrag.GetComponent<TowerHandler>().towerAmount <= 0)
                 eventData.pointerDrag.GetComponent<DragAndDropHandler>().enabled = false;
+
+            this.GetComponent<DropTowerHandler>().readyToMergeToCommon = true;
         }
     }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        if(eventData.pointerDrag != null)
+        if(eventData.pointerDrag != null && eventData.pointerDrag.GetComponent<DragAndDropHandler>())
         {
             this.GetComponent<Image>().color = Color.red;
         }
@@ -50,7 +52,7 @@ public class DropHandler : MonoBehaviour, IDropHandler, IPointerEnterHandler, IP
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        if (eventData.pointerDrag != null)
+        if (eventData.pointerDrag != null && eventData.pointerDrag.GetComponent<DragAndDropHandler>())
         {
             this.GetComponent<Image>().color = _startColor;
         }

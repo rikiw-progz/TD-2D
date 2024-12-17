@@ -6,26 +6,22 @@ public class TowerDragger : MonoBehaviour, IPointerDownHandler, IBeginDragHandle
 {
     private Canvas _canvas;
     private Vector2 _dragBeginPosition;
-    public bool dropRight = false;
-    private Transform _parent;
+    public Transform _parent;
 
     private void Start()
     {
-        _canvas = transform.parent.root.gameObject.GetComponent<Canvas>();
-        _parent = this.transform.parent;
+        _canvas = transform.parent.root.GetComponent<Canvas>();
     }
 
     public void OnBeginDrag(PointerEventData eventData)
     {
+        _parent = this.transform.parent;
         _dragBeginPosition = this.transform.position; 
-        transform.parent.GetComponent<DropTowerHandler>().enabled = false;
+        transform.parent.GetComponent<DropHandler>().enabled = false;
 
-        this.transform.SetParent(this.transform.parent.parent);
-
+        this.transform.SetParent(this.transform.parent.parent);                                         // To show above other sprites
 
         this.GetComponent<Image>().raycastTarget = false;
-
-        this.GetComponent<RectTransform>().localScale = new Vector3(1f, 1f, 1f);
         this.GetComponent<CanvasGroup>().alpha = 0.5f;
         this.GetComponent<CanvasGroup>().blocksRaycasts = false;
 
@@ -39,19 +35,13 @@ public class TowerDragger : MonoBehaviour, IPointerDownHandler, IBeginDragHandle
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        if (dropRight)
-        {
-            this.gameObject.SetActive(false);
-            _parent.GetComponent<DropHandler>().enabled = true;
-
-        }
+        this.transform.SetParent(_parent);
         this.transform.position = _dragBeginPosition;
         this.GetComponent<CanvasGroup>().blocksRaycasts = true;
         this.GetComponent<Image>().raycastTarget = true;
         this.GetComponent<CanvasGroup>().alpha = 1f;
         this.GetComponent<TowerBase>().enabled = true;
-        this.transform.SetParent(_parent);
-        transform.parent.GetComponent<DropTowerHandler>().enabled = true;
+        _parent.GetComponent<DropHandler>().enabled = true;
     }
 
     public void OnPointerDown(PointerEventData eventData)

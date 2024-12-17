@@ -5,6 +5,13 @@ using UnityEngine.UI;
 public class DropHandler : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointerExitHandler
 {
     private Color32 _startColor;
+    public bool primaryPlacement = false;
+
+    public TowerMergeHandler towerMergeHandler;
+    public bool readyToMergeToCommon = false;
+
+    private TowerBase tower1;
+    private TowerBase tower2;
 
     void Start()
     {
@@ -13,32 +20,13 @@ public class DropHandler : MonoBehaviour, IDropHandler, IPointerEnterHandler, IP
 
     public void OnDrop(PointerEventData eventData)
     {
-        if(eventData.pointerDrag != null && eventData.pointerDrag.GetComponent<DragAndDropHandler>())
+        if(eventData.pointerDrag != null && !primaryPlacement && eventData.pointerDrag.GetComponent<DragAndDropHandler>())
         {
-            eventData.pointerDrag.GetComponent<DragAndDropHandler>().towerGO.transform.SetParent(this.transform);
-            eventData.pointerDrag.GetComponent<DragAndDropHandler>().towerGO.transform.SetAsFirstSibling();
-            eventData.pointerDrag.GetComponent<DragAndDropHandler>().towerGO.GetComponent<RectTransform>().anchorMin = new Vector2(0.5f, 0.5f);
-            eventData.pointerDrag.GetComponent<DragAndDropHandler>().towerGO.GetComponent<RectTransform>().anchorMax = new Vector2(0.5f, 0.5f);
-            eventData.pointerDrag.GetComponent<DragAndDropHandler>().towerGO.GetComponent<RectTransform>().localScale = new Vector3(1f, 1f, 1f);
-            eventData.pointerDrag.GetComponent<DragAndDropHandler>().towerGO.GetComponent<RectTransform>().sizeDelta = new Vector2(50f, 50f);
-            eventData.pointerDrag.GetComponent<DragAndDropHandler>().towerGO.GetComponent<RectTransform>().anchoredPosition = new Vector2(0f, 0f);
-            eventData.pointerDrag.GetComponent<DragAndDropHandler>().towerGO.GetComponent<CanvasGroup>().alpha = 1f;
-            eventData.pointerDrag.GetComponent<DragAndDropHandler>().towerGO.GetComponent<CanvasGroup>().blocksRaycasts = true;
-            eventData.pointerDrag.GetComponent<DragAndDropHandler>().droppedRight = true;
-            eventData.pointerDrag.GetComponent<DragAndDropHandler>().towerGO.GetComponent<CanvasGroup>().interactable = true;
-            eventData.pointerDrag.GetComponent<DragAndDropHandler>().towerGO.GetComponent<Image>().raycastTarget = true;
-            eventData.pointerDrag.GetComponent<DragAndDropHandler>().towerGO.GetComponent<CircleCollider2D>().enabled = true;
-
-            eventData.pointerDrag.GetComponent<DragAndDropHandler>().towerGO.GetComponent<TowerDragger>().enabled = true;
-
-            this.GetComponent<Image>().color = _startColor;
-            this.enabled = false;
-
-            eventData.pointerDrag.GetComponent<TowerHandler>().TowerAmount(-1);
-            if (eventData.pointerDrag.GetComponent<TowerHandler>().towerAmount <= 0)
-                eventData.pointerDrag.GetComponent<DragAndDropHandler>().enabled = false;
-
-            this.GetComponent<DropTowerHandler>().readyToMergeToCommon = true;
+            FirstPlacement(eventData);
+        }
+        else if(eventData.pointerDrag != null && primaryPlacement && !eventData.pointerDrag.GetComponent<DragAndDropHandler>())
+        {
+            MergePlacement(eventData);
         }
     }
 
@@ -55,6 +43,42 @@ public class DropHandler : MonoBehaviour, IDropHandler, IPointerEnterHandler, IP
         if (eventData.pointerDrag != null && eventData.pointerDrag.GetComponent<DragAndDropHandler>())
         {
             this.GetComponent<Image>().color = _startColor;
+        }
+    }
+
+    private void FirstPlacement(PointerEventData eventData)
+    {
+        eventData.pointerDrag.GetComponent<DragAndDropHandler>().towerGO.SetActive(false);
+
+        GameObject towerPrefab = PoolBase.instance.GetObject(eventData.pointerDrag.name + "Tower", this.transform.position);
+        primaryPlacement = true;
+        towerPrefab.transform.SetParent(this.transform);
+
+        this.GetComponent<Image>().color = _startColor;
+
+        eventData.pointerDrag.GetComponent<TowerHandler>().TowerAmount(-1);
+        if (eventData.pointerDrag.GetComponent<TowerHandler>().towerAmount <= 0)
+            eventData.pointerDrag.GetComponent<DragAndDropHandler>().enabled = false;
+    }
+
+    private void MergePlacement(PointerEventData eventData)
+    {
+        eventData.pointerDrag.GetComponent<TowerDragger>()._parent.GetComponent<DropHandler>().primaryPlacement = false;
+        eventData.pointerDrag.GetComponent<TowerDragger>()._parent.GetComponent<DropHandler>().enabled = true;
+
+        tower1 = this.transform.GetChild(0).GetComponent<TowerBase>();
+        tower2 = eventData.pointerDrag.GetComponent<TowerBase>();
+
+        this.GetComponent<Image>().color = _startColor;
+        
+        tower1.gameObject.SetActive(false);
+        tower2.gameObject.SetActive(false);
+        GameObject towerGO = towerMergeHandler.MergeTowers(tower1, tower2, this.transform.position);
+        if (towerGO != null)
+        {
+            towerGO.transform.SetParent(this.transform);
+            this.enabled = false;
+            Debug.Log(towerGO.name);
         }
     }
 }

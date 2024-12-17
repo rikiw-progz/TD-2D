@@ -9,6 +9,6 @@ public class TowerHandler : MonoBehaviour
     {
         towerAmount += amount;
 
-        this.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = towerAmount.ToString();
+        this.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = towerAmount.ToString();
     }
 }

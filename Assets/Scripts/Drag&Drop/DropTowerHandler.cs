@@ -24,7 +24,6 @@ public class DropTowerHandler : MonoBehaviour, IDropHandler, IPointerEnterHandle
         {
             tower1 = this.transform.GetChild(0).GetComponent<TowerBase>();
             tower2 = eventData.pointerDrag.GetComponent<TowerBase>();
-            eventData.pointerDrag.GetComponent<TowerDragger>().dropRight = true;
 
             this.GetComponent<Image>().color = _startColor;
             //this.enabled = false;

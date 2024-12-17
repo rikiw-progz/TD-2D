@@ -211,9 +211,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43978dbc6ea837d43985c6f24e185055, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _image: {fileID: 0}
+  _startColor:
+    serializedVersion: 2
+    rgba: 0
   primaryPlacement: 0
   towerMergeHandler: {fileID: 532268893}
-  readyToMergeToCommon: 0
+  readyToMerge: 0
 --- !u!1 &28593113
 GameObject:
   m_ObjectHideFlags: 0
@@ -377,9 +381,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43978dbc6ea837d43985c6f24e185055, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _image: {fileID: 0}
+  _startColor:
+    serializedVersion: 2
+    rgba: 0
   primaryPlacement: 0
   towerMergeHandler: {fileID: 532268893}
-  readyToMergeToCommon: 0
+  readyToMerge: 0
 --- !u!1 &57105678
 GameObject:
   m_ObjectHideFlags: 0
@@ -543,9 +551,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43978dbc6ea837d43985c6f24e185055, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _image: {fileID: 0}
+  _startColor:
+    serializedVersion: 2
+    rgba: 0
   primaryPlacement: 0
   towerMergeHandler: {fileID: 532268893}
-  readyToMergeToCommon: 0
+  readyToMerge: 0
 --- !u!1 &67224745
 GameObject:
   m_ObjectHideFlags: 0
@@ -842,9 +854,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43978dbc6ea837d43985c6f24e185055, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _image: {fileID: 0}
+  _startColor:
+    serializedVersion: 2
+    rgba: 0
   primaryPlacement: 0
   towerMergeHandler: {fileID: 532268893}
-  readyToMergeToCommon: 0
+  readyToMerge: 0
 --- !u!1 &107969701
 GameObject:
   m_ObjectHideFlags: 0
@@ -1008,9 +1024,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43978dbc6ea837d43985c6f24e185055, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _image: {fileID: 0}
+  _startColor:
+    serializedVersion: 2
+    rgba: 0
   primaryPlacement: 0
   towerMergeHandler: {fileID: 532268893}
-  readyToMergeToCommon: 0
+  readyToMerge: 0
 --- !u!1 &120310663
 GameObject:
   m_ObjectHideFlags: 0
@@ -1174,9 +1194,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43978dbc6ea837d43985c6f24e185055, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _image: {fileID: 0}
+  _startColor:
+    serializedVersion: 2
+    rgba: 0
   primaryPlacement: 0
   towerMergeHandler: {fileID: 532268893}
-  readyToMergeToCommon: 0
+  readyToMerge: 0
 --- !u!1 &123553719
 GameObject:
   m_ObjectHideFlags: 0
@@ -1265,9 +1289,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43978dbc6ea837d43985c6f24e185055, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _image: {fileID: 0}
+  _startColor:
+    serializedVersion: 2
+    rgba: 0
   primaryPlacement: 0
   towerMergeHandler: {fileID: 532268893}
-  readyToMergeToCommon: 0
+  readyToMerge: 0
 --- !u!1 &130559619
 GameObject:
   m_ObjectHideFlags: 0
@@ -1489,9 +1517,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43978dbc6ea837d43985c6f24e185055, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _image: {fileID: 0}
+  _startColor:
+    serializedVersion: 2
+    rgba: 0
   primaryPlacement: 0
   towerMergeHandler: {fileID: 532268893}
-  readyToMergeToCommon: 0
+  readyToMerge: 0
 --- !u!1 &144223286
 GameObject:
   m_ObjectHideFlags: 0
@@ -1913,9 +1945,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43978dbc6ea837d43985c6f24e185055, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _image: {fileID: 0}
+  _startColor:
+    serializedVersion: 2
+    rgba: 0
   primaryPlacement: 0
   towerMergeHandler: {fileID: 532268893}
-  readyToMergeToCommon: 0
+  readyToMerge: 0
 --- !u!1 &156515716
 GameObject:
   m_ObjectHideFlags: 0
@@ -2145,9 +2181,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43978dbc6ea837d43985c6f24e185055, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _image: {fileID: 0}
+  _startColor:
+    serializedVersion: 2
+    rgba: 0
   primaryPlacement: 0
   towerMergeHandler: {fileID: 532268893}
-  readyToMergeToCommon: 0
+  readyToMerge: 0
 --- !u!1 &217607645
 GameObject:
   m_ObjectHideFlags: 0
@@ -2536,9 +2576,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43978dbc6ea837d43985c6f24e185055, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _image: {fileID: 0}
+  _startColor:
+    serializedVersion: 2
+    rgba: 0
   primaryPlacement: 0
   towerMergeHandler: {fileID: 532268893}
-  readyToMergeToCommon: 0
+  readyToMerge: 0
 --- !u!1 &255322790
 GameObject:
   m_ObjectHideFlags: 0
@@ -2627,9 +2671,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43978dbc6ea837d43985c6f24e185055, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _image: {fileID: 0}
+  _startColor:
+    serializedVersion: 2
+    rgba: 0
   primaryPlacement: 0
   towerMergeHandler: {fileID: 532268893}
-  readyToMergeToCommon: 0
+  readyToMerge: 0
 --- !u!1 &270084147
 GameObject:
   m_ObjectHideFlags: 0
@@ -2718,9 +2766,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43978dbc6ea837d43985c6f24e185055, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _image: {fileID: 0}
+  _startColor:
+    serializedVersion: 2
+    rgba: 0
   primaryPlacement: 0
   towerMergeHandler: {fileID: 532268893}
-  readyToMergeToCommon: 0
+  readyToMerge: 0
 --- !u!1 &280684225
 GameObject:
   m_ObjectHideFlags: 0
@@ -2809,9 +2861,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43978dbc6ea837d43985c6f24e185055, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _image: {fileID: 0}
+  _startColor:
+    serializedVersion: 2
+    rgba: 0
   primaryPlacement: 0
   towerMergeHandler: {fileID: 532268893}
-  readyToMergeToCommon: 0
+  readyToMerge: 0
 --- !u!1 &304486073
 GameObject:
   m_ObjectHideFlags: 0
@@ -3385,9 +3441,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43978dbc6ea837d43985c6f24e185055, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _image: {fileID: 0}
+  _startColor:
+    serializedVersion: 2
+    rgba: 0
   primaryPlacement: 0
   towerMergeHandler: {fileID: 532268893}
-  readyToMergeToCommon: 0
+  readyToMerge: 0
 --- !u!1 &436399018
 GameObject:
   m_ObjectHideFlags: 0
@@ -3544,9 +3604,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43978dbc6ea837d43985c6f24e185055, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _image: {fileID: 0}
+  _startColor:
+    serializedVersion: 2
+    rgba: 0
   primaryPlacement: 0
   towerMergeHandler: {fileID: 532268893}
-  readyToMergeToCommon: 0
+  readyToMerge: 0
 --- !u!1 &458228196
 GameObject:
   m_ObjectHideFlags: 0
@@ -3961,7 +4025,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   experience: 0
-  experienceRequired: 1
+  experienceRequired: 5
   playerLevel: 0
   towerParent: {fileID: 150147667}
   cards:
@@ -4064,6 +4128,30 @@ MonoBehaviour:
     prefab: {fileID: 3324479743699832736, guid: 574cd6d004e9e2f41b591fb978ba9aba, type: 3}
     parent: {fileID: 400104219}
     size: 10
+  - tag: MagmaGolemTower
+    prefab: {fileID: 8987554163625884059, guid: 0bf59130d2aac584bb86ac87e1654273, type: 3}
+    parent: {fileID: 400104219}
+    size: 10
+  - tag: MudLeviathanTower
+    prefab: {fileID: 6898067995113084585, guid: 57bd83662faa7c043878739fc8c354db, type: 3}
+    parent: {fileID: 400104219}
+    size: 10
+  - tag: FireTreantTower
+    prefab: {fileID: 3161859596021770624, guid: 5734bc0a043797d4bad4a45687b0fae8, type: 3}
+    parent: {fileID: 400104219}
+    size: 10
+  - tag: DarkFireRevenantTower
+    prefab: {fileID: 5257448032598694395, guid: 90769835a756f1a44bd7e6eab9c70b5c, type: 3}
+    parent: {fileID: 400104219}
+    size: 10
+  - tag: FireThunderCloudbringerTower
+    prefab: {fileID: 3238750938433544213, guid: 65cce8d2af1b92046939110abb994192, type: 3}
+    parent: {fileID: 400104219}
+    size: 10
+  - tag: SwampWardenTower
+    prefab: {fileID: 6075512620634722806, guid: 17505bb489379614090743baada80a41, type: 3}
+    parent: {fileID: 400104219}
+    size: 10
 --- !u!114 &532268893
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4164,9 +4252,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43978dbc6ea837d43985c6f24e185055, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _image: {fileID: 0}
+  _startColor:
+    serializedVersion: 2
+    rgba: 0
   primaryPlacement: 0
   towerMergeHandler: {fileID: 532268893}
-  readyToMergeToCommon: 0
+  readyToMerge: 0
 --- !u!1 &599101489
 GameObject:
   m_ObjectHideFlags: 0
@@ -4389,9 +4481,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43978dbc6ea837d43985c6f24e185055, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _image: {fileID: 0}
+  _startColor:
+    serializedVersion: 2
+    rgba: 0
   primaryPlacement: 0
   towerMergeHandler: {fileID: 532268893}
-  readyToMergeToCommon: 0
+  readyToMerge: 0
 --- !u!1 &615268393
 GameObject:
   m_ObjectHideFlags: 0
@@ -4480,9 +4576,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43978dbc6ea837d43985c6f24e185055, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _image: {fileID: 0}
+  _startColor:
+    serializedVersion: 2
+    rgba: 0
   primaryPlacement: 0
   towerMergeHandler: {fileID: 532268893}
-  readyToMergeToCommon: 0
+  readyToMerge: 0
 --- !u!1 &657606323
 GameObject:
   m_ObjectHideFlags: 0
@@ -4571,9 +4671,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43978dbc6ea837d43985c6f24e185055, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _image: {fileID: 0}
+  _startColor:
+    serializedVersion: 2
+    rgba: 0
   primaryPlacement: 0
   towerMergeHandler: {fileID: 532268893}
-  readyToMergeToCommon: 0
+  readyToMerge: 0
 --- !u!1 &669464651
 GameObject:
   m_ObjectHideFlags: 0
@@ -4737,9 +4841,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43978dbc6ea837d43985c6f24e185055, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _image: {fileID: 0}
+  _startColor:
+    serializedVersion: 2
+    rgba: 0
   primaryPlacement: 0
   towerMergeHandler: {fileID: 532268893}
-  readyToMergeToCommon: 0
+  readyToMerge: 0
 --- !u!1 &706430999
 GameObject:
   m_ObjectHideFlags: 0
@@ -5053,9 +5161,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43978dbc6ea837d43985c6f24e185055, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _image: {fileID: 0}
+  _startColor:
+    serializedVersion: 2
+    rgba: 0
   primaryPlacement: 0
   towerMergeHandler: {fileID: 532268893}
-  readyToMergeToCommon: 0
+  readyToMerge: 0
 --- !u!1 &744001529
 GameObject:
   m_ObjectHideFlags: 0
@@ -5221,9 +5333,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43978dbc6ea837d43985c6f24e185055, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _image: {fileID: 0}
+  _startColor:
+    serializedVersion: 2
+    rgba: 0
   primaryPlacement: 0
   towerMergeHandler: {fileID: 532268893}
-  readyToMergeToCommon: 0
+  readyToMerge: 0
 --- !u!1 &782011365
 GameObject:
   m_ObjectHideFlags: 0
@@ -5462,9 +5578,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43978dbc6ea837d43985c6f24e185055, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _image: {fileID: 0}
+  _startColor:
+    serializedVersion: 2
+    rgba: 0
   primaryPlacement: 0
   towerMergeHandler: {fileID: 532268893}
-  readyToMergeToCommon: 0
+  readyToMerge: 0
 --- !u!1 &820220901
 GameObject:
   m_ObjectHideFlags: 0
@@ -5553,9 +5673,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43978dbc6ea837d43985c6f24e185055, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _image: {fileID: 0}
+  _startColor:
+    serializedVersion: 2
+    rgba: 0
   primaryPlacement: 0
   towerMergeHandler: {fileID: 532268893}
-  readyToMergeToCommon: 0
+  readyToMerge: 0
 --- !u!1 &823445678
 GameObject:
   m_ObjectHideFlags: 0
@@ -5973,6 +6097,112 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 844723185}
   m_CullTransparentMesh: 1
+--- !u!1001 &852244259
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1698668559}
+    m_Modifications:
+    - target: {fileID: 1441714336261751880, guid: 574cd6d004e9e2f41b591fb978ba9aba, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1441714336261751880, guid: 574cd6d004e9e2f41b591fb978ba9aba, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1441714336261751880, guid: 574cd6d004e9e2f41b591fb978ba9aba, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1441714336261751880, guid: 574cd6d004e9e2f41b591fb978ba9aba, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1441714336261751880, guid: 574cd6d004e9e2f41b591fb978ba9aba, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1441714336261751880, guid: 574cd6d004e9e2f41b591fb978ba9aba, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1441714336261751880, guid: 574cd6d004e9e2f41b591fb978ba9aba, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 1441714336261751880, guid: 574cd6d004e9e2f41b591fb978ba9aba, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 1441714336261751880, guid: 574cd6d004e9e2f41b591fb978ba9aba, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1441714336261751880, guid: 574cd6d004e9e2f41b591fb978ba9aba, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1441714336261751880, guid: 574cd6d004e9e2f41b591fb978ba9aba, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1441714336261751880, guid: 574cd6d004e9e2f41b591fb978ba9aba, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1441714336261751880, guid: 574cd6d004e9e2f41b591fb978ba9aba, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1441714336261751880, guid: 574cd6d004e9e2f41b591fb978ba9aba, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1441714336261751880, guid: 574cd6d004e9e2f41b591fb978ba9aba, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1441714336261751880, guid: 574cd6d004e9e2f41b591fb978ba9aba, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 245.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1441714336261751880, guid: 574cd6d004e9e2f41b591fb978ba9aba, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 114.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1441714336261751880, guid: 574cd6d004e9e2f41b591fb978ba9aba, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1441714336261751880, guid: 574cd6d004e9e2f41b591fb978ba9aba, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1441714336261751880, guid: 574cd6d004e9e2f41b591fb978ba9aba, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3324479743699832736, guid: 574cd6d004e9e2f41b591fb978ba9aba, type: 3}
+      propertyPath: m_Name
+      value: SteamTower (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3324479743699832736, guid: 574cd6d004e9e2f41b591fb978ba9aba, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 574cd6d004e9e2f41b591fb978ba9aba, type: 3}
+--- !u!224 &852244260 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 1441714336261751880, guid: 574cd6d004e9e2f41b591fb978ba9aba, type: 3}
+  m_PrefabInstance: {fileID: 852244259}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &852568550
 GameObject:
   m_ObjectHideFlags: 0
@@ -6136,9 +6366,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43978dbc6ea837d43985c6f24e185055, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _image: {fileID: 0}
+  _startColor:
+    serializedVersion: 2
+    rgba: 0
   primaryPlacement: 0
   towerMergeHandler: {fileID: 532268893}
-  readyToMergeToCommon: 0
+  readyToMerge: 0
 --- !u!1 &878556822
 GameObject:
   m_ObjectHideFlags: 0
@@ -6227,9 +6461,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43978dbc6ea837d43985c6f24e185055, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _image: {fileID: 0}
+  _startColor:
+    serializedVersion: 2
+    rgba: 0
   primaryPlacement: 0
   towerMergeHandler: {fileID: 532268893}
-  readyToMergeToCommon: 0
+  readyToMerge: 0
 --- !u!1 &884865992
 GameObject:
   m_ObjectHideFlags: 0
@@ -6354,9 +6592,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43978dbc6ea837d43985c6f24e185055, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _image: {fileID: 0}
+  _startColor:
+    serializedVersion: 2
+    rgba: 0
   primaryPlacement: 0
   towerMergeHandler: {fileID: 532268893}
-  readyToMergeToCommon: 0
+  readyToMerge: 0
 --- !u!1 &916217716
 GameObject:
   m_ObjectHideFlags: 0
@@ -6445,9 +6687,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43978dbc6ea837d43985c6f24e185055, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _image: {fileID: 0}
+  _startColor:
+    serializedVersion: 2
+    rgba: 0
   primaryPlacement: 0
   towerMergeHandler: {fileID: 532268893}
-  readyToMergeToCommon: 0
+  readyToMerge: 0
 --- !u!1 &936925674
 GameObject:
   m_ObjectHideFlags: 0
@@ -6611,9 +6857,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43978dbc6ea837d43985c6f24e185055, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _image: {fileID: 0}
+  _startColor:
+    serializedVersion: 2
+    rgba: 0
   primaryPlacement: 0
   towerMergeHandler: {fileID: 532268893}
-  readyToMergeToCommon: 0
+  readyToMerge: 0
 --- !u!1 &952290793
 GameObject:
   m_ObjectHideFlags: 0
@@ -6927,9 +7177,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43978dbc6ea837d43985c6f24e185055, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _image: {fileID: 0}
+  _startColor:
+    serializedVersion: 2
+    rgba: 0
   primaryPlacement: 0
   towerMergeHandler: {fileID: 532268893}
-  readyToMergeToCommon: 0
+  readyToMerge: 0
 --- !u!1 &1091212694
 GameObject:
   m_ObjectHideFlags: 0
@@ -7586,9 +7840,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43978dbc6ea837d43985c6f24e185055, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _image: {fileID: 0}
+  _startColor:
+    serializedVersion: 2
+    rgba: 0
   primaryPlacement: 0
   towerMergeHandler: {fileID: 532268893}
-  readyToMergeToCommon: 0
+  readyToMerge: 0
 --- !u!1 &1186172589
 GameObject:
   m_ObjectHideFlags: 0
@@ -7677,9 +7935,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43978dbc6ea837d43985c6f24e185055, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _image: {fileID: 0}
+  _startColor:
+    serializedVersion: 2
+    rgba: 0
   primaryPlacement: 0
   towerMergeHandler: {fileID: 532268893}
-  readyToMergeToCommon: 0
+  readyToMerge: 0
 --- !u!1 &1192370516
 GameObject:
   m_ObjectHideFlags: 0
@@ -7843,9 +8105,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43978dbc6ea837d43985c6f24e185055, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _image: {fileID: 0}
+  _startColor:
+    serializedVersion: 2
+    rgba: 0
   primaryPlacement: 0
   towerMergeHandler: {fileID: 532268893}
-  readyToMergeToCommon: 0
+  readyToMerge: 0
 --- !u!1 &1202643773
 GameObject:
   m_ObjectHideFlags: 0
@@ -8159,9 +8425,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43978dbc6ea837d43985c6f24e185055, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _image: {fileID: 0}
+  _startColor:
+    serializedVersion: 2
+    rgba: 0
   primaryPlacement: 0
   towerMergeHandler: {fileID: 532268893}
-  readyToMergeToCommon: 0
+  readyToMerge: 0
 --- !u!1 &1246792611
 GameObject:
   m_ObjectHideFlags: 0
@@ -8400,9 +8670,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43978dbc6ea837d43985c6f24e185055, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _image: {fileID: 0}
+  _startColor:
+    serializedVersion: 2
+    rgba: 0
   primaryPlacement: 0
   towerMergeHandler: {fileID: 532268893}
-  readyToMergeToCommon: 0
+  readyToMerge: 0
 --- !u!1 &1296946825
 GameObject:
   m_ObjectHideFlags: 0
@@ -8641,9 +8915,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43978dbc6ea837d43985c6f24e185055, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _image: {fileID: 0}
+  _startColor:
+    serializedVersion: 2
+    rgba: 0
   primaryPlacement: 0
   towerMergeHandler: {fileID: 532268893}
-  readyToMergeToCommon: 0
+  readyToMerge: 0
 --- !u!1 &1315788983
 GameObject:
   m_ObjectHideFlags: 0
@@ -8807,9 +9085,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43978dbc6ea837d43985c6f24e185055, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _image: {fileID: 0}
+  _startColor:
+    serializedVersion: 2
+    rgba: 0
   primaryPlacement: 0
   towerMergeHandler: {fileID: 532268893}
-  readyToMergeToCommon: 0
+  readyToMerge: 0
 --- !u!1 &1352320333
 GameObject:
   m_ObjectHideFlags: 0
@@ -8973,9 +9255,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43978dbc6ea837d43985c6f24e185055, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _image: {fileID: 0}
+  _startColor:
+    serializedVersion: 2
+    rgba: 0
   primaryPlacement: 0
   towerMergeHandler: {fileID: 532268893}
-  readyToMergeToCommon: 0
+  readyToMerge: 0
 --- !u!1 &1375525848
 GameObject:
   m_ObjectHideFlags: 0
@@ -9139,9 +9425,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43978dbc6ea837d43985c6f24e185055, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _image: {fileID: 0}
+  _startColor:
+    serializedVersion: 2
+    rgba: 0
   primaryPlacement: 0
   towerMergeHandler: {fileID: 532268893}
-  readyToMergeToCommon: 0
+  readyToMerge: 0
 --- !u!1 &1395521614
 GameObject:
   m_ObjectHideFlags: 0
@@ -9230,9 +9520,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43978dbc6ea837d43985c6f24e185055, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _image: {fileID: 0}
+  _startColor:
+    serializedVersion: 2
+    rgba: 0
   primaryPlacement: 0
   towerMergeHandler: {fileID: 532268893}
-  readyToMergeToCommon: 0
+  readyToMerge: 0
 --- !u!1 &1424737301
 GameObject:
   m_ObjectHideFlags: 0
@@ -9889,9 +10183,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43978dbc6ea837d43985c6f24e185055, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _image: {fileID: 0}
+  _startColor:
+    serializedVersion: 2
+    rgba: 0
   primaryPlacement: 0
   towerMergeHandler: {fileID: 532268893}
-  readyToMergeToCommon: 0
+  readyToMerge: 0
 --- !u!1 &1527115238
 GameObject:
   m_ObjectHideFlags: 0
@@ -10189,9 +10487,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43978dbc6ea837d43985c6f24e185055, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _image: {fileID: 0}
+  _startColor:
+    serializedVersion: 2
+    rgba: 0
   primaryPlacement: 0
   towerMergeHandler: {fileID: 532268893}
-  readyToMergeToCommon: 0
+  readyToMerge: 0
 --- !u!1 &1535021269
 GameObject:
   m_ObjectHideFlags: 0
@@ -10355,9 +10657,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43978dbc6ea837d43985c6f24e185055, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _image: {fileID: 0}
+  _startColor:
+    serializedVersion: 2
+    rgba: 0
   primaryPlacement: 0
   towerMergeHandler: {fileID: 532268893}
-  readyToMergeToCommon: 0
+  readyToMerge: 0
 --- !u!1 &1548349555
 GameObject:
   m_ObjectHideFlags: 0
@@ -10446,9 +10752,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43978dbc6ea837d43985c6f24e185055, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _image: {fileID: 0}
+  _startColor:
+    serializedVersion: 2
+    rgba: 0
   primaryPlacement: 0
   towerMergeHandler: {fileID: 532268893}
-  readyToMergeToCommon: 0
+  readyToMerge: 0
 --- !u!1 &1558800758
 GameObject:
   m_ObjectHideFlags: 0
@@ -10762,9 +11072,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43978dbc6ea837d43985c6f24e185055, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _image: {fileID: 0}
+  _startColor:
+    serializedVersion: 2
+    rgba: 0
   primaryPlacement: 0
   towerMergeHandler: {fileID: 532268893}
-  readyToMergeToCommon: 0
+  readyToMerge: 0
 --- !u!1 &1595091912
 GameObject:
   m_ObjectHideFlags: 0
@@ -10928,9 +11242,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43978dbc6ea837d43985c6f24e185055, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _image: {fileID: 0}
+  _startColor:
+    serializedVersion: 2
+    rgba: 0
   primaryPlacement: 0
   towerMergeHandler: {fileID: 532268893}
-  readyToMergeToCommon: 0
+  readyToMerge: 0
 --- !u!1 &1625233870
 GameObject:
   m_ObjectHideFlags: 0
@@ -11394,9 +11712,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43978dbc6ea837d43985c6f24e185055, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _image: {fileID: 0}
+  _startColor:
+    serializedVersion: 2
+    rgba: 0
   primaryPlacement: 0
   towerMergeHandler: {fileID: 532268893}
-  readyToMergeToCommon: 0
+  readyToMerge: 0
 --- !u!1 &1692700790
 GameObject:
   m_ObjectHideFlags: 0
@@ -11657,11 +11979,7 @@ RectTransform:
   - {fileID: 2093554476}
   - {fileID: 1108954304}
   - {fileID: 400104219}
-  - {fileID: 1159979092483213113}
-  - {fileID: 5335297965634402671}
-  - {fileID: 6577608769660883268}
-  - {fileID: 8674240549198390648}
-  - {fileID: 3562003020139146511}
+  - {fileID: 852244260}
   m_Father: {fileID: 1755984737}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -11930,9 +12248,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43978dbc6ea837d43985c6f24e185055, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _image: {fileID: 0}
+  _startColor:
+    serializedVersion: 2
+    rgba: 0
   primaryPlacement: 0
   towerMergeHandler: {fileID: 532268893}
-  readyToMergeToCommon: 0
+  readyToMerge: 0
 --- !u!1 &1730931543
 GameObject:
   m_ObjectHideFlags: 0
@@ -12481,9 +12803,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43978dbc6ea837d43985c6f24e185055, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _image: {fileID: 0}
+  _startColor:
+    serializedVersion: 2
+    rgba: 0
   primaryPlacement: 0
   towerMergeHandler: {fileID: 532268893}
-  readyToMergeToCommon: 0
+  readyToMerge: 0
 --- !u!1 &1771148760
 GameObject:
   m_ObjectHideFlags: 0
@@ -13156,9 +13482,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43978dbc6ea837d43985c6f24e185055, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _image: {fileID: 0}
+  _startColor:
+    serializedVersion: 2
+    rgba: 0
   primaryPlacement: 0
   towerMergeHandler: {fileID: 532268893}
-  readyToMergeToCommon: 0
+  readyToMerge: 0
 --- !u!1 &1852885441
 GameObject:
   m_ObjectHideFlags: 0
@@ -13247,9 +13577,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43978dbc6ea837d43985c6f24e185055, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _image: {fileID: 0}
+  _startColor:
+    serializedVersion: 2
+    rgba: 0
   primaryPlacement: 0
   towerMergeHandler: {fileID: 532268893}
-  readyToMergeToCommon: 0
+  readyToMerge: 0
 --- !u!1 &1867408699
 GameObject:
   m_ObjectHideFlags: 0
@@ -13413,9 +13747,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43978dbc6ea837d43985c6f24e185055, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _image: {fileID: 0}
+  _startColor:
+    serializedVersion: 2
+    rgba: 0
   primaryPlacement: 0
   towerMergeHandler: {fileID: 532268893}
-  readyToMergeToCommon: 0
+  readyToMerge: 0
 --- !u!1 &1872645251
 GameObject:
   m_ObjectHideFlags: 0
@@ -13654,9 +13992,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43978dbc6ea837d43985c6f24e185055, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _image: {fileID: 0}
+  _startColor:
+    serializedVersion: 2
+    rgba: 0
   primaryPlacement: 0
   towerMergeHandler: {fileID: 532268893}
-  readyToMergeToCommon: 0
+  readyToMerge: 0
 --- !u!1 &1915357513
 GameObject:
   m_ObjectHideFlags: 0
@@ -13822,9 +14164,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43978dbc6ea837d43985c6f24e185055, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _image: {fileID: 0}
+  _startColor:
+    serializedVersion: 2
+    rgba: 0
   primaryPlacement: 0
   towerMergeHandler: {fileID: 532268893}
-  readyToMergeToCommon: 0
+  readyToMerge: 0
 --- !u!1 &1929132263
 GameObject:
   m_ObjectHideFlags: 0
@@ -13988,9 +14334,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43978dbc6ea837d43985c6f24e185055, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _image: {fileID: 0}
+  _startColor:
+    serializedVersion: 2
+    rgba: 0
   primaryPlacement: 0
   towerMergeHandler: {fileID: 532268893}
-  readyToMergeToCommon: 0
+  readyToMerge: 0
 --- !u!1 &1942218612
 GameObject:
   m_ObjectHideFlags: 0
@@ -14154,9 +14504,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43978dbc6ea837d43985c6f24e185055, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _image: {fileID: 0}
+  _startColor:
+    serializedVersion: 2
+    rgba: 0
   primaryPlacement: 0
   towerMergeHandler: {fileID: 532268893}
-  readyToMergeToCommon: 0
+  readyToMerge: 0
 --- !u!1 &1984576317
 GameObject:
   m_ObjectHideFlags: 0
@@ -14378,9 +14732,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43978dbc6ea837d43985c6f24e185055, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _image: {fileID: 0}
+  _startColor:
+    serializedVersion: 2
+    rgba: 0
   primaryPlacement: 0
   towerMergeHandler: {fileID: 532268893}
-  readyToMergeToCommon: 0
+  readyToMerge: 0
 --- !u!1 &2011134897
 GameObject:
   m_ObjectHideFlags: 0
@@ -14469,9 +14827,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43978dbc6ea837d43985c6f24e185055, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _image: {fileID: 0}
+  _startColor:
+    serializedVersion: 2
+    rgba: 0
   primaryPlacement: 0
   towerMergeHandler: {fileID: 532268893}
-  readyToMergeToCommon: 0
+  readyToMerge: 0
 --- !u!1 &2013959149
 GameObject:
   m_ObjectHideFlags: 0
@@ -15227,9 +15589,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43978dbc6ea837d43985c6f24e185055, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _image: {fileID: 0}
+  _startColor:
+    serializedVersion: 2
+    rgba: 0
   primaryPlacement: 0
   towerMergeHandler: {fileID: 532268893}
-  readyToMergeToCommon: 0
+  readyToMerge: 0
 --- !u!1 &2143311549
 GameObject:
   m_ObjectHideFlags: 0
@@ -15305,19 +15671,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2143311549}
   m_CullTransparentMesh: 1
---- !u!114 &69125480131646069
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3042746614857469137}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a6fac397afc61541890708e826f146b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _parent: {fileID: 0}
 --- !u!114 &213689261202791637
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15332,40 +15685,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _canvas: {fileID: 2013959152}
   towerGO: {fileID: 0}
---- !u!225 &270134919766311601
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3042746614857469137}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
---- !u!114 &403467171010020019
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4774383950201089680}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83da9207cdc8e1f4382e523209ec7f69, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  towerElement: 1
-  projectileAmount: 3
-  projectileName: Water projectile
-  projectileFinishEffect: 0
-  projectileSpeed: 5
-  fireCountdown: 0
-  fireCooldown: 2
-  towerDamage: 10
-  towerRadius: 100
-  chancePercentage: 0
 --- !u!114 &408694433099914720
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15467,7 +15786,7 @@ GameObject:
   - component: {fileID: 7681260635900842605}
   - component: {fileID: 4459677002238295310}
   m_Layer: 5
-  m_Name: Darkness
+  m_Name: Darkness_dragged_object
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15486,14 +15805,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.33107865, g: 0.6697412, b: 0.754717, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: c8469528a7444664bb875e88a87a4a05, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -15503,14 +15822,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!222 &544219888555799253
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8082230704236999303}
-  m_CullTransparentMesh: 1
 --- !u!224 &561979834001804067
 RectTransform:
   m_ObjectHideFlags: 0
@@ -15530,41 +15841,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!58 &750818602629856979
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 814542289464370919}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 200
 --- !u!222 &769875844903794399
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -15573,58 +15849,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4814049100299681319}
   m_CullTransparentMesh: 1
---- !u!114 &787085409007878641
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4774383950201089680}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5f73c05952405a548968a56e33e3f51a, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!1 &814542289464370919
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3562003020139146511}
-  - component: {fileID: 9000860563727820469}
-  - component: {fileID: 4891924112283240838}
-  - component: {fileID: 750818602629856979}
-  - component: {fileID: 2506361281457236103}
-  - component: {fileID: 5518798834036427460}
-  - component: {fileID: 2414564141981792323}
-  m_Layer: 5
-  m_Name: SteamTower (5)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
 --- !u!1 &855742692284167668
 GameObject:
   m_ObjectHideFlags: 0
@@ -15657,6 +15881,7 @@ GameObject:
   - component: {fileID: 213689261202791637}
   - component: {fileID: 2918864398590239570}
   - component: {fileID: 8326171624775541928}
+  - component: {fileID: 8326171624775541929}
   m_Layer: 5
   m_Name: Water
   m_TagString: Untagged
@@ -15672,25 +15897,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4165034245288631419}
   m_CullTransparentMesh: 1
---- !u!224 &1159979092483213113
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3042746614857469137}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1698668559}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 63.3, y: 114.9}
-  m_SizeDelta: {x: 50, y: 50}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &1336563030821665224
 RectTransform:
   m_ObjectHideFlags: 0
@@ -15794,14 +16000,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!222 &1643779169625250558
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7019791760359168684}
-  m_CullTransparentMesh: 1
 --- !u!114 &1745696119655788113
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15904,14 +16102,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.3018868, g: 0.3018868, b: 0.3018868, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 7ff2a58656d57164388a486c96f45193, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -16040,14 +16238,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.4002926, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 173536cd928363549a34f2e0418212d9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -16057,19 +16255,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &2414564141981792323
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 814542289464370919}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a6fac397afc61541890708e826f146b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _parent: {fileID: 0}
 --- !u!224 &2486825156141213290
 RectTransform:
   m_ObjectHideFlags: 0
@@ -16091,18 +16276,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!225 &2506361281457236103
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 814542289464370919}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &2547617184521393462
 GameObject:
   m_ObjectHideFlags: 0
@@ -16117,6 +16290,7 @@ GameObject:
   - component: {fileID: 1346188616408062567}
   - component: {fileID: 3728689608770014010}
   - component: {fileID: 5753109080962940709}
+  - component: {fileID: 5753109080962940710}
   m_Layer: 5
   m_Name: Darkness
   m_TagString: Untagged
@@ -16157,6 +16331,7 @@ GameObject:
   - component: {fileID: 5051660577139360835}
   - component: {fileID: 6132176799396221222}
   - component: {fileID: 8201106155351724610}
+  - component: {fileID: 8201106155351724611}
   m_Layer: 5
   m_Name: Nature
   m_TagString: Untagged
@@ -16164,28 +16339,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2787777376027047567
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7019791760359168684}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83da9207cdc8e1f4382e523209ec7f69, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  towerElement: 1
-  projectileAmount: 3
-  projectileName: Water projectile
-  projectileFinishEffect: 0
-  projectileSpeed: 5
-  fireCountdown: 0
-  fireCooldown: 2
-  towerDamage: 10
-  towerRadius: 100
-  chancePercentage: 0
 --- !u!114 &2865856914607127507
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16295,58 +16448,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6987231021336279923}
   m_CullTransparentMesh: 1
---- !u!114 &3009813591066752461
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7019791760359168684}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5f73c05952405a548968a56e33e3f51a, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!1 &3042746614857469137
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1159979092483213113}
-  - component: {fileID: 6746021668394962051}
-  - component: {fileID: 7103389402123674544}
-  - component: {fileID: 3106539828772426981}
-  - component: {fileID: 270134919766311601}
-  - component: {fileID: 7917717672203149554}
-  - component: {fileID: 69125480131646069}
-  m_Layer: 5
-  m_Name: SteamTower (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
 --- !u!114 &3081867722118844527
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16377,41 +16478,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!58 &3106539828772426981
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3042746614857469137}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 200
 --- !u!1 &3106958137410003674
 GameObject:
   m_ObjectHideFlags: 0
@@ -16424,7 +16490,7 @@ GameObject:
   - component: {fileID: 5904020420999329531}
   - component: {fileID: 9107672589330728558}
   m_Layer: 5
-  m_Name: Nature
+  m_Name: Nature_dragged_object
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16485,25 +16551,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!224 &3562003020139146511
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 814542289464370919}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1698668559}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 310.2, y: 114.9}
-  m_SizeDelta: {x: 50, y: 50}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3619655343314341633
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -16526,6 +16573,7 @@ GameObject:
   - component: {fileID: 4361233957397825676}
   - component: {fileID: 3116985083249799042}
   - component: {fileID: 5347429234288165131}
+  - component: {fileID: 5347429234288165132}
   m_Layer: 5
   m_Name: Fire
   m_TagString: Untagged
@@ -16659,14 +16707,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 6451252030474532619, guid: 2477852fa0b306940bc7649d2e5926bc, type: 3}
   m_PrefabInstance: {fileID: 3870077257848304000}
   m_PrefabAsset: {fileID: 0}
---- !u!222 &3883980792490159810
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4774383950201089680}
-  m_CullTransparentMesh: 1
 --- !u!224 &3897717971756072860
 RectTransform:
   m_ObjectHideFlags: 0
@@ -16686,58 +16726,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &4031488748550577828
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8082230704236999303}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83da9207cdc8e1f4382e523209ec7f69, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  towerElement: 1
-  projectileAmount: 3
-  projectileName: Water projectile
-  projectileFinishEffect: 0
-  projectileSpeed: 5
-  fireCountdown: 0
-  fireCooldown: 2
-  towerDamage: 10
-  towerRadius: 100
-  chancePercentage: 0
---- !u!114 &4073388126226882022
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8082230704236999303}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5f73c05952405a548968a56e33e3f51a, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!224 &4127415667117618888
 RectTransform:
   m_ObjectHideFlags: 0
@@ -16827,28 +16815,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!1 &4774383950201089680
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8674240549198390648}
-  - component: {fileID: 3883980792490159810}
-  - component: {fileID: 787085409007878641}
-  - component: {fileID: 4856182800488904356}
-  - component: {fileID: 7766373186040258800}
-  - component: {fileID: 403467171010020019}
-  - component: {fileID: 7533836386096984116}
-  m_Layer: 5
-  m_Name: SteamTower (4)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
 --- !u!1 &4814049100299681319
 GameObject:
   m_ObjectHideFlags: 0
@@ -16863,6 +16829,7 @@ GameObject:
   - component: {fileID: 3203284943646264261}
   - component: {fileID: 6611398903472814392}
   - component: {fileID: 7720320540195715678}
+  - component: {fileID: 7720320540195715679}
   m_Layer: 5
   m_Name: Earth
   m_TagString: Untagged
@@ -16870,71 +16837,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!58 &4856182800488904356
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4774383950201089680}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 200
---- !u!114 &4891924112283240838
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 814542289464370919}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5f73c05952405a548968a56e33e3f51a, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!222 &4929541439777057359
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -16955,7 +16857,7 @@ GameObject:
   - component: {fileID: 4450518169798487257}
   - component: {fileID: 7659963241308315241}
   m_Layer: 5
-  m_Name: Fire
+  m_Name: Fire_dragged_object
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17076,24 +16978,12 @@ GameObject:
   - component: {fileID: 2097306731726836752}
   - component: {fileID: 1536856455227088978}
   m_Layer: 5
-  m_Name: Water
+  m_Name: Water_dragged_object
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!225 &5255411327554262220
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7019791760359168684}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!114 &5268445333309128457
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17213,25 +17103,6 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!224 &5335297965634402671
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8082230704236999303}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1698668559}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 128.2, y: 114.9}
-  m_SizeDelta: {x: 50, y: 50}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5347429234288165130
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -17253,41 +17124,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   towerAmount: 0
---- !u!114 &5450723097732367368
+--- !u!114 &5347429234288165132
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7019791760359168684}
+  m_GameObject: {fileID: 3683762468322628344}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a6fac397afc61541890708e826f146b, type: 3}
+  m_Script: {fileID: 11500000, guid: aaf9e888fcfb67743a4aa7229d72efdf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _parent: {fileID: 0}
---- !u!114 &5518798834036427460
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 814542289464370919}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83da9207cdc8e1f4382e523209ec7f69, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  towerElement: 1
-  projectileAmount: 3
-  projectileName: Water projectile
+  towerElement: 0
+  projectileAmount: 1
+  projectileName: Name of your bullet here
   projectileFinishEffect: 0
   projectileSpeed: 5
   fireCountdown: 0
-  fireCooldown: 2
+  fireCooldown: 1
   towerDamage: 10
   towerRadius: 100
-  chancePercentage: 0
+  chancePercentage: 30
 --- !u!1 &5675585430762828946
 GameObject:
   m_ObjectHideFlags: 0
@@ -17327,6 +17185,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   towerAmount: 0
+--- !u!114 &5753109080962940710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2547617184521393462}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87e71b53c45b3fc48b2699225d7869ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  towerElement: 4
+  projectileAmount: 1
+  projectileName: Name of your bullet here
+  projectileFinishEffect: 0
+  projectileSpeed: 5
+  fireCountdown: 0
+  fireCooldown: 1
+  towerDamage: 10
+  towerRadius: 100
+  chancePercentage: 30
 --- !u!224 &5760799674998253949
 RectTransform:
   m_ObjectHideFlags: 0
@@ -17490,18 +17370,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8772583507631106060}
   m_CullTransparentMesh: 1
---- !u!225 &6461660146187549927
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8082230704236999303}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &6525086280042939145
 GameObject:
   m_ObjectHideFlags: 0
@@ -17516,6 +17384,7 @@ GameObject:
   - component: {fileID: 7463714785758256151}
   - component: {fileID: 7493305743350876617}
   - component: {fileID: 7493305743350876618}
+  - component: {fileID: 7493305743350876619}
   m_Layer: 5
   m_Name: Thunder
   m_TagString: Untagged
@@ -17531,38 +17400,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6525086280042939145}
   m_CullTransparentMesh: 1
---- !u!114 &6550009225324260387
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8082230704236999303}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a6fac397afc61541890708e826f146b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _parent: {fileID: 0}
---- !u!224 &6577608769660883268
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7019791760359168684}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1698668559}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 190, y: 114.9}
-  m_SizeDelta: {x: 50, y: 50}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &6611398903472814392
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -17594,14 +17431,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &6746021668394962051
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3042746614857469137}
-  m_CullTransparentMesh: 1
 --- !u!222 &6799193149157515988
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -17623,14 +17452,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0.38757864, b: 0.4811321, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: b4dbf82a3e017d44b87f9f621d9d631a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -17640,41 +17469,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!58 &6939461015874781848
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7019791760359168684}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 200
 --- !u!1 &6987231021336279923
 GameObject:
   m_ObjectHideFlags: 0
@@ -17687,64 +17481,12 @@ GameObject:
   - component: {fileID: 2924656666292319115}
   - component: {fileID: 5268445333309128457}
   m_Layer: 5
-  m_Name: Earth
+  m_Name: Earth_dragged_object
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!1 &7019791760359168684
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6577608769660883268}
-  - component: {fileID: 1643779169625250558}
-  - component: {fileID: 3009813591066752461}
-  - component: {fileID: 6939461015874781848}
-  - component: {fileID: 5255411327554262220}
-  - component: {fileID: 2787777376027047567}
-  - component: {fileID: 5450723097732367368}
-  m_Layer: 5
-  m_Name: SteamTower (3)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &7103389402123674544
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3042746614857469137}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5f73c05952405a548968a56e33e3f51a, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!114 &7463714785758256151
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17784,19 +17526,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   towerAmount: 0
---- !u!114 &7533836386096984116
+--- !u!114 &7493305743350876619
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4774383950201089680}
+  m_GameObject: {fileID: 6525086280042939145}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a6fac397afc61541890708e826f146b, type: 3}
+  m_Script: {fileID: 11500000, guid: 7ab30142f29dedb448946c1e1093d3da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _parent: {fileID: 0}
+  towerElement: 3
+  projectileAmount: 1
+  projectileName: Name of your bullet here
+  projectileFinishEffect: 0
+  projectileSpeed: 5
+  fireCountdown: 0
+  fireCooldown: 1
+  towerDamage: 10
+  towerRadius: 100
+  chancePercentage: 30
 --- !u!114 &7659963241308315241
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17866,14 +17617,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.6603774, g: 0.33417985, b: 0.30215383, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: d468f9cb4fa26a545b09a886c491c7b2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -17896,18 +17647,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   towerAmount: 0
---- !u!225 &7766373186040258800
-CanvasGroup:
+--- !u!114 &7720320540195715679
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4774383950201089680}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
+  m_GameObject: {fileID: 4814049100299681319}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18ceb007d8fe5db4a90424ad8564f8c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  towerElement: 2
+  projectileAmount: 1
+  projectileName: Name of your bullet here
+  projectileFinishEffect: 0
+  projectileSpeed: 5
+  fireCountdown: 0
+  fireCooldown: 1
+  towerDamage: 10
+  towerRadius: 100
+  chancePercentage: 30
 --- !u!222 &7795628615986621933
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -17935,85 +17696,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &7917717672203149554
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3042746614857469137}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83da9207cdc8e1f4382e523209ec7f69, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  towerElement: 1
-  projectileAmount: 3
-  projectileName: Water projectile
-  projectileFinishEffect: 0
-  projectileSpeed: 5
-  fireCountdown: 0
-  fireCooldown: 2
-  towerDamage: 10
-  towerRadius: 100
-  chancePercentage: 0
---- !u!1 &8082230704236999303
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5335297965634402671}
-  - component: {fileID: 544219888555799253}
-  - component: {fileID: 4073388126226882022}
-  - component: {fileID: 8146869261986589363}
-  - component: {fileID: 6461660146187549927}
-  - component: {fileID: 4031488748550577828}
-  - component: {fileID: 6550009225324260387}
-  m_Layer: 5
-  m_Name: SteamTower (2)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!58 &8146869261986589363
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8082230704236999303}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 200
 --- !u!114 &8201106155351724609
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18027,14 +17709,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0.4716981, b: 0.078754604, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 75943175b9391994fa102a41fd422532, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -18057,6 +17739,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   towerAmount: 0
+--- !u!114 &8201106155351724611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2642201865647404789}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3abcb82b7c850442bda2b3824a82fac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  towerElement: 5
+  projectileAmount: 1
+  projectileName: Name of your bullet here
+  projectileFinishEffect: 0
+  projectileSpeed: 5
+  fireCountdown: 0
+  fireCooldown: 1
+  towerDamage: 10
+  towerRadius: 100
+  chancePercentage: 30
 --- !u!224 &8326171624775541927
 RectTransform:
   m_ObjectHideFlags: 0
@@ -18091,6 +17795,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   towerAmount: 0
+--- !u!114 &8326171624775541929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 880317941857504983}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83da9207cdc8e1f4382e523209ec7f69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  towerElement: 1
+  projectileAmount: 1
+  projectileName: Name of your bullet here
+  projectileFinishEffect: 0
+  projectileSpeed: 5
+  fireCountdown: 0
+  fireCooldown: 1
+  towerDamage: 10
+  towerRadius: 100
+  chancePercentage: 30
 --- !u!222 &8586159563402417112
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -18111,31 +17837,12 @@ GameObject:
   - component: {fileID: 8586159563402417112}
   - component: {fileID: 3081867722118844527}
   m_Layer: 5
-  m_Name: Thunder
+  m_Name: Thunder_dragged_object
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!224 &8674240549198390648
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4774383950201089680}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1698668559}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 245.1, y: 114.9}
-  m_SizeDelta: {x: 50, y: 50}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &8772583507631106060
 GameObject:
   m_ObjectHideFlags: 0
@@ -18154,14 +17861,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!222 &9000860563727820469
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 814542289464370919}
-  m_CullTransparentMesh: 1
 --- !u!114 &9107672589330728558
 MonoBehaviour:
   m_ObjectHideFlags: 0

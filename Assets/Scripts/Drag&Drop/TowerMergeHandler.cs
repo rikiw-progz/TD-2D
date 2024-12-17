@@ -122,11 +122,23 @@ public class TowerMergeHandler : MonoBehaviour
                 Debug.Log("Merged into a Steam Tower!");
                 return CreateTower("SteamTower", towerLocation);
             case MergeResult.FireEarth:
-                Debug.Log("Merged into a Lava Tower!");
-                return CreateTower("LavaTower", towerLocation);
+                Debug.Log("Merged into a Magma Golem Tower!");
+                return CreateTower("MagmaGolemTower", towerLocation);
             case MergeResult.WaterEarth:
-                Debug.Log("Merged into a Mud Tower!");
-                return CreateTower("MudTower", towerLocation);
+                Debug.Log("Merged into a Mud Leviathan Tower!");
+                return CreateTower("MudLeviathanTower", towerLocation);
+            case MergeResult.FireNature:
+                Debug.Log("Merged into a Fire Treant Tower!");
+                return CreateTower("FireTreantTower", towerLocation);
+            case MergeResult.FireDarkness:
+                Debug.Log("Merged into a Dark Fire Revenant Tower!");
+                return CreateTower("DarkFireRevenantTower", towerLocation);
+            case MergeResult.FireThunder:
+                Debug.Log("Merged into a Fire Thunder Cloudbringer Tower!");
+                return CreateTower("FireThunderCloudbringerTower", towerLocation);
+            case MergeResult.WaterNature:
+                Debug.Log("Merged into a Swamp Warden Tower!");
+                return CreateTower("SwampWardenTower", towerLocation);
             default:
                 Debug.Log("Invalid merge!");
                 return null;

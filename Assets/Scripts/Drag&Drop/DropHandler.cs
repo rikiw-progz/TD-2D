@@ -83,6 +83,7 @@ public class DropHandler : MonoBehaviour, IDropHandler, IPointerEnterHandler, IP
             towerGO.transform.SetParent(this.transform);
             //this.enabled = false;
             Debug.Log(towerGO.name);
+            this.enabled = false; // temporary solution
         }
     }
 
@@ -105,6 +106,7 @@ public class DropHandler : MonoBehaviour, IDropHandler, IPointerEnterHandler, IP
             towerGO.transform.SetParent(this.transform);
             //this.enabled = false;
             Debug.Log(towerGO.name);
+            this.enabled = false; // temporary solution
         }
 
         eventData.pointerDrag.GetComponent<TowerHandler>().TowerAmount(-1);

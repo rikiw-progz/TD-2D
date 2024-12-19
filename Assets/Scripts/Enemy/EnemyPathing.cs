@@ -54,10 +54,10 @@ public class EnemyPathing : MonoBehaviour
     {
         _enemyHP += 3f;
 
-        if(enemyBetweenEnemyDelay > 0.1f)
+        if(enemyBetweenEnemyDelay > 0.5f)
             enemyBetweenEnemyDelay -= 0.05f;
 
-        if(enemySpeed < 5f)
+        if(enemySpeed < 3f)
             enemySpeed += 0.05f;
     }
 }

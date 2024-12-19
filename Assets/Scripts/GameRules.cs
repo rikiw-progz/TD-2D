@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameRules : MonoBehaviour
 {
@@ -17,6 +18,14 @@ public class GameRules : MonoBehaviour
     {
         Application.targetFrameRate = 144;
         CardShow();
+    }
+
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.R))
+        {
+            SceneManager.LoadScene("Synergy");
+        }
     }
 
     public void ExperienceGain(float exp)

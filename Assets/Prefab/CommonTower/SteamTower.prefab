@@ -138,7 +138,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83da9207cdc8e1f4382e523209ec7f69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerElement: 1
+  towerElement: 6
   projectileAmount: 3
   projectileName: Water projectile
   projectileFinishEffect: 0
@@ -160,4 +160,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a6fac397afc61541890708e826f146b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dropRight: 0
+  _parent: {fileID: 0}

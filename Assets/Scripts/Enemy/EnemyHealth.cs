@@ -8,27 +8,47 @@ public class EnemyHealth : MonoBehaviour
 {
     public float enemyHP;
     private Image _image;
+    private Color _color;
+    private bool colored = false;
     private GameObject stageManager;
     public bool damageOverTimeDuration = false;
+    private bool experienceGained = false;
 
     private void Start()
     {
         _image = GetComponent<Image>();
+        _color = _image.color;
         stageManager = GameObject.FindWithTag("Stage Manager");
     }
 
     private void OnEnable()
     {
         this.GetComponent<Image>().color = Color.white;
+        experienceGained = false;
+        colored = false;
     }
 
     public void GetEnemyHP(float damage)
     {
-        _image.DOColor(Color.red, 0.02f).SetLoops(2, LoopType.Yoyo);
+        if(this.gameObject.activeInHierarchy)
+            StartCoroutine(DamageColorReaction());
+
         enemyHP -= damage;
 
         if (enemyHP <= 0)
             Death();
+    }
+
+    IEnumerator DamageColorReaction()
+    {
+        if (colored == false)
+        {
+            colored = true;
+            _image.color = Color.red;
+            yield return new WaitForSeconds(0.05f);
+            _image.color = _color;
+            colored = false;
+        }
     }
 
     public void Debuff(float damageAmount, float duration, string debuffName)
@@ -47,7 +67,7 @@ public class EnemyHealth : MonoBehaviour
 
         while (damageOverTimeDuration == true)
         {
-            ApplyDamage(damage);
+            GetEnemyHP(damage);
 
             // Wait for one second before applying damage again
             yield return new WaitForSeconds(1f);
@@ -62,13 +82,6 @@ public class EnemyHealth : MonoBehaviour
         }
     }
 
-    private void ApplyDamage(float damage)
-    {
-        enemyHP -= damage;
-        if (enemyHP <= 0)
-            Death();
-    }
-
     private void DisablingAllDebuffs()
     {
         for (int i = 0; i < transform.childCount; i++)
@@ -79,7 +92,12 @@ public class EnemyHealth : MonoBehaviour
 
     void Death()
     {
-        stageManager.GetComponent<GameRules>().ExperienceGain(1f);
+        if(experienceGained == false)
+        {
+            stageManager.GetComponent<GameRules>().ExperienceGain(1f);
+            experienceGained = true;
+        }
+
         DisablingAllDebuffs();
         this.gameObject.SetActive(false);
     }

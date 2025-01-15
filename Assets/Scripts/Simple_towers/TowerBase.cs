@@ -8,7 +8,6 @@ public abstract class TowerBase : MonoBehaviour
     public enum ElementType
     {
         Fire,
-        Water,
         Earth,
         Thunder,
         Darkness,
@@ -32,8 +31,24 @@ public abstract class TowerBase : MonoBehaviour
     [HideInInspector] public float fireCountdown = 0f;
     public float fireCooldown = 1f;
     public float towerDamage = 10f;
-    public float towerRadius = 100f;
+    public float towerRadius = 1f;
     public float chancePercentage = 30f;
+    private CircleCollider2D myCircleCollider;
+
+    private void Start()
+    {
+        myCircleCollider = GetComponent<CircleCollider2D>();
+
+        if (myCircleCollider != null)
+        {
+            // Set the new radius
+            myCircleCollider.radius = towerRadius * 50f + 25f;
+        }
+        else
+        {
+            Debug.LogError("No CircleCollider2D component found on this GameObject!");
+        }
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

@@ -29,13 +29,7 @@ public class TowerMergeHandler : MonoBehaviour
 
     public MergeResult GetMergeResult(TowerBase.ElementType element1, TowerBase.ElementType element2)
     {
-        // Ensure consistent ordering for comparisons
-        if ((element1 == TowerBase.ElementType.Fire && element2 == TowerBase.ElementType.Water) ||
-            (element1 == TowerBase.ElementType.Water && element2 == TowerBase.ElementType.Fire))
-        {
-            return MergeResult.FireWater;
-        }
-        else if ((element1 == TowerBase.ElementType.Fire && element2 == TowerBase.ElementType.Earth) ||
+        if ((element1 == TowerBase.ElementType.Fire && element2 == TowerBase.ElementType.Earth) ||
                  (element1 == TowerBase.ElementType.Earth && element2 == TowerBase.ElementType.Fire))
         {
             return MergeResult.FireEarth;
@@ -54,26 +48,6 @@ public class TowerMergeHandler : MonoBehaviour
                  (element1 == TowerBase.ElementType.Thunder && element2 == TowerBase.ElementType.Fire))
         {
             return MergeResult.FireThunder;
-        }
-        else if ((element1 == TowerBase.ElementType.Water && element2 == TowerBase.ElementType.Earth) ||
-                 (element1 == TowerBase.ElementType.Earth && element2 == TowerBase.ElementType.Water))
-        {
-            return MergeResult.WaterEarth;
-        }
-        else if ((element1 == TowerBase.ElementType.Water && element2 == TowerBase.ElementType.Nature) ||
-                 (element1 == TowerBase.ElementType.Nature && element2 == TowerBase.ElementType.Water))
-        {
-            return MergeResult.WaterNature;
-        }
-        else if ((element1 == TowerBase.ElementType.Water && element2 == TowerBase.ElementType.Darkness) ||
-                 (element1 == TowerBase.ElementType.Darkness && element2 == TowerBase.ElementType.Water))
-        {
-            return MergeResult.WaterDarkness;
-        }
-        else if ((element1 == TowerBase.ElementType.Water && element2 == TowerBase.ElementType.Thunder) ||
-                 (element1 == TowerBase.ElementType.Thunder && element2 == TowerBase.ElementType.Water))
-        {
-            return MergeResult.WaterThunder;
         }
         else if ((element1 == TowerBase.ElementType.Earth && element2 == TowerBase.ElementType.Nature) ||
                  (element1 == TowerBase.ElementType.Nature && element2 == TowerBase.ElementType.Earth))
@@ -118,8 +92,6 @@ public class TowerMergeHandler : MonoBehaviour
         // Example: Create a new tower based on the merge result
         switch (mergeResult)
         {
-            case MergeResult.FireWater:
-                return CreateTower("SteamTower", towerLocation);
             case MergeResult.FireEarth:
                 return CreateTower("MagmaGolemTower", towerLocation);
             case MergeResult.WaterEarth:
@@ -130,12 +102,6 @@ public class TowerMergeHandler : MonoBehaviour
                 return CreateTower("DarkFireRevenantTower", towerLocation);
             case MergeResult.FireThunder:
                 return CreateTower("FireThunderCloudbringerTower", towerLocation);
-            case MergeResult.WaterNature:
-                return CreateTower("SwampWardenTower", towerLocation);
-            case MergeResult.WaterDarkness:
-                return CreateTower("AbyssLurker", towerLocation);
-            case MergeResult.WaterThunder:
-                return CreateTower("TempestSerpent", towerLocation);
             case MergeResult.EarthNature:
                 return CreateTower("ThornbackBehemoth", towerLocation);
             case MergeResult.EarthDarkness:

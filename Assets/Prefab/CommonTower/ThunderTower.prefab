@@ -145,8 +145,8 @@ MonoBehaviour:
   projectileSpeed: 10
   fireCountdown: 0
   fireCooldown: 1
-  towerDamage: 10
-  towerRadius: 100
+  towerDamage: 15
+  towerRadius: 6
   chancePercentage: 30
 --- !u!114 &5314084747892013900
 MonoBehaviour:

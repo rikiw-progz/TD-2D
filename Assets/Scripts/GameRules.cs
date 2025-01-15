@@ -41,7 +41,7 @@ public class GameRules : MonoBehaviour
     void LevelUp()
     {
         playerLevel += 1;
-        experienceRequired += playerLevel * 10 + 10;
+        experienceRequired += 10;
         CardShow();
     }
 

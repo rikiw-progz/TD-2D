@@ -7,10 +7,11 @@ public class EnemyMove : MonoBehaviour
     public int currentIndex = 0;
     private Vector2 targetPosition;
     private float _speed;
-    public float speed = 5f;
+    public float speed = 1f;
+    private const float speedCellConst = 0.695f;
     public List<Transform> enemyPath = new();
     public bool pathAdded = false;
-
+ 
     void Start()
     {
         MoveToNextPosition();
@@ -28,7 +29,7 @@ public class EnemyMove : MonoBehaviour
 
     void Update()
     {
-        float step = speed * Time.deltaTime;
+        float step = speedCellConst * speed * Time.deltaTime;
 
         transform.position = Vector2.MoveTowards(transform.position, targetPosition, step);
         
@@ -40,52 +41,18 @@ public class EnemyMove : MonoBehaviour
 
     void MoveToNextPosition()
     {
-        switch (currentIndex % 14)
+        if (currentIndex < enemyPath.Count)
         {
-            case 0:
-                targetPosition = enemyPath[0].position;
-                break;
-            case 1:
-                targetPosition = enemyPath[1].position;
-                break;
-            case 2:
-                targetPosition = enemyPath[2].position;
-                break;
-            case 3:
-                targetPosition = enemyPath[3].position;
-                break;
-            case 4:
-                targetPosition = enemyPath[4].position;
-                break;
-            case 5:
-                targetPosition = enemyPath[5].position;
-                break;
-            case 6:
-                targetPosition = enemyPath[6].position;
-                break;
-            case 7:
-                targetPosition = enemyPath[7].position;
-                break;
-            case 8:
-                targetPosition = enemyPath[8].position;
-                break;
-            case 9:
-                targetPosition = enemyPath[9].position;
-                break;
-            case 10:
-                targetPosition = enemyPath[10].position;
-                break;
-            case 11:
-                targetPosition = enemyPath[11].position;
-                break;
-            case 12:
-                targetPosition = enemyPath[12].position;
-                break;
-            case 13:
-                this.gameObject.SetActive(false);
-                break;
-
+            // Set the target position to the current path point
+            targetPosition = enemyPath[currentIndex].position;
         }
+        else
+        {
+            // When the index exceeds the path length, deactivate the object
+            this.gameObject.SetActive(false);
+        }
+
+        // Increment currentIndex to move to the next path point
         currentIndex++;
     }
 

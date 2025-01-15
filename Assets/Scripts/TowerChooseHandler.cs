@@ -9,19 +9,8 @@ public class TowerChooseHandler : MonoBehaviour
     [SerializeField] private GameObject natureTower;
     [SerializeField] private GameObject darknessTower;
     [SerializeField] private GameObject thunderTower;
-    [SerializeField] private GameObject waterTower;
     [SerializeField] private GameObject earthTower;
     [SerializeField] private GameObject fireTower;
-
-    private void Start()
-    {
-        //bonkStartDamage = natureTower.GetComponent<LesserBonk>().towerDamage;
-        //shadowStartDamage = darknessTower.GetComponent<LesserShadow>().towerDamage;
-        //zeusStartDamage = thunderTower.GetComponent<LesserZeus>().towerDamage;
-        //riderStartDamage = waterTower.GetComponent<LesserRider>().towerDamage;
-        //livingVolcanoStartDamage = earthTower.GetComponent<LesserLivingVolcano>().towerDamage;
-        //firelordStartDamage = fireTower.GetComponent<LesserFireLord>().towerDamage;
-    }
 
     public void NatureTowerPick()
     {
@@ -36,11 +25,6 @@ public class TowerChooseHandler : MonoBehaviour
     public void ThunderTowerPick()
     {
         TowerPick(thunderTower);
-    }
-
-    public void WaterTowerPick()
-    {
-        TowerPick(waterTower);
     }
 
     public void EarthTowerPick()

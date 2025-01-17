@@ -4245,11 +4245,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8a93da76f2a2e243b076b2d1965cae3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyWaveCount: 15
   enemyWaveAmount: 10
   enemyStartPosition: {fileID: 1170682898}
   enemySpeed: 1
   _enemyStartHP: 50
-  enemyBetweenEnemyDelay: 2
+  enemyBetweenEnemyDelayTime: 2
+  waveIsOnProcess: 0
   path:
   - {fileID: 357464089}
   - {fileID: 1731824966}

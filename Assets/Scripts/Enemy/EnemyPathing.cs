@@ -12,7 +12,8 @@ public class EnemyPathing : MonoBehaviour
     public float enemySpeed = 5f;
     public float _enemyStartHP = 5f;
     private float _enemyHP = 5f;
-    public float enemyBetweenEnemyDelay = 0.5f;
+    public float enemyBetweenEnemyDelayTime = 2f;
+    public bool waveIsOnProcess = false;
 
     [SerializeField] private Transform[] path;
     public Button nextWaveBtn;
@@ -25,7 +26,7 @@ public class EnemyPathing : MonoBehaviour
         if (nextWaveBtn != null)
         {
             // Add a listener to the button's onClick event
-            nextWaveBtn.onClick.AddListener(() => StartCoroutine(EnemyWaveHandler()));
+            nextWaveBtn.onClick.AddListener(() => NextWave());
         }
     }
 
@@ -50,15 +51,28 @@ public class EnemyPathing : MonoBehaviour
                     }
 
                     enemy.GetComponent<EnemyMove>().pathAdded = true;
+                    waveIsOnProcess = true;
 
-                    yield return new WaitForSeconds(enemyBetweenEnemyDelay);
+                    yield return new WaitForSeconds(enemyBetweenEnemyDelayTime);
                 }
             }
-
-            // Next wave
+            waveIsOnProcess = false;
+            // Next wave upgrade
             NextWaveLevelUp();
 
             yield return new WaitForSeconds(5f);
+            if(waveIsOnProcess == false)
+            {
+                StartCoroutine(EnemyWaveHandler());
+                enemyWaveCounter++;
+            }
+        }
+    }
+
+    void NextWave()
+    {
+        if (waveIsOnProcess == false)
+        {
             StartCoroutine(EnemyWaveHandler());
             enemyWaveCounter++;
         }
@@ -68,8 +82,8 @@ public class EnemyPathing : MonoBehaviour
     {
         _enemyHP *= 1.2f;
 
-        //if(enemyBetweenEnemyDelay > 0.5f)
-        //    enemyBetweenEnemyDelay -= 0.05f;
+        if(enemyBetweenEnemyDelayTime > 0.5f)
+            enemyBetweenEnemyDelayTime -= 0.05f;
 
         if(enemySpeed < 3f)
             enemySpeed += 0.1f;

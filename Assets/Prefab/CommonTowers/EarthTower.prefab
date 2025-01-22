@@ -138,7 +138,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18ceb007d8fe5db4a90424ad8564f8c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerElement: 2
+  towerElement: 1
   projectileAmount: 1
   projectileName: Earth projectile
   projectileFinishEffect: 0
@@ -148,6 +148,7 @@ MonoBehaviour:
   towerDamage: 40
   towerRadius: 4
   chancePercentage: 30
+  abilityDamage: 10
 --- !u!114 &-3021316524697697084
 MonoBehaviour:
   m_ObjectHideFlags: 0

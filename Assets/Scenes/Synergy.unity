@@ -4418,66 +4418,14 @@ MonoBehaviour:
     prefab: {fileID: 6783104092395667974, guid: e41076bb93fefea4c81503d752475942, type: 3}
     parent: {fileID: 400104219}
     size: 50
-  - tag: SteamTower
-    prefab: {fileID: 3324479743699832736, guid: 574cd6d004e9e2f41b591fb978ba9aba, type: 3}
-    parent: {fileID: 400104219}
-    size: 10
-  - tag: MagmaGolemTower
+  - tag: MagmaCreature
     prefab: {fileID: 8987554163625884059, guid: 0bf59130d2aac584bb86ac87e1654273, type: 3}
     parent: {fileID: 400104219}
     size: 10
-  - tag: MudLeviathanTower
-    prefab: {fileID: 6898067995113084585, guid: 57bd83662faa7c043878739fc8c354db, type: 3}
+  - tag: Lavaball
+    prefab: {fileID: 8855858657947006503, guid: da28c0908df82cf4888266d476419821, type: 3}
     parent: {fileID: 400104219}
-    size: 10
-  - tag: FireTreantTower
-    prefab: {fileID: 3161859596021770624, guid: 5734bc0a043797d4bad4a45687b0fae8, type: 3}
-    parent: {fileID: 400104219}
-    size: 10
-  - tag: DarkFireRevenantTower
-    prefab: {fileID: 5257448032598694395, guid: 90769835a756f1a44bd7e6eab9c70b5c, type: 3}
-    parent: {fileID: 400104219}
-    size: 10
-  - tag: FireThunderCloudbringerTower
-    prefab: {fileID: 3238750938433544213, guid: 65cce8d2af1b92046939110abb994192, type: 3}
-    parent: {fileID: 400104219}
-    size: 10
-  - tag: SwampWardenTower
-    prefab: {fileID: 6075512620634722806, guid: 17505bb489379614090743baada80a41, type: 3}
-    parent: {fileID: 400104219}
-    size: 10
-  - tag: AbyssLurker
-    prefab: {fileID: 1329978028888846278, guid: ef756ec7d2d9de145bc82df91db7cc28, type: 3}
-    parent: {fileID: 400104219}
-    size: 10
-  - tag: TempestSerpent
-    prefab: {fileID: 8560228314375598242, guid: c09de09a4635b79469dc3e184edb3117, type: 3}
-    parent: {fileID: 400104219}
-    size: 10
-  - tag: ThornbackBehemoth
-    prefab: {fileID: 5619343286315681386, guid: 2922a2c79cb4f63498b3b6f7ce7daae1, type: 3}
-    parent: {fileID: 400104219}
-    size: 10
-  - tag: GraveColossus
-    prefab: {fileID: 2727613436070651398, guid: 9fe3004a76d933d429c0e192fecd1000, type: 3}
-    parent: {fileID: 400104219}
-    size: 10
-  - tag: Stormcrusher
-    prefab: {fileID: 3914911155943174013, guid: da4978586eb346643b20970c09e0024f, type: 3}
-    parent: {fileID: 400104219}
-    size: 10
-  - tag: RotfiendBloom
-    prefab: {fileID: 8712287219604221452, guid: eba3c17a24105504287644e235734299, type: 3}
-    parent: {fileID: 400104219}
-    size: 10
-  - tag: Stormwood
-    prefab: {fileID: 1665103141367858672, guid: 19861c739a6d0844ea68d65874853fbd, type: 3}
-    parent: {fileID: 400104219}
-    size: 10
-  - tag: Blackstorm
-    prefab: {fileID: 4307121682915638607, guid: f2effb33d258d254da32c4771cf648c7, type: 3}
-    parent: {fileID: 400104219}
-    size: 10
+    size: 20
 --- !u!114 &532268893
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12142,7 +12090,6 @@ RectTransform:
   - {fileID: 2093554476}
   - {fileID: 1108954304}
   - {fileID: 400104219}
-  - {fileID: 8394615174458191321}
   m_Father: {fileID: 1755984737}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -12780,7 +12727,7 @@ Canvas:
   m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: 0
+  m_SortingLayerID: 1156231233
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!224 &1755984737
@@ -15807,36 +15754,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!114 &500735008951208272
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5646591700733437489}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 41b31a2b67efee443944de7f5b6bb0bb, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!114 &536600185588866285
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15886,28 +15803,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &686757801992178194
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5646591700733437489}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83da9207cdc8e1f4382e523209ec7f69, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  towerElement: 1
-  projectileAmount: 3
-  projectileName: Water projectile
-  projectileFinishEffect: 0
-  projectileSpeed: 5
-  fireCountdown: 0
-  fireCooldown: 2
-  towerDamage: 10
-  towerRadius: 100
-  chancePercentage: 0
 --- !u!222 &769875844903794399
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -16499,14 +16394,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!222 &4177113014740035171
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5646591700733437489}
-  m_CullTransparentMesh: 1
 --- !u!114 &4361233957397825676
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16872,28 +16759,8 @@ MonoBehaviour:
   towerDamage: 10
   towerRadius: 100
   chancePercentage: 30
---- !u!1 &5646591700733437489
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8394615174458191321}
-  - component: {fileID: 4177113014740035171}
-  - component: {fileID: 500735008951208272}
-  - component: {fileID: 5726922119270235653}
-  - component: {fileID: 7483028301043279953}
-  - component: {fileID: 686757801992178194}
-  - component: {fileID: 7247186334649186453}
-  m_Layer: 5
-  m_Name: SteamTower (9)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
+  abilityDamage: 10
+  triggerProjectileSpeed: 3
 --- !u!1 &5675585430762828946
 GameObject:
   m_ObjectHideFlags: 0
@@ -16912,41 +16779,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!58 &5726922119270235653
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5646591700733437489}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 200
 --- !u!222 &5753109080962940708
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -16990,6 +16822,8 @@ MonoBehaviour:
   towerDamage: 10
   towerRadius: 100
   chancePercentage: 30
+  abilityDamage: 10
+  triggerProjectileSpeed: 3
 --- !u!224 &5760799674998253949
 RectTransform:
   m_ObjectHideFlags: 0
@@ -17232,19 +17066,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!114 &7247186334649186453
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5646591700733437489}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a6fac397afc61541890708e826f146b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _parent: {fileID: 0}
 --- !u!114 &7463714785758256151
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17259,18 +17080,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _canvas: {fileID: 2013959152}
   towerGO: {fileID: 0}
---- !u!225 &7483028301043279953
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5646591700733437489}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!225 &7493305743350876617
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -17318,6 +17127,8 @@ MonoBehaviour:
   towerDamage: 10
   towerRadius: 100
   chancePercentage: 30
+  abilityDamage: 10
+  triggerProjectileSpeed: 3
 --- !u!114 &7659963241308315241
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17439,6 +17250,8 @@ MonoBehaviour:
   towerDamage: 10
   towerRadius: 100
   chancePercentage: 30
+  abilityDamage: 10
+  triggerProjectileSpeed: 3
 --- !u!224 &7797822011810774513
 RectTransform:
   m_ObjectHideFlags: 0
@@ -17523,25 +17336,8 @@ MonoBehaviour:
   towerDamage: 10
   towerRadius: 100
   chancePercentage: 30
---- !u!224 &8394615174458191321
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5646591700733437489}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1698668559}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 245.10004, y: 114.899994}
-  m_SizeDelta: {x: 50, y: 50}
-  m_Pivot: {x: 0.5, y: 0.5}
+  abilityDamage: 10
+  triggerProjectileSpeed: 3
 --- !u!222 &8586159563402417112
 CanvasRenderer:
   m_ObjectHideFlags: 0

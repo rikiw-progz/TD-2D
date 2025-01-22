@@ -43,3 +43,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Base
+    uniqueID: 1156231233
+    locked: 0
+  - name: Trail
+    uniqueID: 1387494135
+    locked: 0
+  - name: Projectile
+    uniqueID: 2569500181
+    locked: 0

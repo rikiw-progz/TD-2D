@@ -27,12 +27,14 @@ public abstract class TowerBase : MonoBehaviour
     public bool projectileFinishEffect = false;
 
     [Header("Tower stats")]
-    public float projectileSpeed = 5f;
+    [SerializeField] public float projectileSpeed = 5f;
     [HideInInspector] public float fireCountdown = 0f;
     public float fireCooldown = 1f;
     public float towerDamage = 10f;
     public float towerRadius = 1f;
     public float chancePercentage = 30f;
+    public float abilityDamage = 10f;
+    [SerializeField] public float triggerProjectileSpeed = 3f;
     private CircleCollider2D myCircleCollider;
 
     private void Start()
@@ -115,18 +117,6 @@ public abstract class TowerBase : MonoBehaviour
 
             if (Vector2.Distance(go.transform.position, target.transform.position) < 0.1f)
             {
-                float randomValue = Random.Range(0f, 100f);
-
-                if (randomValue < chancePercentage)
-                {
-                    // Execute your action here
-                    ProjectileTrigger(target);
-                }
-                else
-                {
-                    // Action did not occur
-                }
-
                 if(projectileFinishEffect)
                     ProjectileFinish(target);
 
@@ -140,12 +130,43 @@ public abstract class TowerBase : MonoBehaviour
         // Return the projectile to the pool or handle deactivation
         go.SetActive(false);
     }
+    
+    public virtual IEnumerator TriggerProjectileCoroutine(GameObject go, GameObject target)
+    {
+        while (target != null && go.activeInHierarchy)
+        {
+            float step = triggerProjectileSpeed * Time.deltaTime;
+            go.transform.position = Vector2.MoveTowards(go.transform.position, target.transform.position, step);
+
+            if (Vector2.Distance(go.transform.position, target.transform.position) < 0.1f)
+            {
+                if(projectileFinishEffect)
+                    ProjectileFinish(target);
+
+                DoTriggerDamage(target, abilityDamage);
+                    go.SetActive(false);
+            }
+
+            yield return null;
+        }
+
+        // Return the projectile to the pool or handle deactivation
+        go.SetActive(false);
+    }
 
     public void DoDamage(GameObject target, float damage)
     {
         target.GetComponent<EnemyHealth>().GetEnemyHP(damage);
         GameObject textDamageGO = PoolBase.instance.GetObject("Damage text", target.transform.position);
-        textDamageGO.GetComponent<TextMeshProUGUI>().text = this.towerDamage.ToString();
+        textDamageGO.GetComponent<TextMeshProUGUI>().text = damage.ToString();
+        StartCoroutine(TextDamageDeactivation(textDamageGO));
+    }
+    
+    public void DoTriggerDamage(GameObject target, float damage)
+    {
+        target.GetComponent<EnemyHealth>().GetEnemyHP(damage);
+        GameObject textDamageGO = PoolBase.instance.GetObject("Damage text", target.transform.position);
+        textDamageGO.GetComponent<TextMeshProUGUI>().text = damage.ToString();
         StartCoroutine(TextDamageDeactivation(textDamageGO));
     }
 

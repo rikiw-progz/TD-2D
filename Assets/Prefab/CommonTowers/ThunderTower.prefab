@@ -138,7 +138,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ab30142f29dedb448946c1e1093d3da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerElement: 3
+  towerElement: 2
   projectileAmount: 1
   projectileName: Thunder projectile
   projectileFinishEffect: 0
@@ -148,6 +148,7 @@ MonoBehaviour:
   towerDamage: 20
   towerRadius: 6
   chancePercentage: 30
+  abilityDamage: 10
 --- !u!114 &5314084747892013900
 MonoBehaviour:
   m_ObjectHideFlags: 0

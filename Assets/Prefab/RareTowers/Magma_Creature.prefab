@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 6519641717549983428}
   - component: {fileID: 7844166958432298692}
   - component: {fileID: 6131994458828517465}
-  - component: {fileID: 3985972818284680576}
+  - component: {fileID: 3553068543775295038}
   m_Layer: 5
-  m_Name: Magma_Golem_Tower
+  m_Name: Magma_Creature
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -139,7 +139,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _parent: {fileID: 0}
---- !u!114 &3985972818284680576
+--- !u!114 &3553068543775295038
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -148,16 +148,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 8987554163625884059}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aaf9e888fcfb67743a4aa7229d72efdf, type: 3}
+  m_Script: {fileID: 11500000, guid: a6ddf76363911cb43bc0b41fb0b24e91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerElement: 6
+  towerElement: 0
   projectileAmount: 1
   projectileName: Fire projectile
   projectileFinishEffect: 0
-  projectileSpeed: 7
+  projectileSpeed: 5
   fireCountdown: 0
   fireCooldown: 1
-  towerDamage: 20
-  towerRadius: 40
-  chancePercentage: 30
+  towerDamage: 50
+  towerRadius: 3
+  chancePercentage: 10
+  abilityDamage: 100
+  triggerProjectileName: Lavaball

@@ -4,7 +4,6 @@ public class TowerMergeHandler : MonoBehaviour
 {
     public enum MergeResult
     {
-        FireWater,   // Fire + Water
         FireEarth,   // Fire + Earth
         FireNature,  // Fire + Nature
         FireDarkness, // Fire + Darkness
@@ -93,7 +92,7 @@ public class TowerMergeHandler : MonoBehaviour
         switch (mergeResult)
         {
             case MergeResult.FireEarth:
-                return CreateTower("MagmaGolemTower", towerLocation);
+                return CreateTower("MagmaCreature", towerLocation);
             case MergeResult.WaterEarth:
                 return CreateTower("MudLeviathanTower", towerLocation);
             case MergeResult.FireNature:

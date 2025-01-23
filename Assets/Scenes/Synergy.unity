@@ -4193,6 +4193,7 @@ GameObject:
   - component: {fileID: 532268890}
   - component: {fileID: 532268891}
   - component: {fileID: 532268893}
+  - component: {fileID: 532268894}
   - component: {fileID: 532268892}
   m_Layer: 0
   m_Name: GameManager
@@ -4249,7 +4250,8 @@ MonoBehaviour:
   enemyWaveAmount: 10
   enemyStartPosition: {fileID: 1170682898}
   enemySpeed: 1
-  _enemyStartHP: 50
+  enemyStartHP: 50
+  enemyArmor: 0
   enemyBetweenEnemyDelayTime: 2
   waveIsOnProcess: 0
   path:
@@ -4426,6 +4428,14 @@ MonoBehaviour:
     prefab: {fileID: 8855858657947006503, guid: da28c0908df82cf4888266d476419821, type: 3}
     parent: {fileID: 400104219}
     size: 20
+  - tag: Nightflame
+    prefab: {fileID: 5257448032598694395, guid: 90769835a756f1a44bd7e6eab9c70b5c, type: 3}
+    parent: {fileID: 400104219}
+    size: 10
+  - tag: Nightflame projectile
+    prefab: {fileID: 464049580053385225, guid: 1cf49b9691d1d2744b10c54bff9180b0, type: 3}
+    parent: {fileID: 400104219}
+    size: 50
 --- !u!114 &532268893
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4436,6 +4446,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3872c6d42f309e24ab441ed1acd3fe43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &532268894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 532268887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81780bc8fd909b749abadec0c31b62d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &580249126

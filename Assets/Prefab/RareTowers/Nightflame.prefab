@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 6524413412770024791}
   - component: {fileID: 5255591093783058015}
   - component: {fileID: 2726100177039107442}
-  - component: {fileID: 6211063078527341505}
+  - component: {fileID: 2671611601492251603}
   m_Layer: 5
-  m_Name: Dark_Fire_Revenant
+  m_Name: Nightflame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -113,7 +113,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 200
+  m_Radius: 10
 --- !u!225 &5255591093783058015
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -139,7 +139,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _parent: {fileID: 0}
---- !u!114 &6211063078527341505
+--- !u!114 &2671611601492251603
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -148,16 +148,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 5257448032598694395}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 87e71b53c45b3fc48b2699225d7869ab, type: 3}
+  m_Script: {fileID: 11500000, guid: c22092e8d89cbf84e9043197e57a4336, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerElement: 6
-  projectileAmount: 5
-  projectileName: Darkness projectile
-  projectileFinishEffect: 0
-  projectileSpeed: 4
+  towerElement: 0
+  projectileAmount: 1
+  projectileName: Nightflame projectile
+  projectileFinishEffect: 1
+  projectileSpeed: 10
   fireCountdown: 0
-  fireCooldown: 0.4
-  towerDamage: 4
-  towerRadius: 100
-  chancePercentage: 30
+  fireCooldown: 1
+  towerDamage: 40
+  towerRadius: 2.5
+  chancePercentage: 10
+  abilityDamage: 0
+  triggerProjectileSpeed: 0
+  triggerProjectileName: Nightflame projectile
+  armorReductionAmount: 1
+  armorReductionDuration: 5

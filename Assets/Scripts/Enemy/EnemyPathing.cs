@@ -10,8 +10,10 @@ public class EnemyPathing : MonoBehaviour
     public float enemyWaveAmount = 10f;
     [SerializeField] private Transform enemyStartPosition;
     public float enemySpeed = 5f;
-    public float _enemyStartHP = 5f;
-    private float _enemyHP = 5f;
+    public float enemyStartHP = 50f;
+    private float _enemyHP = 50f;
+    [SerializeField] private int enemyArmor = 0;
+    private int _enemyArmor = 0;
     public float enemyBetweenEnemyDelayTime = 2f;
     public bool waveIsOnProcess = false;
 
@@ -20,7 +22,8 @@ public class EnemyPathing : MonoBehaviour
 
     private IEnumerator Start()
     {
-        _enemyHP = _enemyStartHP;
+        _enemyHP = enemyStartHP;
+        _enemyArmor = enemyArmor;
         yield return new WaitForSeconds(1f);
         StartCoroutine(EnemyWaveHandler());
         if (nextWaveBtn != null)
@@ -42,6 +45,7 @@ public class EnemyPathing : MonoBehaviour
                 {
                     enemy.SetActive(true);
                     enemy.GetComponent<EnemyHealth>().enemyHP = _enemyHP;
+                    enemy.GetComponent<EnemyHealth>().armor = _enemyArmor;
                     enemy.GetComponent<EnemyMove>().enabled = true;
                     enemy.GetComponent<EnemyMove>().speed = enemySpeed;       // is this must be in Update???
                     if (enemy.GetComponent<EnemyMove>().pathAdded == false)

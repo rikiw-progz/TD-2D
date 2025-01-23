@@ -2,29 +2,35 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MagmaCreature : TowerBase
+public class Nightflame : TowerBase
 {
     private GameObject projectileGO;
     private GameObject triggerProjectileGO;
+    private GameObject target;
     [SerializeField] private string triggerProjectileName;
+    [SerializeField] private float armorReductionAmount;
+    [SerializeField] private float armorReductionDuration;
 
     public override void Shoot()
     {
-        base.Shoot();
+        base.Shoot();                                                           // to make trigger
 
         for (int i = 0; i < Mathf.Min(projectileAmount, enemyList.Count); i++)
         {
             projectileGO = PoolBase.instance.GetObject(projectileName, this.transform.position);
             StartCoroutine(ProjectileCoroutine(projectileGO, enemyList[i]));
+            target = enemyList[i];
         }
     }
 
-    public override void TowerTrigger()
+    public override void ProjectileFinishTrigger()
     {
-        int randomValue = (int)Random.Range(0f, enemyList.Count);
+        base.ProjectileFinishTrigger();
 
-        triggerProjectileGO = PoolBase.instance.GetObject(triggerProjectileName, this.transform.position);
-        StartCoroutine(TriggerProjectileCoroutine(triggerProjectileGO, enemyList[randomValue]));
+        if(target.activeInHierarchy)
+        {
+            target.GetComponent<EnemyHealth>().DebuffArmor(armorReductionAmount, armorReductionDuration, triggerProjectileName);
+        }
     }
 
     private void OnDisable()

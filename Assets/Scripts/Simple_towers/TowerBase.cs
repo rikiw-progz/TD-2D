@@ -140,9 +140,6 @@ public abstract class TowerBase : MonoBehaviour
 
             if (Vector2.Distance(go.transform.position, target.transform.position) < 0.1f)
             {
-                if(projectileFinishEffect)
-                    ProjectileFinish(target);
-
                 DoTriggerDamage(target, abilityDamage);
                     go.SetActive(false);
             }
@@ -157,36 +154,31 @@ public abstract class TowerBase : MonoBehaviour
     public void DoDamage(GameObject target, float damage)
     {
         target.GetComponent<EnemyHealth>().GetEnemyHP(damage);
-        GameObject textDamageGO = PoolBase.instance.GetObject("Damage text", target.transform.position);
-        textDamageGO.GetComponent<TextMeshProUGUI>().text = damage.ToString();
-        StartCoroutine(TextDamageDeactivation(textDamageGO));
+        
     }
     
     public void DoTriggerDamage(GameObject target, float damage)
     {
         target.GetComponent<EnemyHealth>().GetEnemyHP(damage);
-        GameObject textDamageGO = PoolBase.instance.GetObject("Damage text", target.transform.position);
-        textDamageGO.GetComponent<TextMeshProUGUI>().text = damage.ToString();
-        StartCoroutine(TextDamageDeactivation(textDamageGO));
-    }
-
-    public virtual void ProjectileTrigger(GameObject target)
-    {
-
     }
 
     public virtual void ProjectileFinish(GameObject target)
     {
-        
+        float randomValue = Random.Range(0f, 100f);
+
+        if (randomValue < chancePercentage)
+        {
+            // Execute your action here
+            ProjectileFinishTrigger();
+        }
     }
 
-    IEnumerator TextDamageDeactivation(GameObject textGO)
+    public virtual void ProjectileFinishTrigger()
     {
-        yield return new WaitForSeconds(0.1f);
-        textGO.SetActive(false);
+        // Implement your action logic here
     }
 
-    // Adds targerRadius amount to the radius
+    // Adds targetRadius amount to the radius
     public void ChangeTowerRadius(float radiusAmount)
     {
         GetComponent<CircleCollider2D>().radius += radiusAmount;

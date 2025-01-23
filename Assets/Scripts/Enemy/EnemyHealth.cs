@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 using UnityEngine.UI;
+using TMPro;
 
 public class EnemyHealth : MonoBehaviour
 {
@@ -13,12 +14,21 @@ public class EnemyHealth : MonoBehaviour
     private GameObject stageManager;
     public bool damageOverTimeDuration = false;
     private bool experienceGained = false;
+    private DamageTextHandler _damageTextHandler;
+
+    [Header("Armor")]
+    public float armor = 0f;
+    private float debuffArmor = 0f;
+    public float coefficient = 0.04f;
+    private float damageReduction;
+    private float damageAmount;
 
     private void Start()
     {
         _image = GetComponent<Image>();
         _color = _image.color;
         stageManager = GameObject.FindWithTag("Stage Manager");
+        _damageTextHandler = stageManager.GetComponent<DamageTextHandler>();
     }
 
     private void OnEnable()
@@ -33,10 +43,24 @@ public class EnemyHealth : MonoBehaviour
         if(this.gameObject.activeInHierarchy)
             StartCoroutine(DamageColorReaction());
 
-        enemyHP -= damage;
+        // Calculate and log the damage reduction
+        damageReduction = CalculateDamageReduction(armor - debuffArmor, coefficient);
+
+        damageAmount = damageReduction * damage;
+
+        if (enemyHP > 0)
+            _damageTextHandler.DamageTextEnable((int)damageAmount, this.transform);
+
+        enemyHP -= damageAmount;
 
         if (enemyHP <= 0)
             Death();
+    }
+
+    // Method to calculate damage reduction
+    private float CalculateDamageReduction(float armorValue, float coeff)
+    {
+        return (1 - (armorValue * coeff) / (1 + armorValue * coeff));
     }
 
     IEnumerator DamageColorReaction()
@@ -51,7 +75,7 @@ public class EnemyHealth : MonoBehaviour
         }
     }
 
-    public void Debuff(float damageAmount, float duration, string debuffName)
+    public void DebuffDamage(float damageAmount, float duration, string debuffName)
     {
         if (this.gameObject.activeInHierarchy && damageOverTimeDuration == false)
             StartCoroutine(ApplyDamageOverTime(damageAmount, duration, debuffName));
@@ -80,6 +104,28 @@ public class EnemyHealth : MonoBehaviour
                     DisablingAllDebuffs();
             }
         }
+    }
+
+    public void DebuffArmor(float armorAmount, float duration, string debuffName)
+    {
+        if (this.gameObject.activeInHierarchy)
+            StartCoroutine(ApplyArmorDebuff(armorAmount, duration, debuffName));
+    }
+
+    private IEnumerator ApplyArmorDebuff(float armorAmount, float duration, string debuffName)
+    {
+        GameObject debuffArmorGO = PoolBase.instance.GetObject(debuffName, this.transform.position);
+        debuffArmorGO.transform.SetParent(this.transform);
+        debuffArmorGO.transform.localPosition = Vector2.zero;
+
+        debuffArmor = armorAmount;
+
+        while (duration > 0f)
+        {
+            yield return null;
+        }
+
+        debuffArmor = 0f;
     }
 
     private void DisablingAllDebuffs()

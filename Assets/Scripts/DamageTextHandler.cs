@@ -16,6 +16,15 @@ public class DamageTextHandler : MonoBehaviour
         StartCoroutine(TextDamageDeactivation(textDamageGO));
     }
 
+    public void MissTextEnable(Transform pos)
+    {
+        GameObject textMissGO = PoolBase.instance.GetObject("Damage text", pos.position);
+        textMissGO.GetComponent<TextMeshProUGUI>().text = "Miss";
+        textMissGO.transform.DOScale(new Vector2(1.5f, 1.5f), damageTextFadeTime);
+        textMissGO.transform.DOLocalMoveY(pos.localPosition.y + 15f, damageTextFadeTime);
+        StartCoroutine(TextDamageDeactivation(textMissGO));
+    }
+
     IEnumerator TextDamageDeactivation(GameObject textGO)
     {
         yield return new WaitForSeconds(damageTextFadeTime);

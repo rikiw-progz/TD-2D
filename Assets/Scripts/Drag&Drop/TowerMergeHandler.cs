@@ -94,7 +94,7 @@ public class TowerMergeHandler : MonoBehaviour
             case MergeResult.FireEarth:
                 return CreateTower("MagmaCreature", towerLocation);
             case MergeResult.FireNature:
-                return CreateTower("FireTreantTower", towerLocation);
+                return CreateTower("FireTreant", towerLocation);
             case MergeResult.FireDarkness:
                 return CreateTower("Nightflame", towerLocation);
             case MergeResult.FireThunder:

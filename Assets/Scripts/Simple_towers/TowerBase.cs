@@ -21,10 +21,12 @@ public abstract class TowerBase : MonoBehaviour
     public readonly List<GameObject> enemyList = new();
     private bool canAttack = false;
 
-    [Header("Bullet")]
+    [Header("Projectile")]
     public int projectileAmount = 1;
     public string projectileName = "Name of your bullet here";
     public bool projectileFinishEffect = false;
+    [HideInInspector] public GameObject projectileGO;
+    [HideInInspector] public GameObject triggerProjectileGO;
 
     [Header("Tower stats")]
     [SerializeField] public float projectileSpeed = 5f;
@@ -37,7 +39,14 @@ public abstract class TowerBase : MonoBehaviour
     [SerializeField] public float triggerProjectileSpeed = 3f;
     private CircleCollider2D myCircleCollider;
 
-    private void Start()
+    private GameObject stageManager;
+    private DamageTextHandler _damageTextHandler;
+
+    private float triggerRandomValue;
+    private float missAttackRandomValue;
+    public float missAttackBaseChancePercentage = 0f;
+
+    public virtual void Start()
     {
         myCircleCollider = GetComponent<CircleCollider2D>();
 
@@ -50,6 +59,9 @@ public abstract class TowerBase : MonoBehaviour
         {
             Debug.LogError("No CircleCollider2D component found on this GameObject!");
         }
+
+        stageManager = GameObject.FindWithTag("Stage Manager");
+        _damageTextHandler = stageManager.GetComponent<DamageTextHandler>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -89,9 +101,9 @@ public abstract class TowerBase : MonoBehaviour
 
     public virtual void Shoot()
     {
-        float randomValue = Random.Range(0f, 100f);
+        triggerRandomValue = Random.Range(0f, 100f);
 
-        if (randomValue < chancePercentage)
+        if (triggerRandomValue < chancePercentage)
         {
             // Execute your action here
             TowerTrigger();
@@ -153,8 +165,16 @@ public abstract class TowerBase : MonoBehaviour
 
     public void DoDamage(GameObject target, float damage)
     {
-        target.GetComponent<EnemyHealth>().GetEnemyHP(damage);
-        
+        missAttackRandomValue = Random.Range(0f, 100f);
+
+        if (missAttackRandomValue > missAttackBaseChancePercentage)
+        {
+            target.GetComponent<EnemyHealth>().GetEnemyHP(damage);
+        }
+        else
+        {
+            _damageTextHandler.MissTextEnable(target.transform);
+        }
     }
     
     public void DoTriggerDamage(GameObject target, float damage)
@@ -195,5 +215,14 @@ public abstract class TowerBase : MonoBehaviour
 
         // Apply the reduction to fireCooldown
         fireCooldown -= reductionAmount;
+    }
+
+    private void OnDisable()
+    {
+        if (projectileGO != null)
+            projectileGO.SetActive(false);
+
+        if (triggerProjectileGO != null)
+            triggerProjectileGO.SetActive(false);
     }
 }

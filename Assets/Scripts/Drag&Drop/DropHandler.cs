@@ -22,15 +22,15 @@ public class DropHandler : MonoBehaviour, IDropHandler, IPointerEnterHandler, IP
 
     public void OnDrop(PointerEventData eventData)
     {
-        if(eventData.pointerDrag != null && !primaryPlacement && eventData.pointerDrag.GetComponent<DragAndDropHandler>())
+        if(eventData.pointerDrag != null && !primaryPlacement && eventData.pointerDrag.GetComponent<DragHandler>())
         {
             FirstPlacement(eventData);
         }
-        else if (eventData.pointerDrag != null && primaryPlacement && eventData.pointerDrag.GetComponent<DragAndDropHandler>())
+        else if (eventData.pointerDrag != null && primaryPlacement && eventData.pointerDrag.GetComponent<DragHandler>())
         {
             MergeElementWithoutPlacing(eventData);
         }
-        else if(eventData.pointerDrag != null && primaryPlacement && !eventData.pointerDrag.GetComponent<DragAndDropHandler>())
+        else if(eventData.pointerDrag != null && primaryPlacement && !eventData.pointerDrag.GetComponent<DragHandler>())
         {
             MergePlacement(eventData);
         }
@@ -51,7 +51,7 @@ public class DropHandler : MonoBehaviour, IDropHandler, IPointerEnterHandler, IP
 
     private void FirstPlacement(PointerEventData eventData)
     {
-        eventData.pointerDrag.GetComponent<DragAndDropHandler>().towerGO.SetActive(false);
+        eventData.pointerDrag.GetComponent<DragHandler>().towerGO.SetActive(false);
 
         GameObject towerPrefab = PoolBase.instance.GetObject(eventData.pointerDrag.name + "Tower", this.transform.position);
         primaryPlacement = true;
@@ -61,7 +61,7 @@ public class DropHandler : MonoBehaviour, IDropHandler, IPointerEnterHandler, IP
 
         eventData.pointerDrag.GetComponent<TowerHandler>().TowerAmount(-1);
         if (eventData.pointerDrag.GetComponent<TowerHandler>().towerAmount <= 0)
-            eventData.pointerDrag.GetComponent<DragAndDropHandler>().enabled = false;
+            eventData.pointerDrag.GetComponent<DragHandler>().enabled = false;
     }
 
     private void MergePlacement(PointerEventData eventData)
@@ -89,7 +89,7 @@ public class DropHandler : MonoBehaviour, IDropHandler, IPointerEnterHandler, IP
 
     private void MergeElementWithoutPlacing(PointerEventData eventData)
     {
-        eventData.pointerDrag.GetComponent<DragAndDropHandler>().towerGO.SetActive(false);
+        eventData.pointerDrag.GetComponent<DragHandler>().towerGO.SetActive(false);
 
         tower1 = this.transform.GetChild(0).GetComponent<TowerBase>();
         tower2 = eventData.pointerDrag.GetComponent<TowerBase>();
@@ -111,6 +111,6 @@ public class DropHandler : MonoBehaviour, IDropHandler, IPointerEnterHandler, IP
 
         eventData.pointerDrag.GetComponent<TowerHandler>().TowerAmount(-1);
         if (eventData.pointerDrag.GetComponent<TowerHandler>().towerAmount <= 0)
-            eventData.pointerDrag.GetComponent<DragAndDropHandler>().enabled = false;
+            eventData.pointerDrag.GetComponent<DragHandler>().enabled = false;
     }
 }

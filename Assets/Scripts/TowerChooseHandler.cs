@@ -42,7 +42,7 @@ public class TowerChooseHandler : MonoBehaviour
         tower.GetComponent<TowerHandler>().TowerAmount(1);
 
         if (tower.GetComponent<TowerHandler>().towerAmount > 0)
-            tower.GetComponent<DragAndDropHandler>().enabled = true;
+            tower.GetComponent<DragHandler>().enabled = true;
 
         Time.timeScale = 1f;
 

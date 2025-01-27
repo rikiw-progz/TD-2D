@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 9151220056106491695}
   - component: {fileID: 264773221775339187}
   - component: {fileID: 2763317602551538811}
-  - component: {fileID: 7147167564725529640}
+  - component: {fileID: 337041484996984078}
   m_Layer: 5
-  m_Name: Fire_Treant_Tower
+  m_Name: Fire_Treant
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -69,7 +69,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a1aaedae4da34da47a3175b8cab6d2c7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fcd5c5e616b476547bdd6d22dac00d13, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -139,7 +139,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _parent: {fileID: 0}
---- !u!114 &7147167564725529640
+--- !u!114 &337041484996984078
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -148,16 +148,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 3161859596021770624}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aaf9e888fcfb67743a4aa7229d72efdf, type: 3}
+  m_Script: {fileID: 11500000, guid: 22baf1b62eb1c9146999ba3d8fe5658c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerElement: 6
-  projectileAmount: 2
-  projectileName: Fire projectile
+  towerElement: 0
+  projectileAmount: 1
+  projectileName: FireTreant projectile
   projectileFinishEffect: 0
-  projectileSpeed: 5
+  projectileGO: {fileID: 0}
+  triggerProjectileGO: {fileID: 0}
+  projectileSpeed: 7
   fireCountdown: 0
-  fireCooldown: 0.25
-  towerDamage: 2
-  towerRadius: 30
-  chancePercentage: 30
+  fireCooldown: 0.5
+  towerDamage: 20
+  towerRadius: 3
+  chancePercentage: 0
+  abilityDamage: 0
+  triggerProjectileSpeed: 0
+  missAttackBaseChancePercentage: 30

@@ -4436,6 +4436,14 @@ MonoBehaviour:
     prefab: {fileID: 464049580053385225, guid: 1cf49b9691d1d2744b10c54bff9180b0, type: 3}
     parent: {fileID: 400104219}
     size: 50
+  - tag: FireTreant
+    prefab: {fileID: 3161859596021770624, guid: 5734bc0a043797d4bad4a45687b0fae8, type: 3}
+    parent: {fileID: 400104219}
+    size: 10
+  - tag: FireTreant projectile
+    prefab: {fileID: 659671735656667399, guid: 2dc96a2d226111a4ab1aaeb9b3a63b47, type: 3}
+    parent: {fileID: 400104219}
+    size: 200
 --- !u!114 &532268893
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16775,6 +16783,8 @@ MonoBehaviour:
   projectileAmount: 1
   projectileName: Name of your bullet here
   projectileFinishEffect: 0
+  projectileGO: {fileID: 0}
+  triggerProjectileGO: {fileID: 0}
   projectileSpeed: 5
   fireCountdown: 0
   fireCooldown: 1
@@ -16783,6 +16793,7 @@ MonoBehaviour:
   chancePercentage: 30
   abilityDamage: 10
   triggerProjectileSpeed: 3
+  missAttackBaseChancePercentage: 5
 --- !u!1 &5675585430762828946
 GameObject:
   m_ObjectHideFlags: 0
@@ -16834,10 +16845,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87e71b53c45b3fc48b2699225d7869ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerElement: 4
+  towerElement: 3
   projectileAmount: 1
   projectileName: Name of your bullet here
   projectileFinishEffect: 0
+  projectileGO: {fileID: 0}
+  triggerProjectileGO: {fileID: 0}
   projectileSpeed: 5
   fireCountdown: 0
   fireCooldown: 1
@@ -16846,6 +16859,7 @@ MonoBehaviour:
   chancePercentage: 30
   abilityDamage: 10
   triggerProjectileSpeed: 3
+  missAttackBaseChancePercentage: 5
 --- !u!224 &5760799674998253949
 RectTransform:
   m_ObjectHideFlags: 0
@@ -17139,10 +17153,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ab30142f29dedb448946c1e1093d3da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerElement: 3
+  towerElement: 2
   projectileAmount: 1
   projectileName: Name of your bullet here
   projectileFinishEffect: 0
+  projectileGO: {fileID: 0}
+  triggerProjectileGO: {fileID: 0}
   projectileSpeed: 5
   fireCountdown: 0
   fireCooldown: 1
@@ -17151,6 +17167,7 @@ MonoBehaviour:
   chancePercentage: 30
   abilityDamage: 10
   triggerProjectileSpeed: 3
+  missAttackBaseChancePercentage: 5
 --- !u!114 &7659963241308315241
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17262,10 +17279,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18ceb007d8fe5db4a90424ad8564f8c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerElement: 2
+  towerElement: 1
   projectileAmount: 1
   projectileName: Name of your bullet here
   projectileFinishEffect: 0
+  projectileGO: {fileID: 0}
+  triggerProjectileGO: {fileID: 0}
   projectileSpeed: 5
   fireCountdown: 0
   fireCooldown: 1
@@ -17274,6 +17293,7 @@ MonoBehaviour:
   chancePercentage: 30
   abilityDamage: 10
   triggerProjectileSpeed: 3
+  missAttackBaseChancePercentage: 5
 --- !u!224 &7797822011810774513
 RectTransform:
   m_ObjectHideFlags: 0
@@ -17348,10 +17368,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3abcb82b7c850442bda2b3824a82fac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerElement: 5
+  towerElement: 4
   projectileAmount: 1
   projectileName: Name of your bullet here
   projectileFinishEffect: 0
+  projectileGO: {fileID: 0}
+  triggerProjectileGO: {fileID: 0}
   projectileSpeed: 5
   fireCountdown: 0
   fireCooldown: 1
@@ -17360,6 +17382,7 @@ MonoBehaviour:
   chancePercentage: 30
   abilityDamage: 10
   triggerProjectileSpeed: 3
+  missAttackBaseChancePercentage: 5
 --- !u!222 &8586159563402417112
 CanvasRenderer:
   m_ObjectHideFlags: 0

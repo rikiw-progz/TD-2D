@@ -49,7 +49,7 @@ public class EnemyHealth : MonoBehaviour
         damageAmount = damageReduction * damage;
 
         if (enemyHP > 0)
-            _damageTextHandler.DamageTextEnable((int)damageAmount, this.transform);
+            _damageTextHandler.DamageTextEnable((int)damageAmount, this.transform);         // damage text
 
         enemyHP -= damageAmount;
 
@@ -114,7 +114,7 @@ public class EnemyHealth : MonoBehaviour
 
     private IEnumerator ApplyArmorDebuff(float armorAmount, float duration, string debuffName)
     {
-        GameObject debuffArmorGO = PoolBase.instance.GetObject(debuffName, this.transform.position);
+        GameObject debuffArmorGO = PoolBase.instance.GetObject(debuffName, this.transform.position);        // maybe check if it was debuffed before then just activate gameobject not pool
         debuffArmorGO.transform.SetParent(this.transform);
         debuffArmorGO.transform.localPosition = Vector2.zero;
 
@@ -126,6 +126,7 @@ public class EnemyHealth : MonoBehaviour
         }
 
         debuffArmor = 0f;
+        debuffArmorGO.SetActive(false);
     }
 
     private void DisablingAllDebuffs()

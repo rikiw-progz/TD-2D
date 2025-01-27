@@ -48,7 +48,7 @@ public class PoolBase : MonoBehaviour
     {
         if (!poolDictionary.ContainsKey(tag))
         {
-            Debug.LogWarning("Pool with tag " + tag + "does NOT exist");
+            Debug.LogWarning("Pool with tag " + tag + " does NOT exist");
             return null;
         }
 

@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Nightflame : TowerBase
 {
-    private GameObject projectileGO;
-    private GameObject triggerProjectileGO;
     private GameObject target;
     [SerializeField] private string triggerProjectileName;
     [SerializeField] private float armorReductionAmount;
@@ -31,14 +29,5 @@ public class Nightflame : TowerBase
         {
             target.GetComponent<EnemyHealth>().DebuffArmor(armorReductionAmount, armorReductionDuration, triggerProjectileName);
         }
-    }
-
-    private void OnDisable()
-    {
-        if (projectileGO != null)
-            projectileGO.SetActive(false);
-
-        if (triggerProjectileGO != null)
-            triggerProjectileGO.SetActive(false);
     }
 }

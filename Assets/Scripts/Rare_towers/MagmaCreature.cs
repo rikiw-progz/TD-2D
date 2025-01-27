@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class MagmaCreature : TowerBase
 {
-    private GameObject projectileGO;
-    private GameObject triggerProjectileGO;
     [SerializeField] private string triggerProjectileName;
 
     public override void Shoot()
@@ -25,14 +23,5 @@ public class MagmaCreature : TowerBase
 
         triggerProjectileGO = PoolBase.instance.GetObject(triggerProjectileName, this.transform.position);
         StartCoroutine(TriggerProjectileCoroutine(triggerProjectileGO, enemyList[randomValue]));
-    }
-
-    private void OnDisable()
-    {
-        if (projectileGO != null)
-            projectileGO.SetActive(false);
-
-        if (triggerProjectileGO != null)
-            triggerProjectileGO.SetActive(false);
     }
 }

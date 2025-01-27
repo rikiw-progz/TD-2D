@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 3610536870555646775}
   - component: {fileID: 7138860320464108325}
   - component: {fileID: 465070797621743656}
-  - component: {fileID: 7790645995534343136}
   - component: {fileID: 1813733861927596574}
+  - component: {fileID: 7790645995534343136}
   - component: {fileID: -1612126941875407597}
   m_Layer: 5
   m_Name: Enemy
@@ -106,20 +106,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &7790645995534343136
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1607949304865346249}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0854007008c59f648a392c96e66e8f38, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyHP: 0
-  damageOverTimeDuration: 0
 --- !u!70 &1813733861927596574
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -155,6 +141,22 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 8, y: 23}
   m_Direction: 0
+--- !u!114 &7790645995534343136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1607949304865346249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0854007008c59f648a392c96e66e8f38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyHP: 0
+  damageOverTimeDuration: 0
+  armor: 0
+  coefficient: 0.06
 --- !u!114 &-1612126941875407597
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -168,6 +170,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentIndex: 0
-  speed: 2
+  speed: 1
   enemyPath: []
   pathAdded: 0

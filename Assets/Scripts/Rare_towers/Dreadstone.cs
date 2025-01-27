@@ -2,16 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Nightflame : TowerBase
+public class Dreadstone : TowerBase
 {
     [SerializeField] private string triggerProjectileName;
-    [SerializeField] private float armorReductionAmount;
-    [SerializeField] private float armorReductionDuration;
+    [SerializeField] private float slowDebuffAmountPercent = 20f;
+    [SerializeField] private float slowDebuffDuration = 5f;
     private GameObject target;
 
     public override void Shoot()
     {
-        base.Shoot();                                                           // to make trigger
+        base.Shoot();
 
         for (int i = 0; i < Mathf.Min(projectileAmount, enemyList.Count); i++)
         {
@@ -29,7 +29,7 @@ public class Nightflame : TowerBase
         {
             if (target.activeInHierarchy)
             {
-                target.GetComponent<EnemyHealth>().DebuffArmor(armorReductionAmount, armorReductionDuration, triggerProjectileName);
+                target.GetComponent<EnemyMove>().ApplyMovementSlow(slowDebuffAmountPercent, slowDebuffDuration, triggerProjectileName);
             }
         }
     }

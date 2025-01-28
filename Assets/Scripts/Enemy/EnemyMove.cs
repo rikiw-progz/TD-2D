@@ -13,8 +13,11 @@ public class EnemyMove : MonoBehaviour
     public bool pathAdded = false;
 
     [Header("Slow")]
-    private int appliedSlowAmount = 0;
-    private List<string> _slowDebuffNames = new();
+    private Dictionary<string, float> _activeSlowDebuffs = new();
+    private Dictionary<string, GameObject> _activeSlowDebuffGO = new();
+    private Dictionary<string, Coroutine> _activeSlowDebuffCoroutines = new();
+    private Coroutine _coroutine;
+    private GameObject debuffSlowGO;
  
     void Start()
     {
@@ -77,41 +80,57 @@ public class EnemyMove : MonoBehaviour
     public void ApplyMovementSlow(float slowPercent,float slowDuration, string slowDebuffName)
     {
         if (this.gameObject.activeInHierarchy)
-            StartCoroutine(SlowCountdown(slowPercent, slowDuration, slowDebuffName));
+        {
+            if (_activeSlowDebuffCoroutines.ContainsKey(slowDebuffName))
+            {
+                StopCoroutine(_activeSlowDebuffCoroutines[slowDebuffName]);
+                Debug.Log("Coroutine cancelled");
+            }
+
+            _activeSlowDebuffCoroutines[slowDebuffName] = StartCoroutine(SlowCountdown(slowPercent, slowDuration, slowDebuffName));
+
+        }
     }
 
     public IEnumerator SlowCountdown(float slowPercent,float slowDuration, string slowDebuffName)
     {
-        appliedSlowAmount++;
-
-        if (appliedSlowAmount == 1)
-            _speed = speed;
-
-        GameObject debuffSlowGO = PoolBase.instance.GetObject(slowDebuffName, this.transform.position);        // maybe check if it was debuffed before then just activate gameobject not pool
-        debuffSlowGO.transform.SetParent(this.transform);
-        debuffSlowGO.transform.localPosition = Vector2.zero;
-
-        if (!_slowDebuffNames.Contains(slowDebuffName))
+        if(!_activeSlowDebuffs.ContainsKey(slowDebuffName))
+        {
+            debuffSlowGO = PoolBase.instance.GetObject(slowDebuffName, this.transform.position);
+            debuffSlowGO.transform.SetParent(this.transform);
+            debuffSlowGO.transform.localPosition = Vector2.zero;
+            _activeSlowDebuffGO.Add(slowDebuffName, debuffSlowGO);
+        }
+        
+        if (!_activeSlowDebuffs.ContainsKey(slowDebuffName))
         {
             // Apply the slow effect
             speed *= (1 - slowPercent / 100);
             Debug.Log($"Speed after applying {slowDebuffName}: {speed}");
 
             // Add the debuff to the list of active debuffs
-            _slowDebuffNames.Add(slowDebuffName);
+            _activeSlowDebuffs.Add(slowDebuffName, slowPercent);
         }
-
+        
         yield return new WaitForSeconds(slowDuration);
-        appliedSlowAmount--;
-        if(appliedSlowAmount <= 0)
+
+        speed *= 1/((1 - _activeSlowDebuffs[slowDebuffName] / 100));
+        Debug.Log($"Speed after slow expired {slowDebuffName}: {speed}");
+        _activeSlowDebuffs.Remove(slowDebuffName);
+        _activeSlowDebuffGO[slowDebuffName].SetActive(false);
+        _activeSlowDebuffGO.Remove(slowDebuffName);
+    }
+
+    private void DisablingAllDebuffs()
+    {
+        for (int i = 0; i < transform.childCount; i++)
         {
-            speed = _speed;
-            debuffSlowGO.SetActive(false);
+            transform.GetChild(i).gameObject.SetActive(false);
         }
     }
 
     private void OnDisable()
     {
-        
+        DisablingAllDebuffs();
     }
 }

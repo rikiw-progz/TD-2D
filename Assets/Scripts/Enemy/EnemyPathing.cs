@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class EnemyPathing : MonoBehaviour
 {
     public int enemyWaveCount = 15;
+    public float timeBetweenEnemyWaves = 5f;
     private int enemyWaveCounter = 1;
     public float enemyWaveAmount = 10f;
     [SerializeField] private Transform enemyStartPosition;
@@ -64,7 +65,7 @@ public class EnemyPathing : MonoBehaviour
             // Next wave upgrade
             NextWaveLevelUp();
 
-            yield return new WaitForSeconds(5f);
+            yield return new WaitForSeconds(timeBetweenEnemyWaves);
             if(waveIsOnProcess == false)
             {
                 StartCoroutine(EnemyWaveHandler());

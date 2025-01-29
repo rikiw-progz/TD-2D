@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2763051806416680288}
   - component: {fileID: 3682656463177351411}
   - component: {fileID: 5323516593593425611}
-  - component: {fileID: 1558178247929406596}
+  - component: {fileID: 3397494761552093799}
   m_Layer: 5
   m_Name: Stormcrusher
   m_TagString: Untagged
@@ -69,7 +69,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e0291104c2567ba498f59b8d30efe086, type: 3}
+  m_Sprite: {fileID: 21300000, guid: be9bba0011da3cc46a8523cde14c64ac, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -139,7 +139,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _parent: {fileID: 0}
---- !u!114 &1558178247929406596
+--- !u!114 &3397494761552093799
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -148,16 +148,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 3914911155943174013}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ab30142f29dedb448946c1e1093d3da, type: 3}
+  m_Script: {fileID: 11500000, guid: fb1e80cf71a4d5b41b1ae594a5935c90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerElement: 6
+  towerElement: 0
   projectileAmount: 1
   projectileName: Thunder projectile
+  projectileFinishTrigger: 0
   projectileFinishEffect: 0
-  projectileSpeed: 9
+  projectileGO: {fileID: 0}
+  triggerProjectileGO: {fileID: 0}
+  projectileSpeed: 5
   fireCountdown: 0
   fireCooldown: 1
   towerDamage: 10
-  towerRadius: 100
+  towerRadius: 1
   chancePercentage: 30
+  abilityDamage: 10
+  triggerProjectileSpeed: 3
+  missAttackBaseChancePercentage: 0
+  triggerProjectileName: 

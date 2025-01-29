@@ -24,6 +24,7 @@ public abstract class TowerBase : MonoBehaviour
     [Header("Projectile")]
     public int projectileAmount = 1;
     public string projectileName = "Name of your bullet here";
+    public bool projectileFinishTrigger = false;
     public bool projectileFinishEffect = false;
     [HideInInspector] public GameObject projectileGO;
     [HideInInspector] public GameObject triggerProjectileGO;
@@ -129,7 +130,7 @@ public abstract class TowerBase : MonoBehaviour
 
             if (Vector2.Distance(go.transform.position, target.transform.position) < 0.1f)
             {
-                if(projectileFinishEffect)
+                if(projectileFinishTrigger)
                     ProjectileFinish(target);
 
                 DoDamage(target, towerDamage);
@@ -154,6 +155,9 @@ public abstract class TowerBase : MonoBehaviour
             {
                 DoTriggerDamage(target, abilityDamage);
                     go.SetActive(false);
+
+                if (projectileFinishEffect)
+                    TriggerProjectileFinishEffect(target);
             }
 
             yield return null;
@@ -196,6 +200,11 @@ public abstract class TowerBase : MonoBehaviour
     public virtual void ProjectileFinishTrigger()
     {
         // Implement your action logic here
+    }
+
+    public virtual void TriggerProjectileFinishEffect(GameObject target)
+    {
+        // write your effects here
     }
 
     // Adds targetRadius amount to the radius

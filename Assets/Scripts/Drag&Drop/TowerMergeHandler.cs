@@ -94,23 +94,23 @@ public class TowerMergeHandler : MonoBehaviour
             case MergeResult.FireEarth:
                 return CreateTower("MagmaCreature", towerLocation);
             case MergeResult.FireNature:
-                return CreateTower("FireTreant", towerLocation);
+                return CreateTower("Flamewood", towerLocation);
             case MergeResult.FireDarkness:
                 return CreateTower("Nightflame", towerLocation);
             case MergeResult.FireThunder:
                 return CreateTower("Stormblazer", towerLocation);
             case MergeResult.EarthNature:
-                return CreateTower("ThornbackBehemoth", towerLocation);
+                return CreateTower("Stonewood", towerLocation);
             case MergeResult.EarthDarkness:
                 return CreateTower("Dreadstone", towerLocation);
             case MergeResult.EarthThunder:
                 return CreateTower("Stormcrusher", towerLocation);
             case MergeResult.NatureDarkness:
-                return CreateTower("RotfiendBloom", towerLocation);
+                return CreateTower("Gravenight", towerLocation);
             case MergeResult.NatureThunder:
-                return CreateTower("Stormwood", towerLocation);
+                return CreateTower("Wildstorm", towerLocation);
             case MergeResult.DarknessThunder:
-                return CreateTower("Blackstorm", towerLocation);
+                return CreateTower("Nightstorm", towerLocation);
             default:
                 Debug.Log("Invalid merge!");
                 return null;

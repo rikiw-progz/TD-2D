@@ -16,9 +16,14 @@ public class EnemyMove : MonoBehaviour
     private Dictionary<string, float> _activeSlowDebuffs = new();
     private Dictionary<string, GameObject> _activeSlowDebuffGO = new();
     private Dictionary<string, Coroutine> _activeSlowDebuffCoroutines = new();
-    private Coroutine _coroutine;
     private GameObject debuffSlowGO;
- 
+
+    [Header("Stun")]
+    private bool isStunned;
+    private GameObject debuffStunGO;
+    private Dictionary<string, GameObject> _activeStunDebuffGO = new();
+    private Dictionary<string, Coroutine> _activeStunDebuffCoroutines = new();
+
     void Start()
     {
         MoveToNextPosition();
@@ -36,13 +41,16 @@ public class EnemyMove : MonoBehaviour
 
     void Update()
     {
-        float step = speedCellConst * speed * Time.deltaTime;
-
-        transform.position = Vector2.MoveTowards(transform.position, targetPosition, step);
-        
-        if (Vector2.Distance(transform.position, targetPosition) < 0.01f)
+        if(!isStunned)
         {
-            MoveToNextPosition();
+            float step = speedCellConst * speed * Time.deltaTime;
+
+            transform.position = Vector2.MoveTowards(transform.position, targetPosition, step);
+
+            if (Vector2.Distance(transform.position, targetPosition) < 0.01f)
+            {
+                MoveToNextPosition();
+            }
         }
     }
 
@@ -63,20 +71,6 @@ public class EnemyMove : MonoBehaviour
         currentIndex++;
     }
 
-    public void Stun(float stunDuration)
-    {
-        if(this.gameObject.activeInHierarchy)
-            StartCoroutine(StunCountdown(stunDuration));
-    }
-
-    public IEnumerator StunCountdown(float stunDuration)
-    {
-        _speed = speed;
-        speed = 0f;
-        yield return new WaitForSeconds(stunDuration);
-        speed = _speed;
-    }
-
     public void ApplyMovementSlow(float slowPercent,float slowDuration, string slowDebuffName)
     {
         if (this.gameObject.activeInHierarchy)
@@ -87,8 +81,6 @@ public class EnemyMove : MonoBehaviour
             }
 
             _activeSlowDebuffCoroutines[slowDebuffName] = StartCoroutine(SlowCountdown(slowPercent, slowDuration, slowDebuffName));
-
-            Debug.Log(_activeSlowDebuffCoroutines.Count);
         }
     }
 
@@ -120,7 +112,43 @@ public class EnemyMove : MonoBehaviour
         // Change parent instead of destroying?
     }
 
-    private void DisablingAllDebuffs()
+    public void ApplyStun(string stunDebuffName, float stunDuration)
+    {
+        if (this.gameObject.activeInHierarchy)
+        {
+            if (_activeStunDebuffCoroutines.ContainsKey(stunDebuffName))
+            {
+                StopCoroutine(_activeStunDebuffCoroutines[stunDebuffName]);
+            }
+
+            _activeStunDebuffCoroutines[stunDebuffName] = StartCoroutine(StunCountdown(stunDebuffName, stunDuration));
+        }
+    }
+
+    public IEnumerator StunCountdown(string stunDebuffName, float stunDuration)
+    {
+        if (!_activeStunDebuffGO.ContainsKey(stunDebuffName))
+        {
+            debuffStunGO = PoolBase.instance.GetObject(stunDebuffName, this.transform.position);
+            debuffStunGO.transform.SetParent(this.transform);
+            debuffStunGO.transform.localPosition = new Vector2(0f, 10f);
+            _activeStunDebuffGO.Add(stunDebuffName, debuffStunGO);
+
+            isStunned = true;
+        }
+
+        yield return new WaitForSeconds(stunDuration);
+
+        isStunned = false;
+
+        _activeStunDebuffGO[stunDebuffName].SetActive(false);
+        _activeStunDebuffGO.Remove(stunDebuffName);
+        _activeStunDebuffCoroutines.Remove(stunDebuffName);
+
+        // Change parent instead of destroying?
+    }
+
+    private void DisableAllDebuffs()
     {
         for (int i = 0; i < transform.childCount; i++)
         {
@@ -130,6 +158,6 @@ public class EnemyMove : MonoBehaviour
 
     private void OnDisable()
     {
-        DisablingAllDebuffs();
+        DisableAllDebuffs();
     }
 }

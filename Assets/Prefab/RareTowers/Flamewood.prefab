@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1665103141367858672
+--- !u!1 &3161859596021770624
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,27 +8,27 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8574328645271053361}
-  - component: {fileID: 3032085924854907746}
-  - component: {fileID: 8654312231187402689}
-  - component: {fileID: 2319851035883468814}
-  - component: {fileID: 8633138897168501609}
-  - component: {fileID: 65322631702637837}
-  - component: {fileID: 7907508356962471785}
+  - component: {fileID: 9041839092794829272}
+  - component: {fileID: 7525914455584737909}
+  - component: {fileID: 7115692638710757672}
+  - component: {fileID: 9151220056106491695}
+  - component: {fileID: 264773221775339187}
+  - component: {fileID: 2763317602551538811}
+  - component: {fileID: 337041484996984078}
   m_Layer: 5
-  m_Name: Stormwood
+  m_Name: Flamewood
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &8574328645271053361
+--- !u!224 &9041839092794829272
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1665103141367858672}
+  m_GameObject: {fileID: 3161859596021770624}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -38,24 +38,24 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 244, y: 54.7}
+  m_AnchoredPosition: {x: 190, y: 114.9}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &3032085924854907746
+--- !u!222 &7525914455584737909
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1665103141367858672}
+  m_GameObject: {fileID: 3161859596021770624}
   m_CullTransparentMesh: 1
---- !u!114 &8654312231187402689
+--- !u!114 &7115692638710757672
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1665103141367858672}
+  m_GameObject: {fileID: 3161859596021770624}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
@@ -69,7 +69,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a3ac98aa5b43a1e4987c70198ad50fbd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fcd5c5e616b476547bdd6d22dac00d13, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -79,13 +79,13 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!58 &2319851035883468814
+--- !u!58 &9151220056106491695
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1665103141367858672}
+  m_GameObject: {fileID: 3161859596021770624}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -114,50 +114,56 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 200
---- !u!225 &8633138897168501609
+--- !u!225 &264773221775339187
 CanvasGroup:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1665103141367858672}
+  m_GameObject: {fileID: 3161859596021770624}
   m_Enabled: 1
   m_Alpha: 1
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
---- !u!114 &65322631702637837
+--- !u!114 &2763317602551538811
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1665103141367858672}
+  m_GameObject: {fileID: 3161859596021770624}
   m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6a6fac397afc61541890708e826f146b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _parent: {fileID: 0}
---- !u!114 &7907508356962471785
+--- !u!114 &337041484996984078
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1665103141367858672}
+  m_GameObject: {fileID: 3161859596021770624}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ab30142f29dedb448946c1e1093d3da, type: 3}
+  m_Script: {fileID: 11500000, guid: 22baf1b62eb1c9146999ba3d8fe5658c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerElement: 6
+  towerElement: 0
   projectileAmount: 1
-  projectileName: Thunder projectile
+  projectileName: Flamewood projectile
+  projectileFinishTrigger: 0
   projectileFinishEffect: 0
-  projectileSpeed: 8
+  projectileGO: {fileID: 0}
+  triggerProjectileGO: {fileID: 0}
+  projectileSpeed: 7
   fireCountdown: 0
-  fireCooldown: 1
-  towerDamage: 10
-  towerRadius: 100
-  chancePercentage: 30
+  fireCooldown: 0.5
+  towerDamage: 20
+  towerRadius: 3
+  chancePercentage: 0
+  abilityDamage: 0
+  triggerProjectileSpeed: 0
+  missAttackBaseChancePercentage: 30

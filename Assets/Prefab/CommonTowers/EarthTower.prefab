@@ -141,14 +141,19 @@ MonoBehaviour:
   towerElement: 1
   projectileAmount: 1
   projectileName: Earth projectile
+  projectileFinishTrigger: 0
   projectileFinishEffect: 0
+  projectileGO: {fileID: 0}
+  triggerProjectileGO: {fileID: 0}
   projectileSpeed: 5
   fireCountdown: 0
   fireCooldown: 2
   towerDamage: 40
-  towerRadius: 4
+  towerRadius: 3
   chancePercentage: 30
   abilityDamage: 10
+  triggerProjectileSpeed: 3
+  missAttackBaseChancePercentage: 0
 --- !u!114 &-3021316524697697084
 MonoBehaviour:
   m_ObjectHideFlags: 0

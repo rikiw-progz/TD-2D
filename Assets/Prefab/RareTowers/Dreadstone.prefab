@@ -154,7 +154,8 @@ MonoBehaviour:
   towerElement: 3
   projectileAmount: 1
   projectileName: Darkness projectile
-  projectileFinishEffect: 1
+  projectileFinishTrigger: 1
+  projectileFinishEffect: 0
   projectileGO: {fileID: 0}
   triggerProjectileGO: {fileID: 0}
   projectileSpeed: 5

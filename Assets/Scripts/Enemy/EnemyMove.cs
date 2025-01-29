@@ -84,11 +84,11 @@ public class EnemyMove : MonoBehaviour
             if (_activeSlowDebuffCoroutines.ContainsKey(slowDebuffName))
             {
                 StopCoroutine(_activeSlowDebuffCoroutines[slowDebuffName]);
-                Debug.Log("Coroutine cancelled");
             }
 
             _activeSlowDebuffCoroutines[slowDebuffName] = StartCoroutine(SlowCountdown(slowPercent, slowDuration, slowDebuffName));
 
+            Debug.Log(_activeSlowDebuffCoroutines.Count);
         }
     }
 
@@ -98,15 +98,11 @@ public class EnemyMove : MonoBehaviour
         {
             debuffSlowGO = PoolBase.instance.GetObject(slowDebuffName, this.transform.position);
             debuffSlowGO.transform.SetParent(this.transform);
-            debuffSlowGO.transform.localPosition = Vector2.zero;
+            debuffSlowGO.transform.localPosition = new Vector2(0f, 10f);
             _activeSlowDebuffGO.Add(slowDebuffName, debuffSlowGO);
-        }
-        
-        if (!_activeSlowDebuffs.ContainsKey(slowDebuffName))
-        {
+
             // Apply the slow effect
             speed *= (1 - slowPercent / 100);
-            Debug.Log($"Speed after applying {slowDebuffName}: {speed}");
 
             // Add the debuff to the list of active debuffs
             _activeSlowDebuffs.Add(slowDebuffName, slowPercent);
@@ -115,10 +111,13 @@ public class EnemyMove : MonoBehaviour
         yield return new WaitForSeconds(slowDuration);
 
         speed *= 1/((1 - _activeSlowDebuffs[slowDebuffName] / 100));
-        Debug.Log($"Speed after slow expired {slowDebuffName}: {speed}");
+
         _activeSlowDebuffs.Remove(slowDebuffName);
         _activeSlowDebuffGO[slowDebuffName].SetActive(false);
         _activeSlowDebuffGO.Remove(slowDebuffName);
+        _activeSlowDebuffCoroutines.Remove(slowDebuffName);
+        
+        // Change parent instead of destroying?
     }
 
     private void DisablingAllDebuffs()

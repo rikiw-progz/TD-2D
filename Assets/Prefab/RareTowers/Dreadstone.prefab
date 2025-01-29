@@ -162,10 +162,10 @@ MonoBehaviour:
   fireCooldown: 1.5
   towerDamage: 40
   towerRadius: 3.5
-  chancePercentage: 30
+  chancePercentage: 20
   abilityDamage: 0
   triggerProjectileSpeed: 0
   missAttackBaseChancePercentage: 0
-  triggerProjectileName: Darkness projectile
+  triggerProjectileName: Fear effect
   slowDebuffAmountPercent: 20
   slowDebuffDuration: 5

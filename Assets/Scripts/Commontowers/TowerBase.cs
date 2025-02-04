@@ -193,11 +193,11 @@ public abstract class TowerBase : MonoBehaviour
         if (randomValue < chancePercentage)
         {
             // Execute your action here
-            ProjectileFinishTrigger();
+            ProjectileFinishTrigger(target);
         }
     }
 
-    public virtual void ProjectileFinishTrigger()
+    public virtual void ProjectileFinishTrigger(GameObject target)
     {
         // Implement your action logic here
     }

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2319851035883468814}
   - component: {fileID: 8633138897168501609}
   - component: {fileID: 65322631702637837}
-  - component: {fileID: 7907508356962471785}
+  - component: {fileID: 614960793624997566}
   m_Layer: 5
   m_Name: Wildstorm
   m_TagString: Untagged
@@ -139,7 +139,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _parent: {fileID: 0}
---- !u!114 &7907508356962471785
+--- !u!114 &614960793624997566
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -148,22 +148,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 1665103141367858672}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ab30142f29dedb448946c1e1093d3da, type: 3}
+  m_Script: {fileID: 11500000, guid: 238ce0724fb7bb34abcb578b6ef0ddea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerElement: 6
+  towerElement: 5
   projectileAmount: 1
   projectileName: Thunder projectile
   projectileFinishTrigger: 0
   projectileFinishEffect: 0
   projectileGO: {fileID: 0}
   triggerProjectileGO: {fileID: 0}
-  projectileSpeed: 8
+  projectileSpeed: 20
   fireCountdown: 0
   fireCooldown: 1
-  towerDamage: 10
-  towerRadius: 100
+  towerDamage: 25
+  towerRadius: 10
   chancePercentage: 30
-  abilityDamage: 10
-  triggerProjectileSpeed: 3
+  abilityDamage: 0
+  triggerProjectileSpeed: 0
   missAttackBaseChancePercentage: 0

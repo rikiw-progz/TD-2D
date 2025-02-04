@@ -154,7 +154,10 @@ MonoBehaviour:
   towerElement: 0
   projectileAmount: 1
   projectileName: Nightflame projectile
-  projectileFinishEffect: 1
+  projectileFinishTrigger: 1
+  projectileFinishEffect: 0
+  projectileGO: {fileID: 0}
+  triggerProjectileGO: {fileID: 0}
   projectileSpeed: 10
   fireCountdown: 0
   fireCooldown: 1
@@ -163,6 +166,7 @@ MonoBehaviour:
   chancePercentage: 10
   abilityDamage: 0
   triggerProjectileSpeed: 0
+  missAttackBaseChancePercentage: 0
   triggerProjectileName: Nightflame projectile
   armorReductionAmount: 1
   armorReductionDuration: 5

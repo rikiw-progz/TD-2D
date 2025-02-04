@@ -2,11 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Dreadstone : TowerBase
+public class Gravenight : TowerBase
 {
     [SerializeField] private string triggerProjectileName;
-    [SerializeField] private float slowDebuffAmountPercent = 20f;
-    [SerializeField] private float slowDebuffDuration = 5f;
 
     public override void Shoot()
     {
@@ -21,12 +19,7 @@ public class Dreadstone : TowerBase
 
     public override void ProjectileFinishTrigger(GameObject target)
     {
-        for (int i = 0; i < Mathf.Min(projectileAmount, enemyList.Count); i++)
-        {
-            if (target.activeInHierarchy)
-            {
-                target.GetComponent<EnemyMove>().ApplyMovementSlow(slowDebuffAmountPercent, slowDebuffDuration, triggerProjectileName);
-            }
-        }
+        // Need to add special effect for dying from this
+        target.GetComponent<EnemyHealth>().Death();
     }
 }

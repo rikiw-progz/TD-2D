@@ -137,7 +137,7 @@ public class EnemyHealth : MonoBehaviour
         }
     }
 
-    void Death()
+    public void Death()
     {
         if(experienceGained == false)
         {

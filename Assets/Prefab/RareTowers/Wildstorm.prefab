@@ -153,7 +153,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   towerElement: 5
   projectileAmount: 1
-  projectileName: Thunder projectile
+  projectileName: Electric line renderer
   projectileFinishTrigger: 0
   projectileFinishEffect: 0
   projectileGO: {fileID: 0}

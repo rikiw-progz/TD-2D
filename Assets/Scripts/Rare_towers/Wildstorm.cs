@@ -9,6 +9,6 @@ public class Wildstorm : TowerBase
         int randomValue = (int)Random.Range(0f, enemyList.Count);
 
         projectileGO = PoolBase.instance.GetObject(projectileName, this.transform.position);
-        StartCoroutine(ProjectileCoroutine(projectileGO, enemyList[randomValue]));
+        StartCoroutine(LineRendererProjectileCoroutine(projectileGO, enemyList[randomValue]));
     }
 }

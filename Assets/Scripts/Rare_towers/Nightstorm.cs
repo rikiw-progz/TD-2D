@@ -9,22 +9,17 @@ public class Nightstorm : TowerBase
     public override void Shoot()
     {
         base.Shoot();
-
+        
         for (int i = 0; i < Mathf.Min(projectileAmount, enemyList.Count); i++)
         {
             projectileGO = PoolBase.instance.GetObject(projectileName, this.transform.position);
-            StartCoroutine(ProjectileCoroutine(projectileGO, enemyList[i]));
+            StartCoroutine(LineRendererProjectileCoroutine(projectileGO, enemyList[i]));
         }
     }
 
-    public override void TowerTrigger()
+    public override void ProjectileFinishTrigger(GameObject target)
     {
-        // Thunder to random unit in ability trigger range
-        
-    }
-
-    public override void TriggerProjectileFinishEffect(GameObject target)
-    {
-        
+        triggerProjectileGO = PoolBase.instance.GetObject(triggerProjectileName, target.transform.position);
+        triggerProjectileGO.GetComponent<ChainLightning>().PerformChainLightning(abilityDamage);
     }
 }

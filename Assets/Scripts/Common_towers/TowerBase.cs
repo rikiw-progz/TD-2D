@@ -167,6 +167,26 @@ public abstract class TowerBase : MonoBehaviour
         go.SetActive(false);
     }
 
+    public virtual IEnumerator LineRendererProjectileCoroutine(GameObject go, GameObject target)
+    {
+        if (target != null && go.activeInHierarchy)
+        {
+            go.GetComponent<CustomLineRenderer>().CustomSetUpLine(this.transform.position, target.transform.position);
+            DoDamage(target, towerDamage);
+
+            yield return new WaitForSeconds(0.15f);
+            go.SetActive(false);
+
+            if (projectileFinishTrigger)
+                ProjectileFinish(target);
+
+            yield return null;
+        }
+
+        // Return the projectile to the pool or handle deactivation
+        go.SetActive(false);
+    }
+
     public void DoDamage(GameObject target, float damage)
     {
         missAttackRandomValue = Random.Range(0f, 100f);

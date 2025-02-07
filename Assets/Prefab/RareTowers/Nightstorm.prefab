@@ -151,20 +151,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec0f7c016742a7d418e0aea8362e4faf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerElement: 0
+  towerElement: 5
   projectileAmount: 1
-  projectileName: Name of your bullet here
-  projectileFinishTrigger: 0
+  projectileName: Electric line renderer
+  projectileFinishTrigger: 1
   projectileFinishEffect: 0
   projectileGO: {fileID: 0}
   triggerProjectileGO: {fileID: 0}
   projectileSpeed: 5
   fireCountdown: 0
   fireCooldown: 1
-  towerDamage: 10
-  towerRadius: 1
-  chancePercentage: 30
-  abilityDamage: 10
-  triggerProjectileSpeed: 3
+  towerDamage: 25
+  towerRadius: 4.5
+  chancePercentage: 20
+  abilityDamage: 50
+  triggerProjectileSpeed: 0
   missAttackBaseChancePercentage: 0
-  triggerProjectileName: 
+  triggerProjectileName: Chain lightning
+  maxBounceCount: 6

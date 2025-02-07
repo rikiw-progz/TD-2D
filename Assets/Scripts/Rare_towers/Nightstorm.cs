@@ -5,6 +5,7 @@ using UnityEngine;
 public class Nightstorm : TowerBase
 {
     [SerializeField] private string triggerProjectileName;
+    [SerializeField] private int maxBounceCount;
 
     public override void Shoot()
     {
@@ -20,6 +21,11 @@ public class Nightstorm : TowerBase
     public override void ProjectileFinishTrigger(GameObject target)
     {
         triggerProjectileGO = PoolBase.instance.GetObject(triggerProjectileName, target.transform.position);
-        triggerProjectileGO.GetComponent<ChainLightning>().PerformChainLightning(abilityDamage);
+        if (target != null && projectileGO.activeInHierarchy)
+        {
+            projectileGO = PoolBase.instance.GetObject(projectileName, this.transform.position);
+            projectileGO.GetComponent<CustomLineRenderer>().CustomSetUpLine(this.transform.position, target.transform.position);
+        }
+        triggerProjectileGO.GetComponent<ChainLightning>().PerformChainLightning(target, projectileGO, abilityDamage, maxBounceCount);
     }
 }

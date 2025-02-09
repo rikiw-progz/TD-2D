@@ -15,6 +15,7 @@ public class EnemyHealth : MonoBehaviour
     public bool damageOverTimeDuration = false;
     private bool experienceGained = false;
     private DamageTextHandler _damageTextHandler;
+    private GameRules _gameRules;
 
     [Header("Armor")]
     public float armor = 0f;
@@ -29,6 +30,7 @@ public class EnemyHealth : MonoBehaviour
         _color = _image.color;
         stageManager = GameObject.FindWithTag("Stage Manager");
         _damageTextHandler = stageManager.GetComponent<DamageTextHandler>();
+        _gameRules = stageManager.GetComponent<GameRules>();
     }
 
     private void OnEnable()
@@ -143,6 +145,8 @@ public class EnemyHealth : MonoBehaviour
         {
             stageManager.GetComponent<GameRules>().ExperienceGain(1f);
             experienceGained = true;
+
+            _gameRules.EnemyCount(-1);
         }
 
         DisablingAllDebuffs();

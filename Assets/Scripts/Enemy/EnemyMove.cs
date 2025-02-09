@@ -63,8 +63,9 @@ public class EnemyMove : MonoBehaviour
         }
         else
         {
+            currentIndex = -1;
             // When the index exceeds the path length, deactivate the object
-            this.gameObject.SetActive(false);
+            //this.gameObject.SetActive(false);
         }
 
         // Increment currentIndex to move to the next path point

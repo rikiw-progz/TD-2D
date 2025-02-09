@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using TMPro;
 
 public class GameRules : MonoBehaviour
 {
@@ -14,18 +16,36 @@ public class GameRules : MonoBehaviour
     [SerializeField] private GameObject[] cards;
     private readonly float cardPositionControl = 400f;
 
+    [Header("Enemy amount")]
+    public int enemyAmount = 0;
+    [SerializeField] private int enemyLimitAmount = 50;
+    [SerializeField] private TextMeshProUGUI enemyAmountTxt;
+    [SerializeField] private GameObject gameOverTxt;
+    [SerializeField] private GameObject replay;
+
     private void Start()
     {
         Application.targetFrameRate = 144;
         CardShow();
+
+        if (replay != null)
+        {
+            // Add a listener to the button's onClick event
+            replay.GetComponent<Button>().onClick.AddListener(() => ReloadScene());
+        }
     }
 
     private void Update()
     {
         if(Input.GetKeyDown(KeyCode.R))
         {
-            SceneManager.LoadScene("Synergy");
+            ReloadScene();
         }
+    }
+
+    void ReloadScene()
+    {
+        SceneManager.LoadScene("Synergy");
     }
 
     public void ExperienceGain(float exp)
@@ -81,6 +101,18 @@ public class GameRules : MonoBehaviour
             GameObject temp = array[i];
             array[i] = array[j];
             array[j] = temp;
+        }
+    }
+
+    public void EnemyCount(int amount)
+    {
+        enemyAmount += amount;
+        enemyAmountTxt.text = enemyAmount.ToString();
+        if (enemyAmount > enemyLimitAmount)
+        {
+            gameOverTxt.SetActive(true);
+            replay.SetActive(true);
+            Time.timeScale = 0f;
         }
     }
 }

@@ -21,10 +21,14 @@ public class EnemyPathing : MonoBehaviour
     [SerializeField] private Transform[] path;
     public Button nextWaveBtn;
 
+    private GameRules _gameRules;
+
     private IEnumerator Start()
     {
         _enemyHP = enemyStartHP;
         _enemyArmor = enemyArmor;
+        _gameRules = this.GetComponent<GameRules>();
+
         yield return new WaitForSeconds(1f);
         StartCoroutine(EnemyWaveHandler());
         if (nextWaveBtn != null)
@@ -32,6 +36,7 @@ public class EnemyPathing : MonoBehaviour
             // Add a listener to the button's onClick event
             nextWaveBtn.onClick.AddListener(() => NextWave());
         }
+
     }
 
     IEnumerator EnemyWaveHandler()
@@ -41,6 +46,8 @@ public class EnemyPathing : MonoBehaviour
             for (int i = 0; i < enemyWaveAmount; i++)
             {
                 GameObject enemy = EnemyPool.instance.GetEnemyObject("Enemy", enemyStartPosition.position);
+                
+                _gameRules.EnemyCount(1);
 
                 if (enemy != null)
                 {

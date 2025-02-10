@@ -161,7 +161,7 @@ MonoBehaviour:
   triggerProjectileGO: {fileID: 0}
   projectileSpeed: 5
   fireCountdown: 0
-  fireCooldown: 1.5
+  fireCooldown: 1.2
   towerDamage: 25
   towerRadius: 4
   chancePercentage: 20

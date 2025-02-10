@@ -164,7 +164,7 @@ MonoBehaviour:
   towerDamage: 55
   towerRadius: 3.5
   chancePercentage: 20
-  abilityDamage: 50
+  abilityDamage: 80
   triggerProjectileSpeed: 4
   missAttackBaseChancePercentage: 0
   triggerProjectileName: Rock

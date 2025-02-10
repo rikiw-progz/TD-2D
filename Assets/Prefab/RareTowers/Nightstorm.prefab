@@ -153,7 +153,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   towerElement: 5
   projectileAmount: 1
-  projectileName: Electric line renderer
+  projectileName: Black electric line renderer
   projectileFinishTrigger: 1
   projectileFinishEffect: 0
   projectileGO: {fileID: 0}
@@ -162,9 +162,9 @@ MonoBehaviour:
   fireCountdown: 0
   fireCooldown: 1
   towerDamage: 25
-  towerRadius: 4.5
+  towerRadius: 3.5
   chancePercentage: 20
-  abilityDamage: 50
+  abilityDamage: 75
   triggerProjectileSpeed: 0
   missAttackBaseChancePercentage: 0
   triggerProjectileName: Chain lightning

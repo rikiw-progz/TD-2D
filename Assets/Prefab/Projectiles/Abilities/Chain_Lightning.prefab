@@ -48,5 +48,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 553aac5d11f161a40a7a8209f4446e32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bounceRadius: 3
+  bounceRadius: 2
   maxBounces: 3
+  lineRendererName: Black electric line renderer

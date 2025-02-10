@@ -141,15 +141,19 @@ MonoBehaviour:
   towerElement: 2
   projectileAmount: 1
   projectileName: Thunder projectile
+  projectileFinishTrigger: 0
   projectileFinishEffect: 0
+  projectileGO: {fileID: 0}
+  triggerProjectileGO: {fileID: 0}
   projectileSpeed: 15
   fireCountdown: 0
   fireCooldown: 1
   towerDamage: 20
-  towerRadius: 6
+  towerRadius: 5
   chancePercentage: 30
   abilityDamage: 10
   triggerProjectileSpeed: 3
+  missAttackBaseChancePercentage: 0
 --- !u!114 &5314084747892013900
 MonoBehaviour:
   m_ObjectHideFlags: 0

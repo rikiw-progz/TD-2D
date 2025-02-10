@@ -154,6 +154,7 @@ MonoBehaviour:
   towerElement: 0
   projectileAmount: 1
   projectileName: Fire projectile
+  projectileFinishTrigger: 0
   projectileFinishEffect: 0
   projectileGO: {fileID: 0}
   triggerProjectileGO: {fileID: 0}
@@ -163,7 +164,7 @@ MonoBehaviour:
   towerDamage: 45
   towerRadius: 3
   chancePercentage: 10
-  abilityDamage: 60
+  abilityDamage: 100
   triggerProjectileSpeed: 3
   missAttackBaseChancePercentage: 0
   triggerProjectileName: Lavaball

@@ -2,13 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class EnemyPathing : MonoBehaviour
 {
-    public int enemyWaveCount = 15;
+    public int enemyWaveMaxAmount = 15;
     public float timeBetweenEnemyWaves = 5f;
     private int enemyWaveCounter = 1;
-    public float enemyWaveAmount = 10f;
+    [SerializeField] private TextMeshProUGUI enemyWaveCount;
+    public float enemyAmountPerWave = 10f;
     [SerializeField] private Transform enemyStartPosition;
     public float enemySpeed = 5f;
     public float enemyStartHP = 50f;
@@ -41,9 +43,10 @@ public class EnemyPathing : MonoBehaviour
 
     IEnumerator EnemyWaveHandler()
     {
-        if (enemyWaveCounter < enemyWaveCount)
+        if (enemyWaveCounter < enemyWaveMaxAmount)
         {
-            for (int i = 0; i < enemyWaveAmount; i++)
+            enemyWaveCount.text = enemyWaveCounter.ToString();
+            for (int i = 0; i < enemyAmountPerWave; i++)
             {
                 GameObject enemy = EnemyPool.instance.GetEnemyObject("Enemy", enemyStartPosition.position);
                 
@@ -92,12 +95,15 @@ public class EnemyPathing : MonoBehaviour
 
     void NextWaveLevelUp()
     {
-        _enemyHP *= 1.2f;
+        _enemyHP *= 1.25f;
 
         if(enemyBetweenEnemyDelayTime > 0.5f)
             enemyBetweenEnemyDelayTime -= 0.05f;
 
         if(enemySpeed < 3f)
             enemySpeed += 0.1f;
+
+        if (enemyAmountPerWave < 20)
+            enemyAmountPerWave++;
     }
 }

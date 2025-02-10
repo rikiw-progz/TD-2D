@@ -168,5 +168,5 @@ MonoBehaviour:
   triggerProjectileSpeed: 0
   missAttackBaseChancePercentage: 0
   triggerProjectileName: Nightflame projectile
-  armorReductionAmount: 1
+  armorReductionAmount: 3
   armorReductionDuration: 5

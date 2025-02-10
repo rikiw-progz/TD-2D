@@ -9,6 +9,7 @@ public class ChainLightning : MonoBehaviour
     private int bounceCount = 0; // Number of bounces done so far
     private GameObject projectileGO;
     private HashSet<Collider2D> affectedUnits = new HashSet<Collider2D>();
+    [SerializeField] private string lineRendererName = "Electric line renderer";
 
     public void PerformChainLightning(GameObject target, GameObject lineRenderer, float damage, int maxBounceCount)
     {
@@ -48,7 +49,7 @@ public class ChainLightning : MonoBehaviour
             if (nearestTarget != null)
             {
                 affectedUnits.Add(nearestTarget);
-                projectileGO = PoolBase.instance.GetObject("Electric line renderer", this.transform.position);
+                projectileGO = PoolBase.instance.GetObject(lineRendererName, this.transform.position);
                 
                 AbilityLineRendererProjectileCoroutine(projectileGO, nearestTarget.gameObject, damage);
 
@@ -86,6 +87,7 @@ public class ChainLightning : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         lineRenderer.SetActive(false);
         this.transform.position = target.transform.position;
+        damage /= 2;
         BounceToNextTarget(this.transform.position, damage);
     }
 

@@ -168,5 +168,5 @@ MonoBehaviour:
   triggerProjectileSpeed: 0
   missAttackBaseChancePercentage: 0
   triggerProjectileName: Fear effect
-  slowDebuffAmountPercent: 20
+  slowDebuffAmountPercent: 30
   slowDebuffDuration: 5

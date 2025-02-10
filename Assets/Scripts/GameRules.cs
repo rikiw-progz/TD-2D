@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -61,7 +59,7 @@ public class GameRules : MonoBehaviour
     void LevelUp()
     {
         playerLevel += 1;
-        experienceRequired += 10 + playerLevel;
+        experienceRequired += 10;
         CardShow();
     }
 

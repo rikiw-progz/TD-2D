@@ -75,15 +75,16 @@ public class DropHandler : MonoBehaviour, IDropHandler, IPointerEnterHandler, IP
         this.GetComponent<Image>().color = _startColor;
 
         GameObject towerGO = towerMergeHandler.MergeTowers(tower1, tower2, this.transform.position);
+        
         if (towerGO != null)
         {
             tower1.gameObject.SetActive(false);
+            tower1.transform.SetParent(null);
             tower2.gameObject.SetActive(false);
 
             towerGO.transform.SetParent(this.transform);
-            //this.enabled = false;
+            towerGO.GetComponent<TowerDragger>().enabled = true;
             Debug.Log(towerGO.name);
-            this.enabled = false; // temporary solution
         }
     }
 
@@ -97,16 +98,16 @@ public class DropHandler : MonoBehaviour, IDropHandler, IPointerEnterHandler, IP
         this.GetComponent<Image>().color = _startColor;
 
         tower1.gameObject.SetActive(false);
-        //tower2.gameObject.SetActive(false);
+        tower1.transform.SetParent(null);
 
         GameObject towerGO = towerMergeHandler.MergeTowers(tower1, tower2, this.transform.position);
 
         if (towerGO != null)
         {
             towerGO.transform.SetParent(this.transform);
-            //this.enabled = false;
+            towerGO.GetComponent<TowerDragger>().enabled = true;
             Debug.Log(towerGO.name);
-            this.enabled = false; // temporary solution
+            //this.enabled = false; // temporary solution
         }
 
         eventData.pointerDrag.GetComponent<TowerHandler>().TowerAmount(-1);

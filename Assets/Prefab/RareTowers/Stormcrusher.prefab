@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb1e80cf71a4d5b41b1ae594a5935c90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerElement: 0
+  towerElement: 11
   projectileAmount: 1
   projectileName: Thunder projectile
   projectileFinishTrigger: 0

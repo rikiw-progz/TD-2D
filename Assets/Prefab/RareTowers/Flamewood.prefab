@@ -151,7 +151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22baf1b62eb1c9146999ba3d8fe5658c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerElement: 0
+  towerElement: 8
   projectileAmount: 1
   projectileName: Flamewood projectile
   projectileFinishTrigger: 0

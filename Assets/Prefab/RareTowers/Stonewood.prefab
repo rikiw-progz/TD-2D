@@ -151,7 +151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7d5513b00ab277499f1847ba642bc42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerElement: 0
+  towerElement: 9
   projectileAmount: 1
   projectileName: Nature projectile
   projectileFinishTrigger: 0

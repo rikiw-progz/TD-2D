@@ -12,7 +12,30 @@ public abstract class TowerBase : MonoBehaviour
         Thunder,
         Darkness,
         Nature,
+
+        Fire_Earth,
+        Fire_Thunder,
+        Fire_Darkness,
+        Fire_Nature,
+        Earth_Nature,
+        Earth_Darkness,
+        Earth_Thunder,
+        Nature_Darkness,
+        Nature_Thunder,
+        Darkness_Thunder,
+
         Synergy
+    }
+
+    public HashSet<ElementType> elements = new();
+
+    public void SetElements(params ElementType[] newElements)
+    {
+        elements.Clear();
+        foreach (var element in newElements)
+        {
+            elements.Add(element);
+        }
     }
 
     [Header("Tower Properties")]

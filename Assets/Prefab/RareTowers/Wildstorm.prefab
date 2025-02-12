@@ -151,7 +151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 238ce0724fb7bb34abcb578b6ef0ddea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerElement: 5
+  towerElement: 13
   projectileAmount: 1
   projectileName: Electric line renderer
   projectileFinishTrigger: 0

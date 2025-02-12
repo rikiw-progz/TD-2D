@@ -151,7 +151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7777b549f28577a4e9648006b4ef881c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerElement: 5
+  towerElement: 12
   projectileAmount: 1
   projectileName: Darkness projectile
   projectileFinishTrigger: 1

@@ -41,10 +41,10 @@ public class MagmaExplosion : MonoBehaviour
             if (isDead)
             {
                 tower.GetComponent<MagmaGolem>().IncreaseTowerKillCount();
-                isDead = false;
 
                 triggerMagmaExplosion = PoolBase.instance.GetObject("Magma explosion", target.transform.position);
                 triggerMagmaExplosion.GetComponent<MagmaExplosion>().MagmaExplode(tower, target.transform.position, damage);
+                isDead = false;
             }
         }
     }

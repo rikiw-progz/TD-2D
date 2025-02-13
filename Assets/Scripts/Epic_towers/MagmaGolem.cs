@@ -5,6 +5,7 @@ using UnityEngine;
 public class MagmaGolem : TowerBase
 {
     [SerializeField] private string triggerProjectileName;
+    [SerializeField] private float magmaExplosionDamage;
 
     public override void Shoot()
     {
@@ -20,6 +21,6 @@ public class MagmaGolem : TowerBase
     public override void TowerKillTrigger(GameObject target)
     {
         triggerProjectileGO = PoolBase.instance.GetObject(triggerProjectileName, target.transform.position);
-        triggerProjectileGO.GetComponent<MagmaExplosion>().MagmaExplode(this.gameObject, target.transform.position, 50f);
+        triggerProjectileGO.GetComponent<MagmaExplosion>().MagmaExplode(this.gameObject, target.transform.position, magmaExplosionDamage);
     }
 }

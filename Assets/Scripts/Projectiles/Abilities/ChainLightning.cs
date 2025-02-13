@@ -45,7 +45,6 @@ public class ChainLightning : MonoBehaviour
                 }
             }
 
-            // If a target is found, apply bounce force to it
             if (nearestTarget != null)
             {
                 affectedUnits.Add(nearestTarget);

@@ -16,6 +16,7 @@ public class EnemyHealth : MonoBehaviour
     private bool experienceGained = false;
     private DamageTextHandler _damageTextHandler;
     private GameRules _gameRules;
+    private bool isDead;
 
     [Header("Armor")]
     public float armor = 0f;
@@ -38,9 +39,10 @@ public class EnemyHealth : MonoBehaviour
         this.GetComponent<Image>().color = Color.white;
         experienceGained = false;
         colored = false;
+        isDead = false;
     }
 
-    public void GetEnemyHP(float damage)
+    public bool GetEnemyHP(float damage)
     {
         if(this.gameObject.activeInHierarchy)
             StartCoroutine(DamageColorReaction());
@@ -55,8 +57,14 @@ public class EnemyHealth : MonoBehaviour
 
         enemyHP -= damageAmount;
 
-        if (enemyHP <= 0)
+        if (enemyHP <= 0 && !isDead)
+        {
+            isDead = true;
             Death();
+            return true;
+        }
+
+        return false;
     }
 
     // Method to calculate damage reduction

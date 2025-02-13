@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6854003775733969546}
   - component: {fileID: 3804635331899216699}
   - component: {fileID: 2086270250732798411}
+  - component: {fileID: 4879410904856488809}
   m_Layer: 5
   m_Name: Magma_Golem
   m_TagString: Untagged
@@ -138,3 +139,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _parent: {fileID: 0}
+--- !u!114 &4879410904856488809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5975855999999358251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42767c5c99078594894ade57e5d5445a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  towerElement: 0
+  projectileAmount: 1
+  projectileName: Fire projectile
+  projectileFinishTrigger: 0
+  projectileFinishEffect: 0
+  projectileGO: {fileID: 0}
+  triggerProjectileGO: {fileID: 0}
+  projectileSpeed: 5
+  fireCountdown: 0
+  fireCooldown: 1
+  towerDamage: 50
+  towerRadius: 4
+  chancePercentage: 0
+  abilityDamage: 0
+  triggerProjectileSpeed: 0
+  missAttackBaseChancePercentage: 0
+  killCount: 0
+  triggerProjectileName: Magma explosion

@@ -70,6 +70,9 @@ public abstract class TowerBase : MonoBehaviour
     private float missAttackRandomValue;
     public float missAttackBaseChancePercentage = 0f;
 
+    [SerializeField] private int killCount;
+    private bool isDead;
+
     public virtual void Start()
     {
         myCircleCollider = GetComponent<CircleCollider2D>();
@@ -153,7 +156,7 @@ public abstract class TowerBase : MonoBehaviour
 
             if (Vector2.Distance(go.transform.position, target.transform.position) < 0.1f)
             {
-                if(projectileFinishTrigger)
+                if (projectileFinishTrigger)
                     ProjectileFinish(target);
 
                 DoDamage(target, towerDamage);
@@ -166,7 +169,7 @@ public abstract class TowerBase : MonoBehaviour
         // Return the projectile to the pool or handle deactivation
         go.SetActive(false);
     }
-    
+
     public virtual IEnumerator TriggerProjectileCoroutine(GameObject go, GameObject target)
     {
         while (target != null && go.activeInHierarchy)
@@ -177,7 +180,7 @@ public abstract class TowerBase : MonoBehaviour
             if (Vector2.Distance(go.transform.position, target.transform.position) < 0.1f)
             {
                 DoTriggerDamage(target, abilityDamage);
-                    go.SetActive(false);
+                go.SetActive(false);
 
                 if (projectileFinishEffect)
                     TriggerProjectileFinishEffect(target);
@@ -216,17 +219,31 @@ public abstract class TowerBase : MonoBehaviour
 
         if (missAttackRandomValue > missAttackBaseChancePercentage)
         {
-            target.GetComponent<EnemyHealth>().GetEnemyHP(damage);
+            DamageAndCheckFate(target, damage);
         }
         else
         {
             _damageTextHandler.MissTextEnable(target.transform);
         }
     }
-    
+
     public void DoTriggerDamage(GameObject target, float damage)
     {
-        target.GetComponent<EnemyHealth>().GetEnemyHP(damage);
+        DamageAndCheckFate(target, damage);
+    }
+
+    private void DamageAndCheckFate(GameObject target, float damage)
+    {
+        EnemyHealth enemyHealth = target.GetComponent<EnemyHealth>();
+        if (enemyHealth != null)
+        {
+            isDead = enemyHealth.GetEnemyHP(damage);
+            if (isDead)
+            {
+                IncreaseTowerKillCount();
+                TowerKillTrigger(target);
+            }
+        }
     }
 
     public virtual void ProjectileFinish(GameObject target)
@@ -267,6 +284,18 @@ public abstract class TowerBase : MonoBehaviour
 
         // Apply the reduction to fireCooldown
         fireCooldown -= reductionAmount;
+    }
+
+    public void IncreaseTowerKillCount()
+    {
+        killCount++;
+        isDead = false;
+        Debug.Log(this.gameObject.name + killCount);
+    }
+
+    public virtual void TowerKillTrigger(GameObject target)
+    {
+
     }
 
     private void OnDisable()

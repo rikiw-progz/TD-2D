@@ -4482,6 +4482,10 @@ MonoBehaviour:
     prefab: {fileID: 6117118807500962118, guid: 65f7c55335d135840aa140a081a6c2cd, type: 3}
     parent: {fileID: 400104219}
     size: 50
+  - tag: Magma explosion
+    prefab: {fileID: 4974390934591633732, guid: 4beaaf3371c46784f86a1e3cac75ddd8, type: 3}
+    parent: {fileID: 400104219}
+    size: 20
 --- !u!114 &532268893
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17479,6 +17483,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shadow
       objectReference: {fileID: 0}
+    - target: {fileID: 3892355439250676020, guid: 8dbb53db13a41d947b7e3bb25b1b4198, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9101569577638195588, guid: 8dbb53db13a41d947b7e3bb25b1b4198, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -17655,6 +17663,10 @@ PrefabInstance:
     - target: {fileID: 5392043137301264665, guid: a486f36fa06febb43808ff6915bb5083, type: 3}
       propertyPath: m_Name
       value: Thornshroud
+      objectReference: {fileID: 0}
+    - target: {fileID: 5392043137301264665, guid: a486f36fa06febb43808ff6915bb5083, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -18055,6 +18067,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shadowquake
       objectReference: {fileID: 0}
+    - target: {fileID: 1687939913657503319, guid: e348f127023beaa4b8554a7f837eea20, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1878438429343144213, guid: e348f127023beaa4b8554a7f837eea20, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -18151,6 +18167,10 @@ PrefabInstance:
     - target: {fileID: 7027239289764134192, guid: 1226098d41b2f434d96054c5d8db80b0, type: 3}
       propertyPath: m_Name
       value: Hellhound
+      objectReference: {fileID: 0}
+    - target: {fileID: 7027239289764134192, guid: 1226098d41b2f434d96054c5d8db80b0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8496390716106195590, guid: 1226098d41b2f434d96054c5d8db80b0, type: 3}
       propertyPath: m_Pivot.x
@@ -18329,6 +18349,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Volcanic_storm
       objectReference: {fileID: 0}
+    - target: {fileID: 7547264584967655129, guid: 96bd8b6ddf4b70a438fc9d4dc4495ac9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -18345,6 +18369,10 @@ PrefabInstance:
     - target: {fileID: 757406822703119937, guid: fa7ec0b3963471d46b36d1f76575e341, type: 3}
       propertyPath: m_Name
       value: Thunderbark
+      objectReference: {fileID: 0}
+    - target: {fileID: 757406822703119937, guid: fa7ec0b3963471d46b36d1f76575e341, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6414571935193560054, guid: fa7ec0b3963471d46b36d1f76575e341, type: 3}
       propertyPath: m_Pivot.x
@@ -18676,11 +18704,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3804424444056561284, guid: d410276034f8f5e4f9b592ce89c830c5, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 972.7
+      value: 540.9
       objectReference: {fileID: 0}
     - target: {fileID: 3804424444056561284, guid: d410276034f8f5e4f9b592ce89c830c5, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 308.1
+      value: 159.8
       objectReference: {fileID: 0}
     - target: {fileID: 3804424444056561284, guid: d410276034f8f5e4f9b592ce89c830c5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -19042,6 +19070,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hellstorm
       objectReference: {fileID: 0}
+    - target: {fileID: 5570874500420804040, guid: 35279181d1976a649a68af55e5f3b483, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -19366,6 +19398,7 @@ MonoBehaviour:
   abilityDamage: 10
   triggerProjectileSpeed: 3
   missAttackBaseChancePercentage: 5
+  killCount: 0
 --- !u!1 &5675585430762828946
 GameObject:
   m_ObjectHideFlags: 0
@@ -19433,6 +19466,7 @@ MonoBehaviour:
   abilityDamage: 10
   triggerProjectileSpeed: 3
   missAttackBaseChancePercentage: 5
+  killCount: 0
 --- !u!224 &5760799674998253949
 RectTransform:
   m_ObjectHideFlags: 0
@@ -19687,6 +19721,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Volter
       objectReference: {fileID: 0}
+    - target: {fileID: 6837066248961618944, guid: 3e74632a05fd824458aaf34917169710, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8131125519350317962, guid: 3e74632a05fd824458aaf34917169710, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -19864,6 +19902,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Infernal_warrior
       objectReference: {fileID: 0}
+    - target: {fileID: 7050398767627298880, guid: 4f858b06d55c51b44bfffc6a16eafd2f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -19936,6 +19978,7 @@ MonoBehaviour:
   abilityDamage: 10
   triggerProjectileSpeed: 3
   missAttackBaseChancePercentage: 5
+  killCount: 0
 --- !u!114 &7659963241308315241
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20063,6 +20106,7 @@ MonoBehaviour:
   abilityDamage: 10
   triggerProjectileSpeed: 3
   missAttackBaseChancePercentage: 5
+  killCount: 0
 --- !u!224 &7797822011810774513
 RectTransform:
   m_ObjectHideFlags: 0
@@ -20153,6 +20197,7 @@ MonoBehaviour:
   abilityDamage: 10
   triggerProjectileSpeed: 3
   missAttackBaseChancePercentage: 5
+  killCount: 0
 --- !u!222 &8586159563402417112
 CanvasRenderer:
   m_ObjectHideFlags: 0

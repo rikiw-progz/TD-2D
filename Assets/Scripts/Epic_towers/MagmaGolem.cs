@@ -2,11 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Dreadstone : TowerBase
+public class MagmaGolem : TowerBase
 {
     [SerializeField] private string triggerProjectileName;
-    [SerializeField] private float slowDebuffAmountPercent = 20f;
-    [SerializeField] private float slowDebuffDuration = 5f;
 
     public override void Shoot()
     {
@@ -19,11 +17,9 @@ public class Dreadstone : TowerBase
         }
     }
 
-    public override void ProjectileFinishTrigger(GameObject target)
+    public override void TowerKillTrigger(GameObject target)
     {
-        if (target.activeInHierarchy)
-        {
-            target.GetComponent<EnemyMove>().ApplyMovementSlow(slowDebuffAmountPercent, slowDebuffDuration, triggerProjectileName);
-        }
+        triggerProjectileGO = PoolBase.instance.GetObject(triggerProjectileName, target.transform.position);
+        triggerProjectileGO.GetComponent<MagmaExplosion>().MagmaExplode(this.gameObject, target.transform.position, 50f);
     }
 }

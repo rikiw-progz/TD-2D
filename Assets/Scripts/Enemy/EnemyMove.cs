@@ -6,7 +6,6 @@ public class EnemyMove : MonoBehaviour
 {
     public int currentIndex = 0;
     private Vector2 targetPosition;
-    private float _speed;
     public float speed = 1f;
     private const float speedCellConst = 0.695f;
     public List<Transform> enemyPath = new();

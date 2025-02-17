@@ -48,7 +48,7 @@ public abstract class TowerBase : MonoBehaviour
     public int projectileAmount = 1;
     public string projectileName = "Name of your bullet here";
     public bool projectileFinishTrigger = false;
-    public bool projectileFinishEffect = false;
+    public bool abilityProjectileFinishEffect = false;
     [HideInInspector] public GameObject projectileGO;
     [HideInInspector] public GameObject triggerProjectileGO;
 
@@ -59,19 +59,28 @@ public abstract class TowerBase : MonoBehaviour
     public float towerDamage = 10f;
     public float towerRadius = 1f;
     public float chancePercentage = 30f;
+    public int abilityProjectileAmount = 1;
     public float abilityDamage = 10f;
-    [SerializeField] public float triggerProjectileSpeed = 3f;
+    [SerializeField] public float abilityProjectileSpeed = 3f;
+    public float abilityFinishChancePercentage = 20f;
     private CircleCollider2D myCircleCollider;
 
     private GameObject stageManager;
     private DamageTextHandler _damageTextHandler;
 
     private float triggerRandomValue;
+    private float abilityTriggerRandomValue;
     private float missAttackRandomValue;
     public float missAttackBaseChancePercentage = 0f;
 
     [SerializeField] private int killCount;
     private bool isDead;
+
+    [Header("Attack Damage Buff")]
+    private Dictionary<string, float> _activeAttackDamageBuffs = new();
+    private Dictionary<string, GameObject> _activeAttackDamageBuffGO = new();
+    private Dictionary<string, Coroutine> _activeAttackDamageBuffCoroutines = new();
+    private GameObject buffAttackDamageGO;
 
     public virtual void Start()
     {
@@ -174,7 +183,7 @@ public abstract class TowerBase : MonoBehaviour
     {
         while (target != null && go.activeInHierarchy)
         {
-            float step = triggerProjectileSpeed * Time.deltaTime;
+            float step = abilityProjectileSpeed * Time.deltaTime;
             go.transform.position = Vector2.MoveTowards(go.transform.position, target.transform.position, step);
 
             if (Vector2.Distance(go.transform.position, target.transform.position) < 0.1f)
@@ -182,8 +191,8 @@ public abstract class TowerBase : MonoBehaviour
                 DoTriggerDamage(target, abilityDamage);
                 go.SetActive(false);
 
-                if (projectileFinishEffect)
-                    TriggerProjectileFinishEffect(target);
+                if (abilityProjectileFinishEffect)
+                    AbilityProjectileFinishEffect(target);
             }
 
             yield return null;
@@ -262,12 +271,27 @@ public abstract class TowerBase : MonoBehaviour
         // Implement your action logic here
     }
 
-    public virtual void TriggerProjectileFinishEffect(GameObject target)
+    public virtual void AbilityProjectileFinishEffect(GameObject target)
     {
         // write your effects here
+        abilityTriggerRandomValue = Random.Range(0f, 100f);
+
+        if (abilityTriggerRandomValue < chancePercentage)
+        {
+            // Execute your action here
+            AbilityFinishEffectAction(target);
+        }
+        else
+        {
+            // Action did not occur
+        }
     }
 
-    // Adds targetRadius amount to the radius
+    public virtual void AbilityFinishEffectAction(GameObject target)
+    {
+
+    }
+
     public void ChangeTowerRadius(float radiusAmount)
     {
         GetComponent<CircleCollider2D>().radius += radiusAmount;
@@ -290,12 +314,52 @@ public abstract class TowerBase : MonoBehaviour
     {
         killCount++;
         isDead = false;
-        Debug.Log(this.gameObject.name + killCount);
     }
 
     public virtual void TowerKillTrigger(GameObject target)
     {
 
+    }
+
+    public void ApplyAttackDamageBuff(float attackDamagePercent, float attackDamageBuffDuration, string attackDamageBuffName)
+    {
+        if (this.gameObject.activeInHierarchy)
+        {
+            if (_activeAttackDamageBuffCoroutines.ContainsKey(attackDamageBuffName))
+            {
+                StopCoroutine(_activeAttackDamageBuffCoroutines[attackDamageBuffName]);
+            }
+
+            _activeAttackDamageBuffCoroutines[attackDamageBuffName] = StartCoroutine(AttackDamageBuffCountdown(attackDamagePercent, attackDamageBuffDuration, attackDamageBuffName));
+        }
+    }
+
+    public IEnumerator AttackDamageBuffCountdown(float attackDamagePercent, float attackDamageBuffDuration, string attackDamageBuffName)
+    {
+        if (!_activeAttackDamageBuffs.ContainsKey(attackDamageBuffName))
+        {
+            buffAttackDamageGO = PoolBase.instance.GetObject(attackDamageBuffName, this.transform.position);
+            buffAttackDamageGO.transform.SetParent(this.transform);
+            buffAttackDamageGO.transform.localPosition = new Vector2(0f, 0f);
+            _activeAttackDamageBuffGO.Add(attackDamageBuffName, buffAttackDamageGO);
+
+            // Apply the slow effect
+            towerDamage *= (1 + attackDamagePercent / 100);
+
+            // Add the debuff to the list of active debuffs
+            _activeAttackDamageBuffs.Add(attackDamageBuffName, attackDamagePercent);
+        }
+
+        yield return new WaitForSeconds(attackDamageBuffDuration);
+
+        towerDamage *= 1 / ((1 + _activeAttackDamageBuffs[attackDamageBuffName] / 100));
+
+        _activeAttackDamageBuffs.Remove(attackDamageBuffName);
+        _activeAttackDamageBuffGO[attackDamageBuffName].SetActive(false);
+        _activeAttackDamageBuffGO.Remove(attackDamageBuffName);
+        _activeAttackDamageBuffCoroutines.Remove(attackDamageBuffName);
+
+        // Change parent instead of destroying?
     }
 
     private void OnDisable()

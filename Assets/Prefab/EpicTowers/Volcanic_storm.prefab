@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4673364453656854353}
   - component: {fileID: 997605685163735321}
   - component: {fileID: 6006520867419017770}
+  - component: {fileID: 3356811938635779060}
   m_Layer: 5
   m_Name: Volcanic_storm
   m_TagString: Untagged
@@ -132,9 +133,43 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7547264584967655129}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6a6fac397afc61541890708e826f146b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _parent: {fileID: 0}
+--- !u!114 &3356811938635779060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7547264584967655129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0840bcb48243839448acd1a9b41c8fec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  towerElement: 0
+  projectileAmount: 1
+  projectileName: Fire projectile
+  projectileFinishTrigger: 0
+  abilityProjectileFinishEffect: 1
+  projectileGO: {fileID: 0}
+  triggerProjectileGO: {fileID: 0}
+  projectileSpeed: 5
+  fireCountdown: 0
+  fireCooldown: 0.5
+  towerDamage: 100
+  towerRadius: 4
+  chancePercentage: 20
+  abilityProjectileAmount: 3
+  abilityDamage: 1
+  abilityProjectileSpeed: 4
+  abilityFinishChancePercentage: 30
+  missAttackBaseChancePercentage: 0
+  killCount: 0
+  triggerProjectileName: Flamewood projectile
+  triggerStunName: Stun effect
+  abilityStunDuration: 0.2

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Stonewood : TowerBase
+public class VolcanicStorm : TowerBase
 {
     [SerializeField] private string triggerProjectileName;
     [SerializeField] private string triggerStunName;
@@ -21,14 +21,18 @@ public class Stonewood : TowerBase
 
     public override void TowerTrigger()
     {
-        int randomValue = (int)Random.Range(0f, enemyList.Count);
+        for (int i = 0; i < Mathf.Min(abilityProjectileAmount, enemyList.Count); i++)
+        {
+            int randomValue = (int)Random.Range(0f, enemyList.Count);
 
-        triggerProjectileGO = PoolBase.instance.GetObject(triggerProjectileName, this.transform.position);
-        StartCoroutine(TriggerProjectileCoroutine(triggerProjectileGO, enemyList[randomValue]));
+            triggerProjectileGO = PoolBase.instance.GetObject(triggerProjectileName, this.transform.position);
+            StartCoroutine(TriggerProjectileCoroutine(triggerProjectileGO, enemyList[randomValue]));
+        }
     }
 
-    public override void AbilityProjectileFinishEffect(GameObject target)
+    public override void AbilityFinishEffectAction(GameObject target)
     {
+        // in future must be shock ability/visualisation like purify in wc3
         target.GetComponent<EnemyMove>().ApplyStun(triggerStunName, abilityStunDuration);
     }
 }

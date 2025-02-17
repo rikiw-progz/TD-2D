@@ -4,13 +4,6 @@ using UnityEngine;
 
 public class FireTreant : TowerBase
 {
-    public override void Start()
-    {
-        base.Start();
-
-        missAttackBaseChancePercentage = 20f;
-    }
-
     public override void Shoot()
     {
         for (int i = 0; i < Mathf.Min(projectileAmount, enemyList.Count); i++)

@@ -3688,11 +3688,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4142198271154689086, guid: 35279181d1976a649a68af55e5f3b483, type: 3}
   m_PrefabInstance: {fileID: 4504821380138393945}
   m_PrefabAsset: {fileID: 0}
---- !u!224 &423021492 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 5311972450440189525, guid: 96bd8b6ddf4b70a438fc9d4dc4495ac9, type: 3}
-  m_PrefabInstance: {fileID: 1963236084677095591}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &436399018
 GameObject:
   m_ObjectHideFlags: 0
@@ -4490,12 +4485,28 @@ MonoBehaviour:
     prefab: {fileID: 4974390934591633732, guid: 4beaaf3371c46784f86a1e3cac75ddd8, type: 3}
     parent: {fileID: 400104219}
     size: 20
+  - tag: InfernalWarrior
+    prefab: {fileID: 7050398767627298880, guid: 4f858b06d55c51b44bfffc6a16eafd2f, type: 3}
+    parent: {fileID: 400104219}
+    size: 10
   - tag: Fear aura area
     prefab: {fileID: 3048464423027989197, guid: 2f12a8f11aa443644972d57497524f7c, type: 3}
     parent: {fileID: 400104219}
     size: 20
-  - tag: InfernalWarrior
-    prefab: {fileID: 7050398767627298880, guid: 4f858b06d55c51b44bfffc6a16eafd2f, type: 3}
+  - tag: VolcanicStorm
+    prefab: {fileID: 7547264584967655129, guid: 96bd8b6ddf4b70a438fc9d4dc4495ac9, type: 3}
+    parent: {fileID: 400104219}
+    size: 10
+  - tag: Hellhound
+    prefab: {fileID: 7027239289764134192, guid: 1226098d41b2f434d96054c5d8db80b0, type: 3}
+    parent: {fileID: 400104219}
+    size: 10
+  - tag: Attack damage buff
+    prefab: {fileID: 2605199072886477997, guid: a1334e3e087c9ec4a95794006ce99524, type: 3}
+    parent: {fileID: 400104219}
+    size: 20
+  - tag: Attack damage area
+    prefab: {fileID: 7618101365195399433, guid: 7f7addd56d6889d408b5456f4e936780, type: 3}
     parent: {fileID: 400104219}
     size: 10
 --- !u!114 &532268893
@@ -10577,11 +10588,6 @@ MonoBehaviour:
   primaryPlacement: 0
   towerMergeHandler: {fileID: 532268893}
   readyToMerge: 0
---- !u!224 &1373958705 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 8496390716106195590, guid: 1226098d41b2f434d96054c5d8db80b0, type: 3}
-  m_PrefabInstance: {fileID: 1874531373658870599}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1375525848
 GameObject:
   m_ObjectHideFlags: 0
@@ -13403,8 +13409,6 @@ RectTransform:
   - {fileID: 884865993}
   - {fileID: 2093554476}
   - {fileID: 400104219}
-  - {fileID: 423021492}
-  - {fileID: 1373958705}
   - {fileID: 441239111}
   - {fileID: 420886797}
   - {fileID: 1557301511}
@@ -18161,208 +18165,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e348f127023beaa4b8554a7f837eea20, type: 3}
---- !u!1001 &1874531373658870599
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 1698668559}
-    m_Modifications:
-    - target: {fileID: 7027239289764134192, guid: 1226098d41b2f434d96054c5d8db80b0, type: 3}
-      propertyPath: m_Name
-      value: Hellhound
-      objectReference: {fileID: 0}
-    - target: {fileID: 7027239289764134192, guid: 1226098d41b2f434d96054c5d8db80b0, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8496390716106195590, guid: 1226098d41b2f434d96054c5d8db80b0, type: 3}
-      propertyPath: m_Pivot.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8496390716106195590, guid: 1226098d41b2f434d96054c5d8db80b0, type: 3}
-      propertyPath: m_Pivot.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8496390716106195590, guid: 1226098d41b2f434d96054c5d8db80b0, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8496390716106195590, guid: 1226098d41b2f434d96054c5d8db80b0, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8496390716106195590, guid: 1226098d41b2f434d96054c5d8db80b0, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8496390716106195590, guid: 1226098d41b2f434d96054c5d8db80b0, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8496390716106195590, guid: 1226098d41b2f434d96054c5d8db80b0, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 8496390716106195590, guid: 1226098d41b2f434d96054c5d8db80b0, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 8496390716106195590, guid: 1226098d41b2f434d96054c5d8db80b0, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8496390716106195590, guid: 1226098d41b2f434d96054c5d8db80b0, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8496390716106195590, guid: 1226098d41b2f434d96054c5d8db80b0, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8496390716106195590, guid: 1226098d41b2f434d96054c5d8db80b0, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8496390716106195590, guid: 1226098d41b2f434d96054c5d8db80b0, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8496390716106195590, guid: 1226098d41b2f434d96054c5d8db80b0, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8496390716106195590, guid: 1226098d41b2f434d96054c5d8db80b0, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8496390716106195590, guid: 1226098d41b2f434d96054c5d8db80b0, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 1160.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8496390716106195590, guid: 1226098d41b2f434d96054c5d8db80b0, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 308.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8496390716106195590, guid: 1226098d41b2f434d96054c5d8db80b0, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8496390716106195590, guid: 1226098d41b2f434d96054c5d8db80b0, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8496390716106195590, guid: 1226098d41b2f434d96054c5d8db80b0, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 1226098d41b2f434d96054c5d8db80b0, type: 3}
---- !u!1001 &1963236084677095591
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 1698668559}
-    m_Modifications:
-    - target: {fileID: 5311972450440189525, guid: 96bd8b6ddf4b70a438fc9d4dc4495ac9, type: 3}
-      propertyPath: m_Pivot.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5311972450440189525, guid: 96bd8b6ddf4b70a438fc9d4dc4495ac9, type: 3}
-      propertyPath: m_Pivot.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5311972450440189525, guid: 96bd8b6ddf4b70a438fc9d4dc4495ac9, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5311972450440189525, guid: 96bd8b6ddf4b70a438fc9d4dc4495ac9, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5311972450440189525, guid: 96bd8b6ddf4b70a438fc9d4dc4495ac9, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5311972450440189525, guid: 96bd8b6ddf4b70a438fc9d4dc4495ac9, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5311972450440189525, guid: 96bd8b6ddf4b70a438fc9d4dc4495ac9, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 5311972450440189525, guid: 96bd8b6ddf4b70a438fc9d4dc4495ac9, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 5311972450440189525, guid: 96bd8b6ddf4b70a438fc9d4dc4495ac9, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5311972450440189525, guid: 96bd8b6ddf4b70a438fc9d4dc4495ac9, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5311972450440189525, guid: 96bd8b6ddf4b70a438fc9d4dc4495ac9, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5311972450440189525, guid: 96bd8b6ddf4b70a438fc9d4dc4495ac9, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5311972450440189525, guid: 96bd8b6ddf4b70a438fc9d4dc4495ac9, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5311972450440189525, guid: 96bd8b6ddf4b70a438fc9d4dc4495ac9, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5311972450440189525, guid: 96bd8b6ddf4b70a438fc9d4dc4495ac9, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5311972450440189525, guid: 96bd8b6ddf4b70a438fc9d4dc4495ac9, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 1097.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 5311972450440189525, guid: 96bd8b6ddf4b70a438fc9d4dc4495ac9, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 308.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5311972450440189525, guid: 96bd8b6ddf4b70a438fc9d4dc4495ac9, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5311972450440189525, guid: 96bd8b6ddf4b70a438fc9d4dc4495ac9, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5311972450440189525, guid: 96bd8b6ddf4b70a438fc9d4dc4495ac9, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7547264584967655129, guid: 96bd8b6ddf4b70a438fc9d4dc4495ac9, type: 3}
-      propertyPath: m_Name
-      value: Volcanic_storm
-      objectReference: {fileID: 0}
-    - target: {fileID: 7547264584967655129, guid: 96bd8b6ddf4b70a438fc9d4dc4495ac9, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 96bd8b6ddf4b70a438fc9d4dc4495ac9, type: 3}
 --- !u!1001 &1970716403239673592
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19289,7 +19091,7 @@ MonoBehaviour:
   projectileAmount: 1
   projectileName: Name of your bullet here
   projectileFinishTrigger: 0
-  projectileFinishEffect: 0
+  abilityProjectileFinishEffect: 0
   projectileGO: {fileID: 0}
   triggerProjectileGO: {fileID: 0}
   projectileSpeed: 5
@@ -19298,8 +19100,10 @@ MonoBehaviour:
   towerDamage: 10
   towerRadius: 100
   chancePercentage: 30
+  abilityProjectileAmount: 1
   abilityDamage: 10
-  triggerProjectileSpeed: 3
+  abilityProjectileSpeed: 3
+  abilityFinishChancePercentage: 20
   missAttackBaseChancePercentage: 5
   killCount: 0
 --- !u!1 &5675585430762828946
@@ -19357,7 +19161,7 @@ MonoBehaviour:
   projectileAmount: 1
   projectileName: Name of your bullet here
   projectileFinishTrigger: 0
-  projectileFinishEffect: 0
+  abilityProjectileFinishEffect: 0
   projectileGO: {fileID: 0}
   triggerProjectileGO: {fileID: 0}
   projectileSpeed: 5
@@ -19366,8 +19170,10 @@ MonoBehaviour:
   towerDamage: 10
   towerRadius: 100
   chancePercentage: 30
+  abilityProjectileAmount: 1
   abilityDamage: 10
-  triggerProjectileSpeed: 3
+  abilityProjectileSpeed: 3
+  abilityFinishChancePercentage: 20
   missAttackBaseChancePercentage: 5
   killCount: 0
 --- !u!224 &5760799674998253949
@@ -19768,7 +19574,7 @@ MonoBehaviour:
   projectileAmount: 1
   projectileName: Name of your bullet here
   projectileFinishTrigger: 0
-  projectileFinishEffect: 0
+  abilityProjectileFinishEffect: 0
   projectileGO: {fileID: 0}
   triggerProjectileGO: {fileID: 0}
   projectileSpeed: 5
@@ -19777,8 +19583,10 @@ MonoBehaviour:
   towerDamage: 10
   towerRadius: 100
   chancePercentage: 30
+  abilityProjectileAmount: 1
   abilityDamage: 10
-  triggerProjectileSpeed: 3
+  abilityProjectileSpeed: 3
+  abilityFinishChancePercentage: 20
   missAttackBaseChancePercentage: 5
   killCount: 0
 --- !u!114 &7659963241308315241
@@ -19896,7 +19704,7 @@ MonoBehaviour:
   projectileAmount: 1
   projectileName: Name of your bullet here
   projectileFinishTrigger: 0
-  projectileFinishEffect: 0
+  abilityProjectileFinishEffect: 0
   projectileGO: {fileID: 0}
   triggerProjectileGO: {fileID: 0}
   projectileSpeed: 5
@@ -19905,8 +19713,10 @@ MonoBehaviour:
   towerDamage: 10
   towerRadius: 100
   chancePercentage: 30
+  abilityProjectileAmount: 1
   abilityDamage: 10
-  triggerProjectileSpeed: 3
+  abilityProjectileSpeed: 3
+  abilityFinishChancePercentage: 20
   missAttackBaseChancePercentage: 5
   killCount: 0
 --- !u!224 &7797822011810774513
@@ -19987,7 +19797,7 @@ MonoBehaviour:
   projectileAmount: 1
   projectileName: Name of your bullet here
   projectileFinishTrigger: 0
-  projectileFinishEffect: 0
+  abilityProjectileFinishEffect: 0
   projectileGO: {fileID: 0}
   triggerProjectileGO: {fileID: 0}
   projectileSpeed: 5
@@ -19996,8 +19806,10 @@ MonoBehaviour:
   towerDamage: 10
   towerRadius: 100
   chancePercentage: 30
+  abilityProjectileAmount: 1
   abilityDamage: 10
-  triggerProjectileSpeed: 3
+  abilityProjectileSpeed: 3
+  abilityFinishChancePercentage: 20
   missAttackBaseChancePercentage: 5
   killCount: 0
 --- !u!222 &8586159563402417112

@@ -31,7 +31,7 @@ public class Stormcrusher : TowerBase
         StartCoroutine(TriggerProjectileCoroutine(triggerProjectileGO, _myAbilityTrigger.abilityTriggerEnemyList[randomValue]));
     }
 
-    public override void TriggerProjectileFinishEffect(GameObject target)
+    public override void AbilityProjectileFinishEffect(GameObject target)
     {
         target.GetComponent<EnemyMove>().ApplyStun(triggerStunName, abilityStunDuration);
     }

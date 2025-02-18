@@ -4,12 +4,19 @@ using UnityEngine;
 
 public class ChainLightning : MonoBehaviour
 {
-    public float bounceRadius = 50f; // Radius to check for nearby units
+    public float bounceRadius = 2f; // Radius to check for nearby units
     public int maxBounces = 3; // Maximum number of bounces
     private int bounceCount = 0; // Number of bounces done so far
     private GameObject projectileGO;
     private HashSet<Collider2D> affectedUnits = new HashSet<Collider2D>();
     [SerializeField] private string lineRendererName = "Electric line renderer";
+    private float timeToMovePosAfterDamage = 0.15f;
+    private float timeToDisableLR;
+
+    private void Start()
+    {
+        timeToDisableLR = 2 * timeToMovePosAfterDamage;
+    }
 
     public void PerformChainLightning(GameObject target, GameObject lineRenderer, float damage, int maxBounceCount)
     {
@@ -72,6 +79,7 @@ public class ChainLightning : MonoBehaviour
         if (target != null && go.activeInHierarchy)
         {
             go.GetComponent<CustomLineRenderer>().CustomSetUpLine(this.transform.position, target.transform.position);
+            go.GetComponent<CustomLineRenderer>().DisableCustomLineRenderer(timeToDisableLR);
             StartCoroutine(DoDamage(target, go, abilityDamage));
         }
         else
@@ -83,14 +91,13 @@ public class ChainLightning : MonoBehaviour
     private IEnumerator DoDamage(GameObject target, GameObject lineRenderer, float damage)
     {
         target.GetComponent<EnemyHealth>().GetEnemyHP(damage);
-        yield return new WaitForSeconds(0.1f);
-        lineRenderer.SetActive(false);
+        yield return new WaitForSeconds(timeToMovePosAfterDamage);
         this.transform.position = target.transform.position;
         damage /= 2;
         BounceToNextTarget(this.transform.position, damage);
     }
 
-    // Optional: Visualize the bounce radius for debugging
+    // Visualize the bounce radius for debugging
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;

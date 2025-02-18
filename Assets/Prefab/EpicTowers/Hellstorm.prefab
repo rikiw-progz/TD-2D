@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4991948884378933089}
   - component: {fileID: 7913765842310801866}
   - component: {fileID: 4071888599132271157}
+  - component: {fileID: 7376466994049057991}
   m_Layer: 5
   m_Name: Hellstorm
   m_TagString: Untagged
@@ -132,9 +133,44 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5570874500420804040}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6a6fac397afc61541890708e826f146b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _parent: {fileID: 0}
+--- !u!114 &7376466994049057991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5570874500420804040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bb0b827af0fb6c4480f42fdf1896a82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  towerElement: 0
+  projectileAmount: 1
+  projectileName: Black electric line renderer
+  projectileFinishTrigger: 0
+  abilityProjectileFinishEffect: 1
+  projectileGO: {fileID: 0}
+  triggerProjectileGO: {fileID: 0}
+  projectileSpeed: 5
+  fireCountdown: 0
+  fireCooldown: 1
+  towerDamage: 50
+  towerRadius: 3
+  chancePercentage: 20
+  abilityProjectileAmount: 5
+  abilityDamage: 5
+  abilityProjectileSpeed: 0
+  abilityFinishChancePercentage: 20
+  missAttackBaseChancePercentage: 0
+  killCount: 0
+  triggerProjectileName: Black electric line renderer
+  fireBurnName: Black fire burn effect
+  fireBurnDamage: 20
+  abilityDebuffDuration: 3

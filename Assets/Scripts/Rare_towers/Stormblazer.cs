@@ -19,7 +19,6 @@ public class Stormblazer : TowerBase
 
     public override void TowerTrigger()
     {
-        burstAttackAmount = 3;
         StartCoroutine(BurstAttack());
     }
 

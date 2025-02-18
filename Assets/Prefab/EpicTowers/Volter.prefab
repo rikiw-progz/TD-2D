@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2817529804782530538}
   - component: {fileID: 6305235455244689816}
   - component: {fileID: 539445267796925862}
+  - component: {fileID: 3091507110330760626}
   m_Layer: 5
   m_Name: Volter
   m_TagString: Untagged
@@ -132,9 +133,42 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6837066248961618944}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6a6fac397afc61541890708e826f146b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _parent: {fileID: 0}
+--- !u!114 &3091507110330760626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6837066248961618944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 318f614352f0ae74e958f075f55ebc44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  towerElement: 0
+  projectileAmount: 1
+  projectileName: Thunder projectile
+  projectileFinishTrigger: 0
+  abilityProjectileFinishEffect: 0
+  projectileGO: {fileID: 0}
+  triggerProjectileGO: {fileID: 0}
+  projectileSpeed: 5
+  fireCountdown: 0
+  fireCooldown: 1
+  towerDamage: 60
+  towerRadius: 4
+  chancePercentage: 20
+  abilityProjectileAmount: 0
+  abilityDamage: 20
+  abilityProjectileSpeed: 0
+  abilityFinishChancePercentage: 0
+  missAttackBaseChancePercentage: 0
+  killCount: 0
+  triggerProjectileName: Electric fireball
+  bounceAmount: 4

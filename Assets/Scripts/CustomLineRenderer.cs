@@ -66,6 +66,17 @@ public class CustomLineRenderer : MonoBehaviour
         }
     }
 
+    public void DisableCustomLineRenderer(float timeToDisable)
+    {
+        StartCoroutine(DisablingGO(timeToDisable));
+    }
+
+    private IEnumerator DisablingGO(float timeToDisable)
+    {
+        yield return new WaitForSeconds(timeToDisable);
+        this.gameObject.SetActive(false);
+    }
+
     private void OnDisable()
     {
         StopAllCoroutines();

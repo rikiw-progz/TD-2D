@@ -14,7 +14,7 @@ public class Nightstorm : TowerBase
         for (int i = 0; i < Mathf.Min(projectileAmount, enemyList.Count); i++)
         {
             projectileGO = PoolBase.instance.GetObject(projectileName, this.transform.position);
-            StartCoroutine(LineRendererProjectileCoroutine(projectileGO, enemyList[i]));
+            StartCoroutine(LineRendererProjectileCoroutine(projectileGO, enemyList[i], towerDamage));
         }
     }
 

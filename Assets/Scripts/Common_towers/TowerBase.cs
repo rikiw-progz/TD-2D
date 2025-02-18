@@ -27,17 +27,6 @@ public abstract class TowerBase : MonoBehaviour
         Synergy
     }
 
-    public HashSet<ElementType> elements = new();
-
-    public void SetElements(params ElementType[] newElements)
-    {
-        elements.Clear();
-        foreach (var element in newElements)
-        {
-            elements.Add(element);
-        }
-    }
-
     [Header("Tower Properties")]
     public ElementType towerElement; // Allows setting the element in Inspector or dynamically
 
@@ -69,7 +58,7 @@ public abstract class TowerBase : MonoBehaviour
     private DamageTextHandler _damageTextHandler;
 
     private float triggerRandomValue;
-    private float abilityTriggerRandomValue;
+    protected float abilityTriggerRandomValue;
     private float missAttackRandomValue;
     public float missAttackBaseChancePercentage = 0f;
 
@@ -202,12 +191,12 @@ public abstract class TowerBase : MonoBehaviour
         go.SetActive(false);
     }
 
-    public virtual IEnumerator LineRendererProjectileCoroutine(GameObject go, GameObject target)
+    public virtual IEnumerator LineRendererProjectileCoroutine(GameObject go, GameObject target, float damage)
     {
         if (target != null && go.activeInHierarchy)
         {
             go.GetComponent<CustomLineRenderer>().CustomSetUpLine(this.transform.position, target.transform.position);
-            DoDamage(target, towerDamage);
+            DoDamage(target, damage);
 
             yield return new WaitForSeconds(0.15f);
             go.SetActive(false);
@@ -362,12 +351,14 @@ public abstract class TowerBase : MonoBehaviour
         // Change parent instead of destroying?
     }
 
-    private void OnDisable()
+    protected void OnDisable()
     {
         if (projectileGO != null)
             projectileGO.SetActive(false);
 
         if (triggerProjectileGO != null)
             triggerProjectileGO.SetActive(false);
+
+        StopAllCoroutines();
     }
 }

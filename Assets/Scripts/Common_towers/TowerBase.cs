@@ -43,7 +43,7 @@ public abstract class TowerBase : MonoBehaviour
 
     [Header("Tower stats")]
     [SerializeField] public float projectileSpeed = 5f;
-    [HideInInspector] public float fireCountdown = 0f;
+    private float fireCountdown = 0f;
     public float fireCooldown = 1f;
     public float towerDamage = 10f;
     public float towerRadius = 1f;
@@ -70,6 +70,12 @@ public abstract class TowerBase : MonoBehaviour
     private Dictionary<string, GameObject> _activeAttackDamageBuffGO = new();
     private Dictionary<string, Coroutine> _activeAttackDamageBuffCoroutines = new();
     private GameObject buffAttackDamageGO;
+
+    [Header("Attack Speed Buff")]
+    private Dictionary<string, float> _activeAttackSpeedBuffs = new();
+    private Dictionary<string, GameObject> _activeAttackSpeedBuffGO = new();
+    private Dictionary<string, Coroutine> _activeAttackSpeedBuffCoroutines = new();
+    private GameObject buffAttackSpeedGO;
 
     public virtual void Start()
     {
@@ -287,18 +293,6 @@ public abstract class TowerBase : MonoBehaviour
         towerRadius = GetComponent<CircleCollider2D>().radius;
     }
 
-    public void ChangeAttackSpeed(float speedAmount)
-    {
-        // Convert speedAmount to a percentage (e.g., 10.0 will become 0.1)
-        float reductionPercentage = speedAmount / 100f;
-
-        // Calculate the amount to reduce fireCooldown by percentage
-        float reductionAmount = fireCooldown * reductionPercentage;
-
-        // Apply the reduction to fireCooldown
-        fireCooldown -= reductionAmount;
-    }
-
     public void IncreaseTowerKillCount()
     {
         killCount++;
@@ -347,6 +341,47 @@ public abstract class TowerBase : MonoBehaviour
         _activeAttackDamageBuffGO[attackDamageBuffName].SetActive(false);
         _activeAttackDamageBuffGO.Remove(attackDamageBuffName);
         _activeAttackDamageBuffCoroutines.Remove(attackDamageBuffName);
+
+        // Change parent instead of destroying?
+    }
+
+    public void ApplyAttackSpeedBuff(float attackSpeedPercent, float attackSpeedBuffDuration, string attackSpeedBuffName)
+    {
+        if (this.gameObject.activeInHierarchy)
+        {
+            if (_activeAttackSpeedBuffCoroutines.ContainsKey(attackSpeedBuffName))
+            {
+                StopCoroutine(_activeAttackSpeedBuffCoroutines[attackSpeedBuffName]);
+            }
+
+            _activeAttackSpeedBuffCoroutines[attackSpeedBuffName] = StartCoroutine(AttackSpeedBuffCountdown(attackSpeedPercent, attackSpeedBuffDuration, attackSpeedBuffName));
+        }
+    }
+
+    public IEnumerator AttackSpeedBuffCountdown(float attackSpeedPercent, float attackSpeedBuffDuration, string attackSpeedBuffName)
+    {
+        if (!_activeAttackSpeedBuffs.ContainsKey(attackSpeedBuffName))
+        {
+            buffAttackSpeedGO = PoolBase.instance.GetObject(attackSpeedBuffName, this.transform.position);
+            buffAttackSpeedGO.transform.SetParent(this.transform);
+            buffAttackSpeedGO.transform.localPosition = new Vector2(0f, 0f);
+            _activeAttackSpeedBuffGO.Add(attackSpeedBuffName, buffAttackSpeedGO);
+
+            // Apply the slow effect
+            fireCooldown *= (1 - attackSpeedPercent / 100);
+
+            // Add the debuff to the list of active debuffs
+            _activeAttackSpeedBuffs.Add(attackSpeedBuffName, attackSpeedPercent);
+        }
+
+        yield return new WaitForSeconds(attackSpeedBuffDuration);
+
+        fireCooldown *= 1 / ((1 - _activeAttackSpeedBuffs[attackSpeedBuffName] / 100));
+
+        _activeAttackSpeedBuffs.Remove(attackSpeedBuffName);
+        _activeAttackSpeedBuffGO[attackSpeedBuffName].SetActive(false);
+        _activeAttackSpeedBuffGO.Remove(attackSpeedBuffName);
+        _activeAttackSpeedBuffCoroutines.Remove(attackSpeedBuffName);
 
         // Change parent instead of destroying?
     }

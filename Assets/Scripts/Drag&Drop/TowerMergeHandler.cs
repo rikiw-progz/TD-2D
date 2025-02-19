@@ -213,11 +213,11 @@ public class TowerMergeHandler : MonoBehaviour
             case MergeResult.EarthNatureDarkness:
                 return CreateTower("Shadow", towerLocation);
             case MergeResult.EarthNatureThunder:
-                return CreateTower("Thunderbark", towerLocation);
+                return CreateTower("ThunderBark", towerLocation);
             case MergeResult.EarthDarknessThunder:
-                return CreateTower("Shadowquake", towerLocation);
+                return CreateTower("ShadowQuake", towerLocation);
             case MergeResult.NatureDarknessThunder:
-                return CreateTower("Thornshroud", towerLocation);
+                return CreateTower("ThornShroud", towerLocation);
             default:
                 Debug.Log("Invalid merge!");
                 return null;

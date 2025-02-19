@@ -14,8 +14,9 @@ GameObject:
   - component: {fileID: 1187400879400790738}
   - component: {fileID: 795829465351124395}
   - component: {fileID: 7729701309705855203}
+  - component: {fileID: 314950528807108438}
   m_Layer: 5
-  m_Name: Thornshroud
+  m_Name: ThornShroud
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -132,9 +133,40 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5392043137301264665}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6a6fac397afc61541890708e826f146b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _parent: {fileID: 0}
+--- !u!114 &314950528807108438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5392043137301264665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f59bb3dc539e53e42b8c2935ed87f495, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  towerElement: 0
+  projectileAmount: 1
+  projectileName: Nature projectile
+  projectileFinishTrigger: 0
+  abilityProjectileFinishEffect: 0
+  projectileGO: {fileID: 0}
+  triggerProjectileGO: {fileID: 0}
+  projectileSpeed: 5
+  fireCooldown: 0.75
+  towerDamage: 50
+  towerRadius: 3.5
+  chancePercentage: 20
+  abilityProjectileAmount: 5
+  abilityDamage: 40
+  abilityProjectileSpeed: 7
+  abilityFinishChancePercentage: 0
+  missAttackBaseChancePercentage: 0
+  killCount: 0
+  triggerProjectileName: Nature projectile

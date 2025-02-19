@@ -133,7 +133,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5257448032598694395}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6a6fac397afc61541890708e826f146b, type: 3}
   m_Name: 
@@ -155,18 +155,20 @@ MonoBehaviour:
   projectileAmount: 1
   projectileName: Nightflame projectile
   projectileFinishTrigger: 1
-  projectileFinishEffect: 0
+  abilityProjectileFinishEffect: 0
   projectileGO: {fileID: 0}
   triggerProjectileGO: {fileID: 0}
   projectileSpeed: 10
-  fireCountdown: 0
   fireCooldown: 1
   towerDamage: 40
   towerRadius: 2.5
   chancePercentage: 10
+  abilityProjectileAmount: 1
   abilityDamage: 0
-  triggerProjectileSpeed: 0
+  abilityProjectileSpeed: 3
+  abilityFinishChancePercentage: 20
   missAttackBaseChancePercentage: 0
+  killCount: 0
   triggerProjectileName: Nightflame projectile
   armorReductionAmount: 3
   armorReductionDuration: 5

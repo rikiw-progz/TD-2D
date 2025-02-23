@@ -7,6 +7,7 @@ public class DropHandler : MonoBehaviour, IDropHandler, IPointerEnterHandler, IP
     public Image _image;
     public Color32 _startColor;
     public bool primaryPlacement = false;
+    public bool placeIsBusy = false;
 
     public TowerMergeHandler towerMergeHandler;
     public bool readyToMerge = false;
@@ -14,15 +15,18 @@ public class DropHandler : MonoBehaviour, IDropHandler, IPointerEnterHandler, IP
     private TowerBase tower1;
     private TowerBase tower2;
 
+    private GameRules _gameRules;
+
     void Start()
     {
         _image = GetComponent<Image>();
         _startColor = _image.color;
+        _gameRules = GameObject.FindWithTag("Stage Manager").GetComponent<GameRules>();
     }
 
     public void OnDrop(PointerEventData eventData)
     {
-        if(eventData.pointerDrag != null && !primaryPlacement && eventData.pointerDrag.GetComponent<DragHandler>())
+        if(eventData.pointerDrag != null && !primaryPlacement && eventData.pointerDrag.GetComponent<DragHandler>() && !placeIsBusy)
         {
             FirstPlacement(eventData);
         }
@@ -51,6 +55,7 @@ public class DropHandler : MonoBehaviour, IDropHandler, IPointerEnterHandler, IP
 
     private void FirstPlacement(PointerEventData eventData)
     {
+        placeIsBusy = true;
         eventData.pointerDrag.GetComponent<DragHandler>().towerGO.SetActive(false);
 
         GameObject towerPrefab = PoolBase.instance.GetObject(eventData.pointerDrag.name + "Tower", this.transform.position);
@@ -66,7 +71,9 @@ public class DropHandler : MonoBehaviour, IDropHandler, IPointerEnterHandler, IP
 
     private void MergePlacement(PointerEventData eventData)
     {
+        placeIsBusy = true;
         eventData.pointerDrag.GetComponent<TowerDragger>()._parent.GetComponent<DropHandler>().primaryPlacement = false;
+        eventData.pointerDrag.GetComponent<TowerDragger>()._parent.GetComponent<DropHandler>().placeIsBusy = false;
         eventData.pointerDrag.GetComponent<TowerDragger>()._parent.GetComponent<DropHandler>().enabled = true;
 
         tower1 = this.transform.GetChild(0).GetComponent<TowerBase>();
@@ -90,6 +97,7 @@ public class DropHandler : MonoBehaviour, IDropHandler, IPointerEnterHandler, IP
 
     private void MergeElementWithoutPlacing(PointerEventData eventData)
     {
+        placeIsBusy = true;
         eventData.pointerDrag.GetComponent<DragHandler>().towerGO.SetActive(false);
 
         tower1 = this.transform.GetChild(0).GetComponent<TowerBase>();

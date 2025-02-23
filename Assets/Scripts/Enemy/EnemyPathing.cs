@@ -58,7 +58,7 @@ public class EnemyPathing : MonoBehaviour
                     enemy.GetComponent<EnemyHealth>().enemyHP = _enemyHP;
                     enemy.GetComponent<EnemyHealth>().armor = _enemyArmor;
                     enemy.GetComponent<EnemyMove>().enabled = true;
-                    enemy.GetComponent<EnemyMove>().speed = enemySpeed;       // is this must be in Update???
+                    enemy.GetComponent<EnemyMove>().speed = enemySpeed;
                     if (enemy.GetComponent<EnemyMove>().pathAdded == false)
                     {
                         for (int j = 0; j < path.Length; j++)
@@ -71,6 +71,20 @@ public class EnemyPathing : MonoBehaviour
                     yield return new WaitForSeconds(enemyBetweenEnemyDelayTime);
                 }
             }
+
+            if (enemyWaveCounter >= 0 && enemyWaveCounter % 2 == 0) // Boss-1 (Every 2 waves, starting wave 6)
+            {
+                SpawnBoss("Boss_1", _enemyHP * 5, _enemyArmor * 2, enemySpeed * 0.8f);
+            }
+            if (enemyWaveCounter >= 5 && enemyWaveCounter % 4 == 0) // Boss-2 (Every 4 waves, starting wave 10)
+            {
+                SpawnBoss("Boss_2", _enemyHP * 10, _enemyArmor * 4, enemySpeed * 0.7f);
+            }
+            if (enemyWaveCounter >= 10 && enemyWaveCounter % 7 == 0) // Boss-3 (Every 7 waves, starting wave 15)
+            {
+                SpawnBoss("Boss_3", _enemyHP * 20, _enemyArmor * 6, enemySpeed * 0.6f);
+            }
+
             waveIsOnProcess = false;
             // Next wave upgrade
             NextWaveLevelUp();
@@ -81,6 +95,26 @@ public class EnemyPathing : MonoBehaviour
                 StartCoroutine(EnemyWaveHandler());
                 enemyWaveCounter++;
             }
+        }
+    }
+
+    void SpawnBoss(string bossType, float bossHP, float bossArmor, float bossSpeed)
+    {
+        GameObject boss = EnemyPool.instance.GetEnemyObject(bossType, enemyStartPosition.position);
+
+        if (boss != null)
+        {
+            boss.SetActive(true);
+            boss.GetComponent<EnemyHealth>().enemyHP = bossHP;
+            boss.GetComponent<EnemyHealth>().armor = bossArmor;
+            boss.GetComponent<EnemyMove>().enabled = true;
+            boss.GetComponent<EnemyMove>().speed = bossSpeed;
+            if (boss.GetComponent<EnemyMove>().pathAdded == false)
+            {
+                for (int j = 0; j < path.Length; j++)
+                    boss.GetComponent<EnemyMove>().enemyPath.Add(path[j]);
+            }
+            boss.GetComponent<EnemyMove>().pathAdded = true;
         }
     }
 

@@ -14,12 +14,23 @@ public class GameRules : MonoBehaviour
     [SerializeField] private GameObject[] cards;
     private readonly float cardPositionControl = 400f;
 
+    [Header("Cards")]
+    public int firstEssenceAmount = 0;
+    [SerializeField] private TextMeshProUGUI firstEssenceAmountTxt;
+    public int secondEssenceAmount = 0;
+    [SerializeField] private TextMeshProUGUI secondEssenceAmountTxt;
+    public int thirdEssenceAmount = 0;
+    [SerializeField] private TextMeshProUGUI thirdEssenceAmountTxt;
+
     [Header("Enemy amount")]
     public int enemyAmount = 0;
     [SerializeField] private int enemyLimitAmount = 50;
     [SerializeField] private TextMeshProUGUI enemyAmountTxt;
     [SerializeField] private GameObject gameOverTxt;
     [SerializeField] private GameObject replay;
+
+    public TextMeshProUGUI timerText; // Assign a UI Text element in the Inspector
+    private float elapsedTime = 0f;
 
     private void Start()
     {
@@ -31,6 +42,10 @@ public class GameRules : MonoBehaviour
             // Add a listener to the button's onClick event
             replay.GetComponent<Button>().onClick.AddListener(() => ReloadScene());
         }
+
+        GetFirstEssence(0);
+        GetSecondEssence(0);
+        GetThirdEssence(0);
     }
 
     private void Update()
@@ -39,6 +54,16 @@ public class GameRules : MonoBehaviour
         {
             ReloadScene();
         }
+
+        TimeDisplay();
+    }
+
+    void TimeDisplay()
+    {
+        elapsedTime += Time.deltaTime;
+        int minutes = Mathf.FloorToInt(elapsedTime / 60);
+        int seconds = Mathf.FloorToInt(elapsedTime % 60);
+        timerText.text = minutes + ":" + seconds.ToString("00");
     }
 
     void ReloadScene()
@@ -112,5 +137,23 @@ public class GameRules : MonoBehaviour
             replay.SetActive(true);
             Time.timeScale = 0f;
         }
+    }
+
+    public void GetFirstEssence(int amount)
+    {
+        firstEssenceAmount += amount;
+        firstEssenceAmountTxt.text = firstEssenceAmount.ToString();
+    }
+
+    public void GetSecondEssence(int amount)
+    {
+        secondEssenceAmount += amount;
+        secondEssenceAmountTxt.text = secondEssenceAmount.ToString();
+    }
+
+    public void GetThirdEssence(int amount)
+    {
+        thirdEssenceAmount += amount;
+        thirdEssenceAmountTxt.text = thirdEssenceAmount.ToString();
     }
 }

@@ -7,6 +7,16 @@ using TMPro;
 
 public class EnemyHealth : MonoBehaviour
 {
+    public EnemyType enemyType;
+
+    public enum EnemyType
+    {
+        Simple,
+        Boss_1,
+        Boss_2,
+        Boss_3,
+        Unknown
+    }
     public float enemyHP;
     private Image _image;
     private Color _color;
@@ -151,7 +161,24 @@ public class EnemyHealth : MonoBehaviour
     {
         if(experienceGained == false)
         {
-            stageManager.GetComponent<GameRules>().ExperienceGain(1f);
+            if(enemyType == EnemyType.Simple)
+                _gameRules.ExperienceGain(1f);
+            else if (enemyType == EnemyType.Boss_1)
+            {
+                _gameRules.ExperienceGain(2f);
+                _gameRules.GetFirstEssence(1);
+            }
+            else if (enemyType == EnemyType.Boss_2)
+            {
+                _gameRules.ExperienceGain(3f);
+                _gameRules.GetSecondEssence(1);
+            }
+            else if (enemyType == EnemyType.Boss_3)
+            {
+                _gameRules.ExperienceGain(5f);
+                _gameRules.GetThirdEssence(1);
+            }
+
             experienceGained = true;
 
             _gameRules.EnemyCount(-1);

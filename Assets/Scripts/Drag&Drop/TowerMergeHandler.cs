@@ -127,7 +127,7 @@ public class TowerMergeHandler : MonoBehaviour
         if (tower1.towerElement.ToString().Contains("_") || tower2.towerElement.ToString().Contains("_"))
         {
             return MergeTowersThreeElements(tower1, tower2, towerLocation);
-        }
+        } 
         else
         {
             return MergeTowersTwoElements(tower1, tower2, towerLocation);

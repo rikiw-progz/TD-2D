@@ -5,7 +5,6 @@ using UnityEngine;
 public class Stormcrusher : TowerBase
 {
     [SerializeField] private string triggerProjectileName;
-    [SerializeField] private AbilityTriggerRange _myAbilityTrigger;
     [SerializeField] private float thunderPosY = 10f;
     [SerializeField] private string triggerStunName;
     [SerializeField] private float abilityStunDuration;
@@ -24,15 +23,38 @@ public class Stormcrusher : TowerBase
     public override void TowerTrigger()
     {
         // Thunder to random unit in ability trigger range
-        int randomValue = (int)Random.Range(0f, _myAbilityTrigger.abilityTriggerEnemyList.Count);
+        int randomValue = (int)Random.Range(0f, enemyList.Count);
 
-        triggerProjectileGO = PoolBase.instance.GetObject(triggerProjectileName, new Vector2(_myAbilityTrigger.abilityTriggerEnemyList[randomValue].transform.position.x,_myAbilityTrigger.abilityTriggerEnemyList[randomValue].transform.position.y + thunderPosY));
+        triggerProjectileGO = PoolBase.instance.GetObject(triggerProjectileName, new Vector2(enemyList[randomValue].transform.position.x, enemyList[randomValue].transform.position.y + thunderPosY));
         
-        StartCoroutine(TriggerProjectileCoroutine(triggerProjectileGO, _myAbilityTrigger.abilityTriggerEnemyList[randomValue]));
+        StartCoroutine(StormCrusherLineRendererProjectileCoroutine(triggerProjectileGO,
+            new Vector2(enemyList[randomValue].transform.position.x, enemyList[randomValue].transform.position.y + thunderPosY), 
+            enemyList[randomValue], 
+            abilityDamage));
     }
 
-    public override void AbilityProjectileFinishEffect(GameObject target)
+    public IEnumerator StormCrusherLineRendererProjectileCoroutine(GameObject go, Vector2 startPos, GameObject target, float damage)
     {
-        target.GetComponent<EnemyMove>().ApplyStun(triggerStunName, abilityStunDuration);
+        if (target != null && go.activeInHierarchy)
+        {
+            go.GetComponent<CustomLineRenderer>().CustomSetUpLine(startPos, target.transform.position);
+            DoDamage(target, damage);
+
+            abilityTriggerRandomValue = Random.Range(0f, 100f);
+
+            if (abilityTriggerRandomValue < chancePercentage)
+            {
+                // Execute your action here
+                target.GetComponent<EnemyMove>().ApplyStun(triggerStunName, abilityStunDuration);
+            }
+
+            yield return new WaitForSeconds(0.15f);
+            go.SetActive(false);
+
+            yield return null;
+        }
+
+        // Return the projectile to the pool or handle deactivation
+        go.SetActive(false);
     }
 }

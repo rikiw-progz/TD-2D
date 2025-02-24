@@ -26,6 +26,7 @@ public class EnemyHealth : MonoBehaviour
     private bool experienceGained = false;
     private DamageTextHandler _damageTextHandler;
     private GameRules _gameRules;
+    private EnemyPathing _enemyPath;
     private bool isDead;
 
     [Header("Armor")]
@@ -42,6 +43,7 @@ public class EnemyHealth : MonoBehaviour
         stageManager = GameObject.FindWithTag("Stage Manager");
         _damageTextHandler = stageManager.GetComponent<DamageTextHandler>();
         _gameRules = stageManager.GetComponent<GameRules>();
+        _enemyPath = stageManager.GetComponent<EnemyPathing>();
     }
 
     private void OnEnable()
@@ -181,7 +183,7 @@ public class EnemyHealth : MonoBehaviour
 
             experienceGained = true;
 
-            _gameRules.EnemyCount(-1);
+            _enemyPath.EnemyCount(-1);
         }
 
         DisablingAllDebuffs();

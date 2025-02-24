@@ -216,7 +216,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 0
   primaryPlacement: 0
-  towerMergeHandler: {fileID: 532268893}
+  placeIsBusy: 0
   readyToMerge: 0
 --- !u!1 &28593113
 GameObject:
@@ -461,7 +461,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 0
   primaryPlacement: 0
-  towerMergeHandler: {fileID: 532268893}
+  placeIsBusy: 0
   readyToMerge: 0
 --- !u!1 &67224745
 GameObject:
@@ -726,7 +726,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 0
   primaryPlacement: 0
-  towerMergeHandler: {fileID: 532268893}
+  placeIsBusy: 0
   readyToMerge: 0
 --- !u!114 &91683795
 MonoBehaviour:
@@ -859,7 +859,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 0
   primaryPlacement: 0
-  towerMergeHandler: {fileID: 532268893}
+  placeIsBusy: 0
   readyToMerge: 0
 --- !u!1 &107969701
 GameObject:
@@ -1104,7 +1104,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 0
   primaryPlacement: 0
-  towerMergeHandler: {fileID: 532268893}
+  placeIsBusy: 0
   readyToMerge: 0
 --- !u!1 &130559619
 GameObject:
@@ -1332,7 +1332,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 0
   primaryPlacement: 0
-  towerMergeHandler: {fileID: 532268893}
+  placeIsBusy: 0
   readyToMerge: 0
 --- !u!1 &144223286
 GameObject:
@@ -1758,7 +1758,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 0
   primaryPlacement: 0
-  towerMergeHandler: {fileID: 532268893}
+  placeIsBusy: 0
   readyToMerge: 0
 --- !u!1 &156515716
 GameObject:
@@ -1993,7 +1993,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 0
   primaryPlacement: 0
-  towerMergeHandler: {fileID: 532268893}
+  placeIsBusy: 0
   readyToMerge: 0
 --- !u!1 &217607645
 GameObject:
@@ -2388,7 +2388,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 0
   primaryPlacement: 0
-  towerMergeHandler: {fileID: 532268893}
+  placeIsBusy: 0
   readyToMerge: 0
 --- !u!1 &260692863
 GameObject:
@@ -2604,7 +2604,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 0
   primaryPlacement: 0
-  towerMergeHandler: {fileID: 532268893}
+  placeIsBusy: 0
   readyToMerge: 0
 --- !u!1 &288844270
 GameObject:
@@ -2661,7 +2661,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 0
   primaryPlacement: 0
-  towerMergeHandler: {fileID: 532268893}
+  placeIsBusy: 0
   readyToMerge: 0
 --- !u!114 &288844273
 MonoBehaviour:
@@ -3740,7 +3740,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 0
   primaryPlacement: 0
-  towerMergeHandler: {fileID: 532268893}
+  placeIsBusy: 0
   readyToMerge: 0
 --- !u!114 &408463669
 MonoBehaviour:
@@ -4016,7 +4016,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 0
   primaryPlacement: 0
-  towerMergeHandler: {fileID: 532268893}
+  placeIsBusy: 0
   readyToMerge: 0
 --- !u!1 &458228196
 GameObject:
@@ -4563,6 +4563,11 @@ MonoBehaviour:
   - {fileID: 1793914883}
   - {fileID: 2111409175}
   nextWaveBtn: {fileID: 260692865}
+  enemyAmount: 0
+  enemyLimitAmount: 50
+  enemyAmountTxt: {fileID: 1968603250}
+  gameOverTxt: {fileID: 296869900}
+  replay: {fileID: 1246596314}
 --- !u!114 &532268891
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4591,11 +4596,6 @@ MonoBehaviour:
   secondEssenceAmountTxt: {fileID: 1144271083}
   thirdEssenceAmount: 0
   thirdEssenceAmountTxt: {fileID: 1022792077}
-  enemyAmount: 0
-  enemyLimitAmount: 50
-  enemyAmountTxt: {fileID: 1968603250}
-  gameOverTxt: {fileID: 296869900}
-  replay: {fileID: 1246596314}
   timerText: {fileID: 566755650}
 --- !u!114 &532268892
 MonoBehaviour:
@@ -4702,10 +4702,6 @@ MonoBehaviour:
     prefab: {fileID: 5619343286315681386, guid: 2922a2c79cb4f63498b3b6f7ce7daae1, type: 3}
     parent: {fileID: 400104219}
     size: 10
-  - tag: Thunder bolt
-    prefab: {fileID: 6992392326698063281, guid: b5869b9f0e544f04fbe6613b0c0a272f, type: 3}
-    parent: {fileID: 400104219}
-    size: 20
   - tag: Stormcrusher
     prefab: {fileID: 3914911155943174013, guid: da4978586eb346643b20970c09e0024f, type: 3}
     parent: {fileID: 400104219}
@@ -4889,7 +4885,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 0
   primaryPlacement: 0
-  towerMergeHandler: {fileID: 532268893}
+  placeIsBusy: 0
   readyToMerge: 0
 --- !u!114 &536557467
 MonoBehaviour:
@@ -4963,7 +4959,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 500}
+  m_AnchoredPosition: {x: 0, y: 515}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &566755650
@@ -5156,7 +5152,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 0
   primaryPlacement: 0
-  towerMergeHandler: {fileID: 532268893}
+  placeIsBusy: 0
   readyToMerge: 0
 --- !u!1 &596510699
 GameObject:
@@ -5213,7 +5209,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 0
   primaryPlacement: 0
-  towerMergeHandler: {fileID: 532268893}
+  placeIsBusy: 0
   readyToMerge: 0
 --- !u!114 &596510702
 MonoBehaviour:
@@ -5480,7 +5476,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 0
   primaryPlacement: 0
-  towerMergeHandler: {fileID: 532268893}
+  placeIsBusy: 0
   readyToMerge: 0
 --- !u!1 &615268393
 GameObject:
@@ -5575,7 +5571,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 0
   primaryPlacement: 0
-  towerMergeHandler: {fileID: 532268893}
+  placeIsBusy: 0
   readyToMerge: 0
 --- !u!1 &657606323
 GameObject:
@@ -5670,7 +5666,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 0
   primaryPlacement: 0
-  towerMergeHandler: {fileID: 532268893}
+  placeIsBusy: 0
   readyToMerge: 0
 --- !u!1 &669464651
 GameObject:
@@ -5840,7 +5836,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 0
   primaryPlacement: 0
-  towerMergeHandler: {fileID: 532268893}
+  placeIsBusy: 0
   readyToMerge: 0
 --- !u!1 &706430999
 GameObject:
@@ -6160,7 +6156,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 0
   primaryPlacement: 0
-  towerMergeHandler: {fileID: 532268893}
+  placeIsBusy: 0
   readyToMerge: 0
 --- !u!1 &744001529
 GameObject:
@@ -6337,7 +6333,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 0
   primaryPlacement: 0
-  towerMergeHandler: {fileID: 532268893}
+  placeIsBusy: 0
   readyToMerge: 0
 --- !u!1 &780256854
 GameObject:
@@ -6394,7 +6390,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 0
   primaryPlacement: 0
-  towerMergeHandler: {fileID: 532268893}
+  placeIsBusy: 0
   readyToMerge: 0
 --- !u!114 &780256857
 MonoBehaviour:
@@ -6677,7 +6673,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 0
   primaryPlacement: 0
-  towerMergeHandler: {fileID: 532268893}
+  placeIsBusy: 0
   readyToMerge: 0
 --- !u!1 &820220901
 GameObject:
@@ -6772,7 +6768,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 0
   primaryPlacement: 0
-  towerMergeHandler: {fileID: 532268893}
+  placeIsBusy: 0
   readyToMerge: 0
 --- !u!1 &823445678
 GameObject:
@@ -7359,7 +7355,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 0
   primaryPlacement: 0
-  towerMergeHandler: {fileID: 532268893}
+  placeIsBusy: 0
   readyToMerge: 0
 --- !u!1 &884865992
 GameObject:
@@ -7490,7 +7486,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 0
   primaryPlacement: 0
-  towerMergeHandler: {fileID: 532268893}
+  placeIsBusy: 0
   readyToMerge: 0
 --- !u!1 &905562329
 GameObject:
@@ -7665,7 +7661,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 0
   primaryPlacement: 0
-  towerMergeHandler: {fileID: 532268893}
+  placeIsBusy: 0
   readyToMerge: 0
 --- !u!1 &936925674
 GameObject:
@@ -7835,7 +7831,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 0
   primaryPlacement: 0
-  towerMergeHandler: {fileID: 532268893}
+  placeIsBusy: 0
   readyToMerge: 0
 --- !u!1 &952290793
 GameObject:
@@ -7967,7 +7963,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 0
   primaryPlacement: 0
-  towerMergeHandler: {fileID: 532268893}
+  placeIsBusy: 0
   readyToMerge: 0
 --- !u!114 &952855310
 MonoBehaviour:
@@ -8346,7 +8342,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 0
   primaryPlacement: 0
-  towerMergeHandler: {fileID: 532268893}
+  placeIsBusy: 0
   readyToMerge: 0
 --- !u!114 &988070009
 MonoBehaviour:
@@ -8479,7 +8475,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 0
   primaryPlacement: 0
-  towerMergeHandler: {fileID: 532268893}
+  placeIsBusy: 0
   readyToMerge: 0
 --- !u!1 &1022792075
 GameObject:
@@ -8670,7 +8666,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 0
   primaryPlacement: 0
-  towerMergeHandler: {fileID: 532268893}
+  placeIsBusy: 0
   readyToMerge: 0
 --- !u!114 &1061896535
 MonoBehaviour:
@@ -8840,7 +8836,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 0
   primaryPlacement: 0
-  towerMergeHandler: {fileID: 532268893}
+  placeIsBusy: 0
   readyToMerge: 0
 --- !u!114 &1110902744
 MonoBehaviour:
@@ -8935,7 +8931,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 0
   primaryPlacement: 0
-  towerMergeHandler: {fileID: 532268893}
+  placeIsBusy: 0
   readyToMerge: 0
 --- !u!114 &1121617498
 MonoBehaviour:
@@ -9314,7 +9310,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 0
   primaryPlacement: 0
-  towerMergeHandler: {fileID: 532268893}
+  placeIsBusy: 0
   readyToMerge: 0
 --- !u!114 &1161359562
 MonoBehaviour:
@@ -9655,7 +9651,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 0
   primaryPlacement: 0
-  towerMergeHandler: {fileID: 532268893}
+  placeIsBusy: 0
   readyToMerge: 0
 --- !u!1 &1186172589
 GameObject:
@@ -9750,7 +9746,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 0
   primaryPlacement: 0
-  towerMergeHandler: {fileID: 532268893}
+  placeIsBusy: 0
   readyToMerge: 0
 --- !u!1 &1192370516
 GameObject:
@@ -9920,7 +9916,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 0
   primaryPlacement: 0
-  towerMergeHandler: {fileID: 532268893}
+  placeIsBusy: 0
   readyToMerge: 0
 --- !u!1 &1202643773
 GameObject:
@@ -10202,7 +10198,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 0
   primaryPlacement: 0
-  towerMergeHandler: {fileID: 532268893}
+  placeIsBusy: 0
   readyToMerge: 0
 --- !u!114 &1243532025
 MonoBehaviour:
@@ -10335,7 +10331,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 0
   primaryPlacement: 0
-  towerMergeHandler: {fileID: 532268893}
+  placeIsBusy: 0
   readyToMerge: 0
 --- !u!1 &1246596314
 GameObject:
@@ -10777,7 +10773,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 0
   primaryPlacement: 0
-  towerMergeHandler: {fileID: 532268893}
+  placeIsBusy: 0
   readyToMerge: 0
 --- !u!1 &1296946825
 GameObject:
@@ -11022,7 +11018,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 0
   primaryPlacement: 0
-  towerMergeHandler: {fileID: 532268893}
+  placeIsBusy: 0
   readyToMerge: 0
 --- !u!1 &1315788983
 GameObject:
@@ -11192,7 +11188,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 0
   primaryPlacement: 0
-  towerMergeHandler: {fileID: 532268893}
+  placeIsBusy: 0
   readyToMerge: 0
 --- !u!1 &1352320333
 GameObject:
@@ -11362,7 +11358,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 0
   primaryPlacement: 0
-  towerMergeHandler: {fileID: 532268893}
+  placeIsBusy: 0
   readyToMerge: 0
 --- !u!1 &1375525848
 GameObject:
@@ -11532,7 +11528,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 0
   primaryPlacement: 0
-  towerMergeHandler: {fileID: 532268893}
+  placeIsBusy: 0
   readyToMerge: 0
 --- !u!1 &1395521614
 GameObject:
@@ -11627,7 +11623,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 0
   primaryPlacement: 0
-  towerMergeHandler: {fileID: 532268893}
+  placeIsBusy: 0
   readyToMerge: 0
 --- !u!1 &1424737301
 GameObject:
@@ -11759,7 +11755,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 0
   primaryPlacement: 0
-  towerMergeHandler: {fileID: 532268893}
+  placeIsBusy: 0
   readyToMerge: 0
 --- !u!114 &1429887984
 MonoBehaviour:
@@ -12251,7 +12247,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 0
   primaryPlacement: 0
-  towerMergeHandler: {fileID: 532268893}
+  placeIsBusy: 0
   readyToMerge: 0
 --- !u!1 &1527115238
 GameObject:
@@ -12555,7 +12551,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 0
   primaryPlacement: 0
-  towerMergeHandler: {fileID: 532268893}
+  placeIsBusy: 0
   readyToMerge: 0
 --- !u!1 &1535021269
 GameObject:
@@ -12859,7 +12855,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 0
   primaryPlacement: 0
-  towerMergeHandler: {fileID: 532268893}
+  placeIsBusy: 0
   readyToMerge: 0
 --- !u!1 &1548349555
 GameObject:
@@ -12954,7 +12950,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 0
   primaryPlacement: 0
-  towerMergeHandler: {fileID: 532268893}
+  placeIsBusy: 0
   readyToMerge: 0
 --- !u!1 &1558800758
 GameObject:
@@ -13274,7 +13270,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 0
   primaryPlacement: 0
-  towerMergeHandler: {fileID: 532268893}
+  placeIsBusy: 0
   readyToMerge: 0
 --- !u!1 &1595091912
 GameObject:
@@ -13444,7 +13440,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 0
   primaryPlacement: 0
-  towerMergeHandler: {fileID: 532268893}
+  placeIsBusy: 0
   readyToMerge: 0
 --- !u!1 &1625233870
 GameObject:
@@ -13914,7 +13910,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 0
   primaryPlacement: 0
-  towerMergeHandler: {fileID: 532268893}
+  placeIsBusy: 0
   readyToMerge: 0
 --- !u!1 &1692700790
 GameObject:
@@ -14275,7 +14271,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 0
   primaryPlacement: 0
-  towerMergeHandler: {fileID: 532268893}
+  placeIsBusy: 0
   readyToMerge: 0
 --- !u!114 &1721109694
 MonoBehaviour:
@@ -14483,7 +14479,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 0
   primaryPlacement: 0
-  towerMergeHandler: {fileID: 532268893}
+  placeIsBusy: 0
   readyToMerge: 0
 --- !u!1 &1730931543
 GameObject:
@@ -15038,7 +15034,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 0
   primaryPlacement: 0
-  towerMergeHandler: {fileID: 532268893}
+  placeIsBusy: 0
   readyToMerge: 0
 --- !u!1 &1771148760
 GameObject:
@@ -15454,7 +15450,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 0
   primaryPlacement: 0
-  towerMergeHandler: {fileID: 532268893}
+  placeIsBusy: 0
   readyToMerge: 0
 --- !u!114 &1794145966
 MonoBehaviour:
@@ -15812,7 +15808,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 0
   primaryPlacement: 0
-  towerMergeHandler: {fileID: 532268893}
+  placeIsBusy: 0
   readyToMerge: 0
 --- !u!1 &1832286432
 GameObject:
@@ -15869,7 +15865,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 0
   primaryPlacement: 0
-  towerMergeHandler: {fileID: 532268893}
+  placeIsBusy: 0
   readyToMerge: 0
 --- !u!114 &1832286435
 MonoBehaviour:
@@ -16002,7 +15998,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 0
   primaryPlacement: 0
-  towerMergeHandler: {fileID: 532268893}
+  placeIsBusy: 0
   readyToMerge: 0
 --- !u!1 &1867408699
 GameObject:
@@ -16172,7 +16168,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 0
   primaryPlacement: 0
-  towerMergeHandler: {fileID: 532268893}
+  placeIsBusy: 0
   readyToMerge: 0
 --- !u!1 &1872645251
 GameObject:
@@ -16417,7 +16413,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 0
   primaryPlacement: 0
-  towerMergeHandler: {fileID: 532268893}
+  placeIsBusy: 0
   readyToMerge: 0
 --- !u!1 &1915357513
 GameObject:
@@ -16589,7 +16585,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 0
   primaryPlacement: 0
-  towerMergeHandler: {fileID: 532268893}
+  placeIsBusy: 0
   readyToMerge: 0
 --- !u!1 &1929132263
 GameObject:
@@ -16759,7 +16755,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 0
   primaryPlacement: 0
-  towerMergeHandler: {fileID: 532268893}
+  placeIsBusy: 0
   readyToMerge: 0
 --- !u!1 &1941948410
 GameObject:
@@ -17063,7 +17059,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 0
   primaryPlacement: 0
-  towerMergeHandler: {fileID: 532268893}
+  placeIsBusy: 0
   readyToMerge: 0
 --- !u!1 &1968603248
 GameObject:
@@ -17368,7 +17364,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 0
   primaryPlacement: 0
-  towerMergeHandler: {fileID: 532268893}
+  placeIsBusy: 0
   readyToMerge: 0
 --- !u!1 &2011134897
 GameObject:
@@ -17463,7 +17459,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 0
   primaryPlacement: 0
-  towerMergeHandler: {fileID: 532268893}
+  placeIsBusy: 0
   readyToMerge: 0
 --- !u!1 &2013959149
 GameObject:
@@ -18234,7 +18230,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 0
   primaryPlacement: 0
-  towerMergeHandler: {fileID: 532268893}
+  placeIsBusy: 0
   readyToMerge: 0
 --- !u!1 &2143311549
 GameObject:

@@ -4,6 +4,13 @@ using System;
 
 public class TowerMergeHandler : MonoBehaviour
 {
+    private GameRules _gameRules;
+
+    private void Start()
+    {
+        _gameRules = GameObject.FindWithTag("Stage Manager").GetComponent<GameRules>();
+    }
+
     public enum MergeResult
     {
         FireEarth,                  // Fire + Earth
@@ -123,14 +130,56 @@ public class TowerMergeHandler : MonoBehaviour
 
     public GameObject MergeTowers(TowerBase tower1, TowerBase tower2, Vector2 towerLocation)
     {
-        // If tower1 or tower2 is already a merged tower
+        GameObject mergedTower;
+
+        // Check if one of the towers is already merged
         if (tower1.towerElement.ToString().Contains("_") || tower2.towerElement.ToString().Contains("_"))
         {
-            return MergeTowersThreeElements(tower1, tower2, towerLocation);
-        } 
+            if (_gameRules.secondEssenceAmount > 0)
+            {
+                mergedTower = MergeTowersThreeElements(tower1, tower2, towerLocation);
+
+                // Only subtract essence if merging was successful
+                if (mergedTower != null)
+                {
+                    _gameRules.GetSecondEssence(-1);
+                }
+                else
+                {
+                    Debug.Log("Merge failed. No second essence deducted.");
+                }
+
+                return mergedTower;
+            }
+            else
+            {
+                Debug.Log("No second essence available.");
+                return null;
+            }
+        }
         else
         {
-            return MergeTowersTwoElements(tower1, tower2, towerLocation);
+            if (_gameRules.firstEssenceAmount > 0)
+            {
+                mergedTower = MergeTowersTwoElements(tower1, tower2, towerLocation);
+
+                // Only subtract essence if merging was successful
+                if (mergedTower != null)
+                {
+                    _gameRules.GetFirstEssence(-1);
+                }
+                else
+                {
+                    Debug.Log("Merge failed. No first essence deducted.");
+                }
+
+                return mergedTower;
+            }
+            else
+            {
+                Debug.Log("No first essence available.");
+                return null;
+            }
         }
     }
 

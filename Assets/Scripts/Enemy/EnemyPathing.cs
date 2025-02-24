@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class EnemyPathing : MonoBehaviour
 {
@@ -23,13 +24,17 @@ public class EnemyPathing : MonoBehaviour
     [SerializeField] private Transform[] path;
     public Button nextWaveBtn;
 
-    private GameRules _gameRules;
+    [Header("Enemy amount")]
+    public int enemyAmount = 0;
+    [SerializeField] private int enemyLimitAmount = 50;
+    [SerializeField] private TextMeshProUGUI enemyAmountTxt;
+    [SerializeField] private GameObject gameOverTxt;
+    [SerializeField] private GameObject replay;
 
     private IEnumerator Start()
     {
         _enemyHP = enemyStartHP;
         _enemyArmor = enemyArmor;
-        _gameRules = this.GetComponent<GameRules>();
 
         yield return new WaitForSeconds(1f);
         StartCoroutine(EnemyWaveHandler());
@@ -39,6 +44,16 @@ public class EnemyPathing : MonoBehaviour
             nextWaveBtn.onClick.AddListener(() => NextWave());
         }
 
+        if (replay != null)
+        {
+            // Add a listener to the button's onClick event
+            replay.GetComponent<Button>().onClick.AddListener(() => ReloadScene());
+        }
+    }
+
+    void ReloadScene()
+    {
+        SceneManager.LoadScene("Synergy");
     }
 
     IEnumerator EnemyWaveHandler()
@@ -50,7 +65,7 @@ public class EnemyPathing : MonoBehaviour
             {
                 GameObject enemy = EnemyPool.instance.GetEnemyObject("Enemy", enemyStartPosition.position);
                 
-                _gameRules.EnemyCount(1);
+                EnemyCount(1);
 
                 if (enemy != null)
                 {
@@ -75,14 +90,17 @@ public class EnemyPathing : MonoBehaviour
             if (enemyWaveCounter >= 0 && enemyWaveCounter % 2 == 0) // Boss-1 (Every 2 waves, starting wave 6)
             {
                 SpawnBoss("Boss_1", _enemyHP * 5, _enemyArmor * 2, enemySpeed * 0.8f);
+                EnemyCount(1); // for now
             }
             if (enemyWaveCounter >= 5 && enemyWaveCounter % 4 == 0) // Boss-2 (Every 4 waves, starting wave 10)
             {
                 SpawnBoss("Boss_2", _enemyHP * 10, _enemyArmor * 4, enemySpeed * 0.7f);
+                EnemyCount(1); // for now
             }
             if (enemyWaveCounter >= 10 && enemyWaveCounter % 7 == 0) // Boss-3 (Every 7 waves, starting wave 15)
             {
                 SpawnBoss("Boss_3", _enemyHP * 20, _enemyArmor * 6, enemySpeed * 0.6f);
+                EnemyCount(1); // for now
             }
 
             waveIsOnProcess = false;
@@ -139,5 +157,17 @@ public class EnemyPathing : MonoBehaviour
 
         if (enemyAmountPerWave < 20)
             enemyAmountPerWave++;
+    }
+
+    public void EnemyCount(int amount)
+    {
+        enemyAmount += amount;
+        enemyAmountTxt.text = enemyAmount.ToString();
+        if (enemyAmount > enemyLimitAmount)
+        {
+            gameOverTxt.SetActive(true);
+            replay.SetActive(true);
+            Time.timeScale = 0f;
+        }
     }
 }

@@ -22,13 +22,6 @@ public class GameRules : MonoBehaviour
     public int thirdEssenceAmount = 0;
     [SerializeField] private TextMeshProUGUI thirdEssenceAmountTxt;
 
-    [Header("Enemy amount")]
-    public int enemyAmount = 0;
-    [SerializeField] private int enemyLimitAmount = 50;
-    [SerializeField] private TextMeshProUGUI enemyAmountTxt;
-    [SerializeField] private GameObject gameOverTxt;
-    [SerializeField] private GameObject replay;
-
     public TextMeshProUGUI timerText; // Assign a UI Text element in the Inspector
     private float elapsedTime = 0f;
 
@@ -36,12 +29,6 @@ public class GameRules : MonoBehaviour
     {
         Application.targetFrameRate = 144;
         CardShow();
-
-        if (replay != null)
-        {
-            // Add a listener to the button's onClick event
-            replay.GetComponent<Button>().onClick.AddListener(() => ReloadScene());
-        }
 
         GetFirstEssence(0);
         GetSecondEssence(0);
@@ -127,17 +114,7 @@ public class GameRules : MonoBehaviour
         }
     }
 
-    public void EnemyCount(int amount)
-    {
-        enemyAmount += amount;
-        enemyAmountTxt.text = enemyAmount.ToString();
-        if (enemyAmount > enemyLimitAmount)
-        {
-            gameOverTxt.SetActive(true);
-            replay.SetActive(true);
-            Time.timeScale = 0f;
-        }
-    }
+    
 
     public void GetFirstEssence(int amount)
     {

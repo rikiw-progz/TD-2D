@@ -9,19 +9,21 @@ public class DropHandler : MonoBehaviour, IDropHandler, IPointerEnterHandler, IP
     public bool primaryPlacement = false;
     public bool placeIsBusy = false;
 
-    public TowerMergeHandler towerMergeHandler;
+    private TowerMergeHandler towerMergeHandler;
     public bool readyToMerge = false;
 
     private TowerBase tower1;
     private TowerBase tower2;
 
-    private GameRules _gameRules;
+    void Awake()
+    {
+        towerMergeHandler = GameObject.FindWithTag("Stage Manager").GetComponent<TowerMergeHandler>();
+    }
 
     void Start()
     {
         _image = GetComponent<Image>();
         _startColor = _image.color;
-        _gameRules = GameObject.FindWithTag("Stage Manager").GetComponent<GameRules>();
     }
 
     public void OnDrop(PointerEventData eventData)
@@ -71,20 +73,21 @@ public class DropHandler : MonoBehaviour, IDropHandler, IPointerEnterHandler, IP
 
     private void MergePlacement(PointerEventData eventData)
     {
-        placeIsBusy = true;
-        eventData.pointerDrag.GetComponent<TowerDragger>()._parent.GetComponent<DropHandler>().primaryPlacement = false;
-        eventData.pointerDrag.GetComponent<TowerDragger>()._parent.GetComponent<DropHandler>().placeIsBusy = false;
-        eventData.pointerDrag.GetComponent<TowerDragger>()._parent.GetComponent<DropHandler>().enabled = true;
-
-        tower1 = this.transform.GetChild(0).GetComponent<TowerBase>();
+        if (this.transform.childCount > 0)
+        {
+            tower1 = this.transform.GetChild(0).GetComponent<TowerBase>();
+        }
         tower2 = eventData.pointerDrag.GetComponent<TowerBase>();
-
-        this.GetComponent<Image>().color = _startColor;
 
         GameObject towerGO = towerMergeHandler.MergeTowers(tower1, tower2, this.transform.position);
         
         if (towerGO != null)
         {
+            eventData.pointerDrag.GetComponent<TowerDragger>()._parent.GetComponent<DropHandler>().primaryPlacement = false;
+            eventData.pointerDrag.GetComponent<TowerDragger>()._parent.GetComponent<DropHandler>().placeIsBusy = false;
+            eventData.pointerDrag.GetComponent<TowerDragger>()._parent.GetComponent<DropHandler>().enabled = true;
+
+            placeIsBusy = true;
             tower1.gameObject.SetActive(false);
             tower1.transform.SetParent(null);
             tower2.gameObject.SetActive(false);
@@ -93,33 +96,35 @@ public class DropHandler : MonoBehaviour, IDropHandler, IPointerEnterHandler, IP
             towerGO.GetComponent<TowerDragger>().enabled = true;
             Debug.Log(towerGO.name);
         }
+
+        this.GetComponent<Image>().color = _startColor;
     }
 
     private void MergeElementWithoutPlacing(PointerEventData eventData)
     {
-        placeIsBusy = true;
         eventData.pointerDrag.GetComponent<DragHandler>().towerGO.SetActive(false);
 
         tower1 = this.transform.GetChild(0).GetComponent<TowerBase>();
         tower2 = eventData.pointerDrag.GetComponent<TowerBase>();
 
-        this.GetComponent<Image>().color = _startColor;
-
-        tower1.gameObject.SetActive(false);
-        tower1.transform.SetParent(null);
-
         GameObject towerGO = towerMergeHandler.MergeTowers(tower1, tower2, this.transform.position);
 
         if (towerGO != null)
         {
+            placeIsBusy = true;
+            tower1.gameObject.SetActive(false);
+            tower1.transform.SetParent(null);
+
             towerGO.transform.SetParent(this.transform);
             towerGO.GetComponent<TowerDragger>().enabled = true;
+
+            eventData.pointerDrag.GetComponent<TowerHandler>().TowerAmount(-1);
+            if (eventData.pointerDrag.GetComponent<TowerHandler>().towerAmount <= 0)
+                eventData.pointerDrag.GetComponent<DragHandler>().enabled = false;
+
             Debug.Log(towerGO.name);
-            //this.enabled = false; // temporary solution
         }
 
-        eventData.pointerDrag.GetComponent<TowerHandler>().TowerAmount(-1);
-        if (eventData.pointerDrag.GetComponent<TowerHandler>().towerAmount <= 0)
-            eventData.pointerDrag.GetComponent<DragHandler>().enabled = false;
+        this.GetComponent<Image>().color = _startColor;
     }
 }

@@ -28,6 +28,9 @@ public class EnemyHealth : MonoBehaviour
     private GameRules _gameRules;
     private EnemyPathing _enemyPath;
     private bool isDead;
+    [SerializeField] private Image healthFill;
+    private float currentHealth;
+    [HideInInspector] public float maxHealth;
 
     [Header("Armor")]
     public float armor = 0f;
@@ -69,6 +72,8 @@ public class EnemyHealth : MonoBehaviour
 
         enemyHP -= damageAmount;
 
+        SetHealth(enemyHP, maxHealth);
+
         if (enemyHP <= 0 && !isDead)
         {
             isDead = true;
@@ -79,6 +84,14 @@ public class EnemyHealth : MonoBehaviour
         return false;
     }
 
+    public void SetHealth(float health, float maxHealth)
+    {
+        if (health == currentHealth) return; // Prevent unnecessary updates
+        this.currentHealth = health;
+        this.maxHealth = maxHealth;
+        healthFill.fillAmount = health / maxHealth; // Efficient scaling
+    }
+
     // Method to calculate damage reduction
     private float CalculateDamageReduction(float armorValue, float coeff)
     {
@@ -87,14 +100,13 @@ public class EnemyHealth : MonoBehaviour
 
     IEnumerator DamageColorReaction()
     {
-        if (colored == false)
-        {
-            colored = true;
-            _image.color = Color.red;
-            yield return new WaitForSeconds(0.05f);
-            _image.color = _color;
-            colored = false;
-        }
+        if (colored) yield break;
+
+        colored = true;
+        _image.color = Color.red;
+        yield return new WaitForSeconds(0.05f);
+        _image.color = _color;
+        colored = false;
     }
 
     public void DebuffDamage(float damageAmount, float duration, string debuffName)
@@ -144,7 +156,8 @@ public class EnemyHealth : MonoBehaviour
 
         while (duration > 0f)
         {
-            yield return null;
+            yield return new WaitForSeconds(1f);
+            duration -= 1f;
         }
 
         debuffArmor = 0f;
@@ -153,7 +166,7 @@ public class EnemyHealth : MonoBehaviour
 
     private void DisablingAllDebuffs()
     {
-        for (int i = 0; i < transform.childCount; i++)
+        for (int i = 1; i < transform.childCount; i++)
         {
             transform.GetChild(i).gameObject.SetActive(false);
         }

@@ -70,7 +70,9 @@ public class EnemyPathing : MonoBehaviour
                 if (enemy != null)
                 {
                     enemy.SetActive(true);
+                    enemy.GetComponent<EnemyHealth>().maxHealth = _enemyHP;
                     enemy.GetComponent<EnemyHealth>().enemyHP = _enemyHP;
+                    enemy.GetComponent<EnemyHealth>().SetHealth(_enemyHP, _enemyHP);
                     enemy.GetComponent<EnemyHealth>().armor = _enemyArmor;
                     enemy.GetComponent<EnemyMove>().enabled = true;
                     enemy.GetComponent<EnemyMove>().speed = enemySpeed;
@@ -123,7 +125,9 @@ public class EnemyPathing : MonoBehaviour
         if (boss != null)
         {
             boss.SetActive(true);
+            boss.GetComponent<EnemyHealth>().maxHealth = bossHP;
             boss.GetComponent<EnemyHealth>().enemyHP = bossHP;
+            boss.GetComponent<EnemyHealth>().SetHealth(bossHP, bossHP);
             boss.GetComponent<EnemyHealth>().armor = bossArmor;
             boss.GetComponent<EnemyMove>().enabled = true;
             boss.GetComponent<EnemyMove>().speed = bossSpeed;

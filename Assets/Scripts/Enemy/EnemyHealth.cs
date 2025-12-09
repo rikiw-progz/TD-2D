@@ -196,7 +196,7 @@ public class EnemyHealth : MonoBehaviour
 
             experienceGained = true;
 
-            _enemyPath.EnemyCount(-1);
+            //_enemyPath.EnemyCount(-1);
         }
 
         DisablingAllDebuffs();

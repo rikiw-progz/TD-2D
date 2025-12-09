@@ -10,6 +10,8 @@ public class EnemyMove : MonoBehaviour
     private const float speedCellConst = 0.695f;
     public List<Transform> enemyPath = new();
     public bool pathAdded = false;
+    private bool canWalk = true;
+    private float stopDistance = 0.5f;
 
     [Header("Slow")]
     private Dictionary<string, float> _activeSlowDebuffs = new();
@@ -25,51 +27,55 @@ public class EnemyMove : MonoBehaviour
 
     void Start()
     {
-        MoveToNextPosition();
+        targetPosition = GameObject.FindGameObjectWithTag("MainTower").transform.localPosition;
+
+        //MoveToNextPosition();
     }
 
     private void OnEnable()
     {
-        if(enemyPath.Count > 0)
-        {
-            currentIndex = 0;
+        //if(enemyPath.Count > 0)
+        //{
+        //    currentIndex = 0;
 
-            MoveToNextPosition();
-        }
+        //    MoveToNextPosition();
+        //}
+        canWalk = true;
     }
 
     void Update()
     {
-        if(!isStunned)
+        if(!isStunned && canWalk)
         {
             float step = speedCellConst * speed * Time.deltaTime;
 
             transform.position = Vector2.MoveTowards(transform.position, targetPosition, step);
 
-            if (Vector2.Distance(transform.position, targetPosition) < 0.01f)
+            if (Vector2.Distance(transform.position, targetPosition) < stopDistance)
             {
-                MoveToNextPosition();
+                //MoveToNextPosition();
+                canWalk = false;
             }
         }
     }
 
-    void MoveToNextPosition()
-    {
-        if (currentIndex < enemyPath.Count)
-        {
-            // Set the target position to the current path point
-            targetPosition = enemyPath[currentIndex].position;
-        }
-        else
-        {
-            currentIndex = -1;
-            // When the index exceeds the path length, deactivate the object
-            //this.gameObject.SetActive(false);
-        }
+    //void MoveToNextPosition()
+    //{
+    //    if (currentIndex < enemyPath.Count)
+    //    {
+    //        // Set the target position to the current path point
+    //        targetPosition = enemyPath[currentIndex].position;
+    //    }
+    //    else
+    //    {
+    //        currentIndex = -1;
+    //        // When the index exceeds the path length, deactivate the object
+    //        //this.gameObject.SetActive(false);
+    //    }
 
-        // Increment currentIndex to move to the next path point
-        currentIndex++;
-    }
+    //    // Increment currentIndex to move to the next path point
+    //    currentIndex++;
+    //}
 
     public void ApplyMovementSlow(float slowPercent,float slowDuration, string slowDebuffName)
     {

@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -12,7 +12,8 @@ public class EnemyPathing : MonoBehaviour
     private int enemyWaveCounter = 1;
     [SerializeField] private TextMeshProUGUI enemyWaveCount;
     public float enemyAmountPerWave = 10f;
-    [SerializeField] private Transform enemyStartPosition;
+    [SerializeField] private BoxCollider2D spawnArea;
+
     public float enemySpeed = 5f;
     public float enemyStartHP = 50f;
     private float _enemyHP = 50f;
@@ -20,14 +21,12 @@ public class EnemyPathing : MonoBehaviour
     private int _enemyArmor = 0;
     public float enemyBetweenEnemyDelayTime = 2f;
     public bool waveIsOnProcess = false;
-
-    [SerializeField] private Transform[] path;
     public Button nextWaveBtn;
 
     [Header("Enemy amount")]
     public int enemyAmount = 0;
-    [SerializeField] private int enemyLimitAmount = 50;
-    [SerializeField] private TextMeshProUGUI enemyAmountTxt;
+    //[SerializeField] private int enemyLimitAmount = 50;
+    //[SerializeField] private TextMeshProUGUI enemyAmountTxt;
     [SerializeField] private GameObject gameOverTxt;
     [SerializeField] private GameObject replay;
 
@@ -41,7 +40,7 @@ public class EnemyPathing : MonoBehaviour
         if (nextWaveBtn != null)
         {
             // Add a listener to the button's onClick event
-            nextWaveBtn.onClick.AddListener(() => NextWave());
+            //nextWaveBtn.onClick.AddListener(() => NextWave());
         }
 
         if (replay != null)
@@ -63,9 +62,9 @@ public class EnemyPathing : MonoBehaviour
             enemyWaveCount.text = enemyWaveCounter.ToString();
             for (int i = 0; i < enemyAmountPerWave; i++)
             {
-                GameObject enemy = EnemyPool.instance.GetEnemyObject("Enemy", enemyStartPosition.position);
-                
-                EnemyCount(1);
+                Vector2 spawnPos = GetRandomPointInCollider(spawnArea);
+
+                GameObject enemy = EnemyPool.instance.GetEnemyObject("Enemy", spawnPos);
 
                 if (enemy != null)
                 {
@@ -76,11 +75,6 @@ public class EnemyPathing : MonoBehaviour
                     enemy.GetComponent<EnemyHealth>().armor = _enemyArmor;
                     enemy.GetComponent<EnemyMove>().enabled = true;
                     enemy.GetComponent<EnemyMove>().speed = enemySpeed;
-                    if (enemy.GetComponent<EnemyMove>().pathAdded == false)
-                    {
-                        for (int j = 0; j < path.Length; j++)
-                            enemy.GetComponent<EnemyMove>().enemyPath.Add(path[j]);
-                    }
 
                     enemy.GetComponent<EnemyMove>().pathAdded = true;
                     waveIsOnProcess = true;
@@ -92,17 +86,17 @@ public class EnemyPathing : MonoBehaviour
             if (enemyWaveCounter >= 0 && enemyWaveCounter % 2 == 0) // Boss-1 (Every 2 waves, starting wave 6)
             {
                 SpawnBoss("Boss_1", _enemyHP * 5, _enemyArmor * 2, enemySpeed * 0.8f);
-                EnemyCount(1); // for now
+                //EnemyCount(1); // for now
             }
             if (enemyWaveCounter >= 5 && enemyWaveCounter % 4 == 0) // Boss-2 (Every 4 waves, starting wave 10)
             {
                 SpawnBoss("Boss_2", _enemyHP * 10, _enemyArmor * 4, enemySpeed * 0.7f);
-                EnemyCount(1); // for now
+                //EnemyCount(1); // for now
             }
             if (enemyWaveCounter >= 10 && enemyWaveCounter % 7 == 0) // Boss-3 (Every 7 waves, starting wave 15)
             {
                 SpawnBoss("Boss_3", _enemyHP * 20, _enemyArmor * 6, enemySpeed * 0.6f);
-                EnemyCount(1); // for now
+                //EnemyCount(1); // for now
             }
 
             waveIsOnProcess = false;
@@ -118,9 +112,40 @@ public class EnemyPathing : MonoBehaviour
         }
     }
 
+    public static Vector2 GetRandomPointInCollider(BoxCollider2D box)
+    {
+        Bounds b = box.bounds;
+
+        float left = b.min.x;
+        float right = b.max.x;
+        float bottom = b.min.y;
+        float top = b.max.y;
+
+        float r = box.edgeRadius;
+
+        left += r;
+        right -= r;
+        bottom += r;
+        top -= r;
+
+        int side = Random.Range(0, 4);
+
+        switch (side)
+        {
+            case 0: return new Vector2(Random.Range(left, right), bottom); // bottom
+            case 1: return new Vector2(Random.Range(left, right), top);    // top
+            case 2: return new Vector2(left, Random.Range(bottom, top));   // left
+            case 3: return new Vector2(right, Random.Range(bottom, top));  // right
+        }
+
+        return Vector2.zero;
+    }
+
     void SpawnBoss(string bossType, float bossHP, float bossArmor, float bossSpeed)
     {
-        GameObject boss = EnemyPool.instance.GetEnemyObject(bossType, enemyStartPosition.position);
+        Vector2 spawnPos = GetRandomPointInCollider(spawnArea);
+
+        GameObject boss = EnemyPool.instance.GetEnemyObject(bossType, spawnPos);
 
         if (boss != null)
         {
@@ -131,47 +156,42 @@ public class EnemyPathing : MonoBehaviour
             boss.GetComponent<EnemyHealth>().armor = bossArmor;
             boss.GetComponent<EnemyMove>().enabled = true;
             boss.GetComponent<EnemyMove>().speed = bossSpeed;
-            if (boss.GetComponent<EnemyMove>().pathAdded == false)
-            {
-                for (int j = 0; j < path.Length; j++)
-                    boss.GetComponent<EnemyMove>().enemyPath.Add(path[j]);
-            }
             boss.GetComponent<EnemyMove>().pathAdded = true;
         }
     }
 
-    void NextWave()
-    {
-        if (waveIsOnProcess == false)
-        {
-            StartCoroutine(EnemyWaveHandler());
-            enemyWaveCounter++;
-        }
-    }
+    //void NextWave()
+    //{
+    //    if (waveIsOnProcess == false)
+    //    {
+    //        StartCoroutine(EnemyWaveHandler());
+    //        enemyWaveCounter++;
+    //    }
+    //}
 
     void NextWaveLevelUp()
     {
-        _enemyHP *= 1.25f;
+        _enemyHP *= 1.15f;
 
-        if(enemyBetweenEnemyDelayTime > 0.5f)
-            enemyBetweenEnemyDelayTime -= 0.05f;
+        if(enemyBetweenEnemyDelayTime > 0.1f)
+            enemyBetweenEnemyDelayTime -= 0.02f;
 
         if(enemySpeed < 3f)
-            enemySpeed += 0.1f;
+            enemySpeed += 0.02f;
 
-        if (enemyAmountPerWave < 20)
+        if (enemyAmountPerWave < 2000)
             enemyAmountPerWave++;
     }
 
-    public void EnemyCount(int amount)
-    {
-        enemyAmount += amount;
-        enemyAmountTxt.text = enemyAmount.ToString();
-        if (enemyAmount > enemyLimitAmount)
-        {
-            gameOverTxt.SetActive(true);
-            replay.SetActive(true);
-            Time.timeScale = 0f;
-        }
-    }
+    //public void EnemyCount(int amount)
+    //{
+    //    enemyAmount += amount;
+    //    enemyAmountTxt.text = enemyAmount.ToString();
+    //    if (enemyAmount > enemyLimitAmount)
+    //    {
+    //        gameOverTxt.SetActive(true);
+    //        replay.SetActive(true);
+    //        Time.timeScale = 0f;
+    //    }
+    //}
 }

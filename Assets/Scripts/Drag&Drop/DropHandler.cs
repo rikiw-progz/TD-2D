@@ -46,7 +46,7 @@ public class DropHandler : MonoBehaviour, IDropHandler, IPointerEnterHandler, IP
     {
         if(eventData.pointerDrag != null)
         {
-            _image.color = Color.red;
+            _image.color = Color.grey;
         }
     }
 

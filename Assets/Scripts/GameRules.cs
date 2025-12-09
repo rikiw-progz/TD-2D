@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
 
@@ -37,11 +36,6 @@ public class GameRules : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.R))
-        {
-            ReloadScene();
-        }
-
         TimeDisplay();
     }
 
@@ -51,11 +45,6 @@ public class GameRules : MonoBehaviour
         int minutes = Mathf.FloorToInt(elapsedTime / 60);
         int seconds = Mathf.FloorToInt(elapsedTime % 60);
         timerText.text = minutes + ":" + seconds.ToString("00");
-    }
-
-    void ReloadScene()
-    {
-        SceneManager.LoadScene("Synergy");
     }
 
     public void ExperienceGain(float exp)
@@ -71,7 +60,7 @@ public class GameRules : MonoBehaviour
     void LevelUp()
     {
         playerLevel += 1;
-        experienceRequired += 10;
+        experienceRequired += 10 + playerLevel*2;
         CardShow();
     }
 

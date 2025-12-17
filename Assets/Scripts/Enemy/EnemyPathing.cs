@@ -173,7 +173,7 @@ public class EnemyPathing : MonoBehaviour
     {
         _enemyHP *= 1.15f;
 
-        if(enemyBetweenEnemyDelayTime > 0.1f)
+        if(enemyBetweenEnemyDelayTime > 0.04f)
             enemyBetweenEnemyDelayTime -= 0.02f;
 
         if(enemySpeed < 3f)

@@ -6770,7 +6770,7 @@ MonoBehaviour:
   enemySpeed: 0.5
   enemyStartHP: 10
   enemyArmor: 0
-  enemyBetweenEnemyDelayTime: 0.5
+  enemyBetweenEnemyDelayTime: 0.25
   waveIsOnProcess: 0
   nextWaveBtn: {fileID: 260692865}
   enemyAmount: 0
